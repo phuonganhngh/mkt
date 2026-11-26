@@ -143,13 +143,21 @@ function BenchmarkMetrics({ locale }: { locale: Locale }) {
   </div>;
 }
 
+function BenchmarkHighlights({ locale }: { locale: Locale }) {
+  const ja = locale === "ja";
+  return <div className="benchmark-highlights" aria-label={ja ? "比較分析のポイント" : "Benchmark highlights"}>
+    <div><strong>+7.2%</strong><span>{ja ? "フォロワー・登録者数の単純合計比較" : "Combined Audience Comparison"}</span></div>
+    <div><strong>5.74×</strong><span>{ja ? "Facebookフォロワー数の比較" : "Facebook Follower Comparison"}</span></div>
+  </div>;
+}
+
 function NikkeiThumbnail({ locale }: { locale: Locale }) {
   const ja = locale === "ja";
   return <aside className="nikkei-thumbnail-reference" aria-label={ja ? "日本経済新聞の記事" : "Nikkei media reference"}>
     <div className="nikkei-reference-heading">{ja ? "関連記事・資料" : "MEDIA REFERENCE"} <time dateTime="2026-03-02">{ja ? "2026年3月2日" : "March 2, 2026"}</time></div>
     <a href={nikkeiArticleLink} target="_blank" rel="noopener noreferrer" aria-label={ja ? "日本経済新聞の元記事を開く" : "Open the original Nikkei article"}>
       <img src="/media/nikkei-article-thumbnail.jpg" alt={ja ? "日本経済新聞：JALがベトナムのインフルエンサーを帯広・旭川のPRに招いた記事のサムネイル" : "Nikkei news preview about JAL inviting Vietnamese influencers to promote Obihiro and Asahikawa"} width="350" height="110" loading="lazy" />
-      <span>{ja ? "日本経済新聞の元記事を見る ↗" : "Read original Nikkei article ↗"}</span>
+
     </a>
     <p>{ja ? "記事はJALのプロモーション活動に関する参考資料です。フォロワー数は独自調査であり、日経の記事に記載された数値ではありません。" : "The article documents the JAL initiative. Follower figures are from independent benchmarking, not figures reported by Nikkei."}</p>
   </aside>;
@@ -169,6 +177,8 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       continue;
     } else if (block.startsWith("@benchmark-note ")) {
       if (showBenchmark) children.push(<p className="footnote" key={index}>{inline(block.slice(16))}</p>);
+    } else if (block === "@benchmark-highlights" && id === "partnerships") {
+      children.push(<BenchmarkHighlights key={index} locale={locale} />);
     } else if (block === "@benchmark-metrics" && id === "partnerships") {
       children.push(<BenchmarkMetrics key={index} locale={locale} />);
     } else if (block === "@nikkei-thumbnail" && id === "partnerships") {
