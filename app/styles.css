@@ -285,6 +285,6 @@ th { font-weight: 500; }
 .benchmark-highlights span { font: 400 .75rem/1.5 var(--ui); color: var(--muted); }
 .nikkei-thumbnail-reference { border-top: 0; padding-top: 0; }
 .nikkei-thumbnail-reference a { display: inline-block; max-width: 100%; margin-top: .6rem; }
-.nikkei-thumbnail-reference img { width: min(100%, 420px); height: auto; border: 0; border-radius: .6rem; }
+.nikkei-thumbnail-reference img { width: min(100%, 760px); max-width: 100%; height: auto; border: 0; border-radius: .6rem; }
 .nikkei-thumbnail-reference a > span { display: none; }
 @media (max-width:520px) { .benchmark-highlights { grid-template-columns: 1fr; gap: .6rem; } }
