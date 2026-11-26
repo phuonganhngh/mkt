@@ -153,13 +153,21 @@ function BenchmarkHighlights({ locale }: { locale: Locale }) {
 
 function NikkeiThumbnail({ locale }: { locale: Locale }) {
   const ja = locale === "ja";
-  return <aside className="nikkei-thumbnail-reference" aria-label={ja ? "日本経済新聞の記事" : "Nikkei media reference"}>
-    <div className="nikkei-reference-heading">{ja ? "関連記事・資料" : "MEDIA REFERENCE"} <time dateTime="2026-03-02">{ja ? "2026年3月2日" : "March 2, 2026"}</time></div>
-    <a href={nikkeiArticleLink} target="_blank" rel="noopener noreferrer" aria-label={ja ? "日本経済新聞の元記事を開く" : "Open the original Nikkei article"}>
-      <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/media/nikkei-article-thumbnail.jpg`} alt={ja ? "日本経済新聞：JALがベトナムのインフルエンサーを帯広・旭川のPRに招いた記事のサムネイル" : "Nikkei news preview about JAL inviting Vietnamese influencers to promote Obihiro and Asahikawa"} width="867" height="273" loading="lazy" />
-
-    </a>
-    <p>{ja ? "記事はJALのプロモーション活動に関する参考資料です。フォロワー数は独自調査であり、日経の記事に記載された数値ではありません。" : "The article documents the JAL initiative. Follower figures are from independent benchmarking, not figures reported by Nikkei."}</p>
+  return <aside className="nikkei-thumbnail-reference" aria-label={ja ? "日本経済新聞の関連記事" : "Nikkei media reference"}>
+    <div className="nikkei-reference-heading">
+      <span>{ja ? "関連記事・資料" : "MEDIA REFERENCE"}</span>
+      <time dateTime="2026-03-02">{ja ? "2026年3月2日" : "March 2, 2026"}</time>
+    </div>
+    <div className="nikkei-reference-body">
+      <a className="nikkei-reference-image" href={nikkeiArticleLink} target="_blank" rel="noopener noreferrer" aria-label={ja ? "日本経済新聞の元記事を開く" : "Open the original Nikkei article"}>
+        <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/media/nikkei-article-thumbnail.jpg`} alt={ja ? "日本経済新聞によるJALのベトナム人インフルエンサー招へい記事のサムネイル" : "Nikkei thumbnail about JAL inviting Vietnamese influencers to promote Obihiro and Asahikawa"} width="867" height="273" loading="lazy" />
+      </a>
+      <div className="nikkei-reference-copy">
+        <h4>{ja ? "JAL、ベトナムのインフルエンサーを招き帯広・旭川をPR" : "JAL Invites Vietnamese Influencers to Promote Obihiro and Asahikawa"}</h4>
+        <p>{ja ? "日本経済新聞（Nikkei）" : "日本経済新聞 (Nikkei)"}</p>
+        <a className="nikkei-reference-link" href={nikkeiArticleLink} target="_blank" rel="noopener noreferrer">{ja ? "元記事を見る" : "View Original Article"} <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
   </aside>;
 }
 
