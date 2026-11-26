@@ -40,3 +40,13 @@ Verified against Netlify's credit-based pricing documentation on November 25, 20
 - Follow [MEDIA_GUIDE.md](MEDIA_GUIDE.md) to add or replace files. Rebuild and check both languages before publishing.
 
 See [PROJECT_STATUS.md](PROJECT_STATUS.md) for pending inputs and release checks.
+
+## Preview before production
+
+The review branch is `develop`. Preview builds are triggered by pushes to `develop` using the GitHub Pages workflow in `.github/workflows/pages-preview.yml`. Preview URL (once Pages is enabled and the workflow succeeds): https://phuonganhngh.github.io/mkt/
+
+One-time repository setting: **Settings → Pages → Build and deployment → Source: GitHub Actions**. Do not select `Deploy from a branch`.
+
+Continue editing `develop` only. Review the GitHub Pages version, including EN/JP, images, mobile and navigation. Merge `develop` into `main` only when approved; `main` is the Netlify production branch. To keep Netlify quiet during review, ensure Netlify watches only `main` and does not build branch deploys / deploy previews.
+
+The GitHub Pages build uses `GITHUB_PAGES=true`, `NEXT_PUBLIC_BASE_PATH=/mkt`. Production builds omit them, so the usual root URLs are retained.

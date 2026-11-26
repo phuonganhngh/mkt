@@ -52,3 +52,12 @@ Support Marketing Manager and Digital Marketing Manager applications with projec
 - Standardized the Problem heading to Challenge across remaining draft Work pages.
 
 - Added the actual user-provided Nikkei thumbnail as a local image asset and linked it to the original article; source screenshot displayed without inventing an illustration. Added two audience totals above the platform-by-platform chart. Removed the redundant plain comparison table while preserving the chart and disclaimer.
+
+## Preview workflow (GitHub Pages) — November 26, 2026
+
+- Branch `develop` is the editable preview branch. GitHub Actions builds static Next.js HTML for `https://phuonganhngh.github.io/mkt/`.
+- Branch `main` remains Netlify production. Its files and `netlify.toml` have not been changed.
+- Preview-only build variables: `GITHUB_PAGES=true` and `NEXT_PUBLIC_BASE_PATH=/mkt`. The preview `basePath` is set in `next.config.ts`; internal links and local media URLs are adjusted only for this build.
+- Once GitHub Pages is enabled with **Source: GitHub Actions** in repository Settings > Pages, `develop` pushes publish preview; a deliberate merge `develop -> main` triggers Netlify production.
+- If `develop` is merged to `main`, Netlify builds without GitHub Pages environment variables, retaining the normal root-path URL.
+- Keep media files in `public/media`; on GitHub Pages they will resolve under `/mkt/media/`.

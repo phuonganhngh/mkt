@@ -4,6 +4,9 @@ import { useRef, useState } from "react";
 import type { ImageAsset, Media } from "../content/media";
 import { ui, type Locale } from "../content/site";
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const assetPath = (src: string) => src.startsWith("/") ? assetBase + src : src;
+
 export function Placeholder({ locale, label }: { locale: Locale; label?: string }) {
   return <div className="media-placeholder"><span>{label ?? ui[locale].placeholder}</span></div>;
 }
@@ -16,8 +19,8 @@ export function AssetImage({ image, locale, sizes, eager = false }: {
   return (
     // The static export serves optimized image variants supplied with the project.
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={image.src}
-      srcSet={image.variants?.map(item => `${item.src} ${item.width}w`).join(", ") || undefined}
+    <img src={assetPath(image.src)}
+      srcSet={image.variants?.map(item => `${assetPath(item.src)} ${item.width}w`).join(", ") || undefined}
       sizes={sizes} loading={eager ? "eager" : "lazy"} decoding="async"
       alt={image.alt[locale]} onError={() => setFailed(true)} />
   );
@@ -53,7 +56,7 @@ function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
 
   return <figure className="media-item">
     {item.kind === "pdf" || external
-      ? <a className="media-trigger" href={item.src} aria-label={`${action} — ${caption}`}>
+      ? <a className="media-trigger" href={assetPath(item.src)} aria-label={`${action} — ${caption}`}>
           {preview ?? <Placeholder locale={locale} label={action} />}
         </a>
       : <button type="button" ref={trigger} className="media-trigger" onClick={open}
@@ -69,8 +72,8 @@ function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
             ? <AssetImage image={item} locale={locale} sizes="min(90vw, 1000px)" eager />
             : embed
               ? <iframe className="video-frame" src={embed} title={caption} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
-              : <video className="video-frame" src={item.src} controls playsInline preload="metadata" poster={poster?.src}>
-                  {item.subtitles?.map(track => <track key={track.src} src={track.src} kind="captions" srcLang={track.lang} label={track.label} />)}
+              : <video className="video-frame" src={assetPath(item.src)} controls playsInline preload="metadata" poster={poster?.src ? assetPath(poster.src) : undefined}>
+                  {item.subtitles?.map(track => <track key={track.src} src={assetPath(track.src)} kind="captions" srcLang={track.lang} label={track.label} />)}
                 </video>)}
           <p>{caption}</p>
         </div>

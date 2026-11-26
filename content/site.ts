@@ -40,5 +40,6 @@ export const ui = {
 };
 
 export function pageUrl(locale: Locale, slug = "") {
-  return (locale === "ja" ? "/jp/" : "/") + (slug ? slug + "/" : "");
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  return base + (locale === "ja" ? "/jp/" : "/") + (slug ? slug + "/" : "");
 }
