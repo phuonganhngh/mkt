@@ -236,3 +236,20 @@ th { font-weight: 500; }
   .website-strategy-framework li > div { grid-template-columns: 1fr; gap: .2rem; }
   .website-before-after { grid-template-columns: 1fr; gap: 1.4rem; }
 }
+
+
+/* Strategic Approach: full-width editorial rows with vertically centered columns. */
+.case-section:has(.website-strategy-framework) .section-copy { grid-column: 1 / -1; }
+.website-strategy-framework li { align-items: center; }
+.website-strategy-framework li > div {
+  grid-template-columns: 19rem minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+}
+.website-strategy-framework p { margin-top: 0; }
+@media (min-width: 1100px) {
+  .website-strategy-framework li > div p { white-space: nowrap; }
+}
+@media (max-width: 900px) {
+  .website-strategy-framework li > div { grid-template-columns: 1fr; gap: .2rem; }
+}
