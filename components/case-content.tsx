@@ -132,6 +132,29 @@ function EditingTools() {
   </div>;
 }
 
+
+const nikkeiArticleLink = "https://www.nikkei.com/article/DGXZQOFC2594O0V20C26A2000000/";
+
+function BenchmarkMetrics({ locale }: { locale: Locale }) {
+  const ja = locale === "ja";
+  return <div className="benchmark-metrics" aria-label={ja ? "フォロワー数の比較" : "Combined follower and subscriber comparison"}>
+    <div><span>{ja ? "選定クリエイター" : "Selected Creator"}</span><strong>834.9K</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
+    <div><span>{ja ? "JALクリエイター比較対象" : "JAL Creator Benchmark"}</span><strong>779.1K</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
+  </div>;
+}
+
+function NikkeiThumbnail({ locale }: { locale: Locale }) {
+  const ja = locale === "ja";
+  return <aside className="nikkei-thumbnail-reference" aria-label={ja ? "日本経済新聞の記事" : "Nikkei media reference"}>
+    <div className="nikkei-reference-heading">{ja ? "関連記事・資料" : "MEDIA REFERENCE"} <time dateTime="2026-03-02">{ja ? "2026年3月2日" : "March 2, 2026"}</time></div>
+    <a href={nikkeiArticleLink} target="_blank" rel="noopener noreferrer" aria-label={ja ? "日本経済新聞の元記事を開く" : "Open the original Nikkei article"}>
+      <img src="/media/nikkei-article-thumbnail.jpg" alt={ja ? "日本経済新聞：JALがベトナムのインフルエンサーを帯広・旭川のPRに招いた記事のサムネイル" : "Nikkei news preview about JAL inviting Vietnamese influencers to promote Obihiro and Asahikawa"} width="350" height="110" loading="lazy" />
+      <span>{ja ? "日本経済新聞の元記事を見る ↗" : "Read original Nikkei article ↗"}</span>
+    </a>
+    <p>{ja ? "記事はJALのプロモーション活動に関する参考資料です。フォロワー数は独自調査であり、日経の記事に記載された数値ではありません。" : "The article documents the JAL initiative. Follower figures are from independent benchmarking, not figures reported by Nikkei."}</p>
+  </aside>;
+}
+
 function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category; locale: Locale }) {
   const children: ReactNode[] = [];
   const showBenchmark = process.env.PORTFOLIO_BENCHMARK_REVIEW === "1" || process.env.PORTFOLIO_BENCHMARK_APPROVED === "1";
@@ -146,6 +169,10 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       continue;
     } else if (block.startsWith("@benchmark-note ")) {
       if (showBenchmark) children.push(<p className="footnote" key={index}>{inline(block.slice(16))}</p>);
+    } else if (block === "@benchmark-metrics" && id === "partnerships") {
+      children.push(<BenchmarkMetrics key={index} locale={locale} />);
+    } else if (block === "@nikkei-thumbnail" && id === "partnerships") {
+      children.push(<NikkeiThumbnail key={index} locale={locale} />);
     } else if (block === "@editing-tools" && id === "social") {
       children.push(<EditingTools key={index} />);
     } else if (block === "@challenge-illustration" && id === "website") {

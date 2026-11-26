@@ -50,3 +50,5 @@ Support Marketing Manager and Digital Marketing Manager applications with projec
 - Nikkei article (March 2, 2026): https://www.nikkei.com/article/DGXZQOFC2594O0V20C26A2000000/ . The screenshot belongs to the user and is a linked thumbnail, not a source for follower counts.
 - Removed former sentence about a creator's planned stay in EN/JP.
 - Standardized the Problem heading to Challenge across remaining draft Work pages.
+
+- Added the actual user-provided Nikkei thumbnail as a local image asset and linked it to the original article; source screenshot displayed without inventing an illustration. Added two audience totals above the platform-by-platform chart. Removed the redundant plain comparison table while preserving the chart and disclaimer.

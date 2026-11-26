@@ -262,3 +262,18 @@ th { font-weight: 500; }
 @media (max-width: 520px) {
   .editing-tools { grid-template-columns: 1fr; }
 }
+
+
+/* International Partnerships: approved creator benchmark and sourced article thumbnail. */
+.benchmark-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-block: 1.2rem 1.4rem; }
+.benchmark-metrics > div { border-top: 1px solid var(--line); padding-top: .85rem; display: flex; flex-direction: column; gap: .25rem; min-width: 0; }
+.benchmark-metrics span { font: 500 .875rem/1.5 var(--ui); color: var(--ink); }
+.benchmark-metrics strong { font: 700 clamp(1.6rem, 3vw, 2.25rem)/1.3 var(--heading); color: var(--accent); }
+.benchmark-metrics small { font: 400 .75rem/1.55 var(--ui); color: var(--muted); }
+.nikkei-thumbnail-reference { border-top: 1px solid var(--line); padding-top: 1.15rem; margin-top: 1.35rem; }
+.nikkei-reference-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; font: 500 .75rem/1.5 var(--ui); color: var(--muted); }
+.nikkei-thumbnail-reference a { display: block; margin-top: .7rem; }
+.nikkei-thumbnail-reference img { display: block; width: min(100%, 540px); height: auto; border: 1px solid var(--line); border-radius: .8rem; }
+.nikkei-thumbnail-reference a > span { display: inline-block; margin-top: .45rem; color: var(--accent); text-decoration: underline; font: 500 .875rem/1.5 var(--ui); }
+.nikkei-thumbnail-reference p { color: var(--muted); font: 400 .75rem/1.55 var(--ui); margin-top: .55rem; }
+@media (max-width: 520px) { .benchmark-metrics { grid-template-columns: 1fr; gap: .6rem; } }
