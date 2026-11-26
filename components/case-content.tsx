@@ -98,6 +98,25 @@ function WebsiteBeforeAfter({ locale }: { locale: Locale }) {
   </div>;
 }
 
+const editingTools = [
+  { name: "CapCut", icon: "capcut", color: "000000", initials: "CC" },
+  { name: "Adobe Photoshop", icon: "adobephotoshop", color: "31A8FF", initials: "Ps" },
+  { name: "Adobe Illustrator", icon: "adobeillustrator", color: "FF9A00", initials: "Ai" },
+  { name: "Adobe Lightroom", icon: "adobelightroom", color: "31A8FF", initials: "Lr" },
+] as const;
+
+function EditingTools() {
+  return <div className="editing-tools" aria-label="Editing and design tools">
+    {editingTools.map(tool => <div className="editing-tool" key={tool.name}>
+      <span className="editing-tool-logo">
+        {/* External brand icon. The brand name remains visible if image loading is unavailable. */}
+        <img src={`https://cdn.simpleicons.org/${tool.icon}/${tool.color}`} alt="" width="32" height="32" loading="lazy" />
+      </span>
+      <span>{tool.name}</span>
+    </div>)}
+  </div>;
+}
+
 function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category; locale: Locale }) {
   const children: ReactNode[] = [];
   const showBenchmark = process.env.PORTFOLIO_BENCHMARK_REVIEW === "1" || process.env.PORTFOLIO_BENCHMARK_APPROVED === "1";
@@ -112,6 +131,8 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       continue;
     } else if (block.startsWith("@benchmark-note ")) {
       if (showBenchmark) children.push(<p className="footnote" key={index}>{inline(block.slice(16))}</p>);
+    } else if (block === "@editing-tools" && id === "social") {
+      children.push(<EditingTools key={index} />);
     } else if (block === "@challenge-illustration" && id === "website") {
       children.push(<WebsiteChallengeVisual key={index} locale={locale} />);
     } else if (block === "@strategy-framework" && id === "website") {
