@@ -43,3 +43,10 @@ Support Marketing Manager and Digital Marketing Manager applications with projec
 - Moved the personal website design paragraph into My Role & Delivery and removed the repeated design bullet.
 - Design & Transformation now shows only two actual-media placeholders and the exact captions BEFORE and AFTER; no extra section headings or explanatory copy. Original and new homepage screenshots/PDFs are still pending.
 - Shared styling, About Me and unrelated pages are unchanged.
+
+## Nikkei benchmark evidence — November 26, 2026
+
+- Featured Vietnamese creator case uses approved English copy and equivalent Japanese text; anonymous cross-platform comparison is visible in the standard page, with caveat that follower totals are non-unique sums.
+- Nikkei article (March 2, 2026): https://www.nikkei.com/article/DGXZQOFC2594O0V20C26A2000000/ . The screenshot belongs to the user and is a linked thumbnail, not a source for follower counts.
+- Removed former sentence about a creator's planned stay in EN/JP.
+- Standardized the Problem heading to Challenge across remaining draft Work pages.

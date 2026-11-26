@@ -2,7 +2,7 @@ import type { Locale } from "./site";
 import type { Document } from "./documents";
 
 const headings = {
-  en: ["Project Overview", "My Role", "Problem", "Solution", "Execution & Deliverables", "Results"],
+  en: ["Project Overview", "My Role", "Challenge", "Solution", "Execution & Deliverables", "Results"],
   ja: ["プロジェクト概要", "担当業務", "課題", "解決策", "施策と制作物", "成果"],
 };
 
