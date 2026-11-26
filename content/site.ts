@@ -11,7 +11,7 @@ export const identity = {
     en: "Combining an international traveler's perspective with creative execution and management experience, I develop marketing solutions that connect hospitality brands with global audiences.",
     ja: "海外旅行者の視点とクリエイティブな実行力、マネジメント経験を活かし、ホスピタリティブランドと世界の旅行者をつなぐマーケティングに取り組んでいます。",
   },
-  contact: { email: "", url: "", label: { en: "Professional profile", ja: "職務プロフィール" } },
+  contact: { email: "phuonganhnt209@gmail.com", url: "", label: { en: "Professional profile", ja: "職務プロフィール" } },
 };
 
 export const ui = {
