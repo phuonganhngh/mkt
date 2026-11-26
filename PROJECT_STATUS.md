@@ -34,3 +34,12 @@ Support Marketing Manager and Digital Marketing Manager applications with projec
 - English Homepage Transformation consolidated from nine sections to five in both languages: Project Overview, The Challenge, Strategic Approach, Design & Transformation, My Role & Delivery.
 - Before & After uses two separate pending media groups (`before-homepage` and `after-homepage`). Add only actual old/new English homepage screenshots or PDFs to `content/media.ts` and `public/media/` when available; do not fabricate imagery.
 - Existing two-column layout, typography, navigation, footer and other project pages unchanged. Rollback with a new revert commit to the baseline if needed; do not force-push.
+
+## Website case-study presentation refinement — November 26, 2026
+
+- Removed Company, Position and Project metadata lines from Project Overview (EN/JP); retained Expertise, launch statement and live website link.
+- Recast The Challenge as concise narrative plus original lightweight line illustrations about the group-to-FIT transition, transport, accommodation and onsen questions.
+- Rendered five Strategic Approach elements as a numbered editorial list, not separate cards.
+- Moved the personal website design paragraph into My Role & Delivery and removed the repeated design bullet.
+- Design & Transformation now shows only two actual-media placeholders and the exact captions BEFORE and AFTER; no extra section headings or explanatory copy. Original and new homepage screenshots/PDFs are still pending.
+- Shared styling, About Me and unrelated pages are unchanged.

@@ -205,3 +205,32 @@ th { font-weight: 500; }
   .media-gallery { gap: .8rem; }
   .chart-platform { grid-template-columns: 4.5rem minmax(0, 1fr); }
 }
+
+/* Website case-study content visuals only. */
+.website-challenge-visual { border-block: 1px solid var(--line); padding-block: 1.2rem; margin-block: 1.4rem; font-family: var(--ui); color: var(--ink); }
+.challenge-shift { display: flex; align-items: center; flex-wrap: wrap; gap: .55rem 1rem; font: 400 .875rem/1.5 var(--ui); }
+.challenge-shift > span:nth-child(2) { font-size: 1.25rem; color: var(--accent); }
+.challenge-shift strong { font-weight: 650; color: var(--accent); }
+.challenge-details { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 1.1rem; border-top: 1px solid var(--line); }
+.challenge-detail { display: flex; flex-direction: column; gap: .2rem; align-items: flex-start; min-width: 0; padding: 1rem .7rem .25rem 0; }
+.challenge-detail + .challenge-detail { border-left: 1px solid var(--line); padding-left: .85rem; }
+.challenge-detail svg { margin-bottom: .4rem; color: var(--accent); }
+.challenge-detail strong { font: 500 .875rem/1.4 var(--ui); }
+.challenge-detail span { font: 400 .75rem/1.45 var(--ui); color: var(--muted); }
+.website-strategy-framework { list-style: none !important; padding: 0 !important; margin: 1rem 0 0; border-top: 1px solid var(--line); }
+.website-strategy-framework li { display: grid; grid-template-columns: 2.25rem minmax(0,1fr); gap: .35rem; padding: .9rem 0; margin: 0 !important; border-bottom: 1px solid var(--line); }
+.website-strategy-framework .strategy-index { color: var(--accent); font: 500 .875rem/1.5 var(--ui); }
+.website-strategy-framework strong { color: var(--ink); font: 500 .9375rem/1.5 var(--ui); }
+.website-strategy-framework p { font: 400 .875rem/1.65 var(--reading); margin-top: .15rem; }
+.website-before-after { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.website-before-after figure { min-width: 0; }
+.website-before-after .section-media { margin: 0; }
+.website-before-after .empty-gallery { max-width: none; aspect-ratio: 1.1; }
+.website-before-after .media-gallery { grid-template-columns: 1fr; }
+.website-before-after figcaption { margin-top: .55rem; color: var(--ink); font: 500 .875rem/1.4 var(--ui); letter-spacing: .06em; }
+@media (max-width: 520px) {
+  .challenge-detail { padding-right: .3rem; }
+  .challenge-detail + .challenge-detail { padding-left: .5rem; }
+  .challenge-detail svg { width: 30px; height: 30px; }
+  .website-before-after { grid-template-columns: 1fr; gap: 1.4rem; }
+}

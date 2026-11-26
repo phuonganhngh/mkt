@@ -63,6 +63,41 @@ function ContentTable({ lines }: { lines: string[] }) {
   </div>;
 }
 
+
+function WebsiteChallengeVisual({ locale }: { locale: Locale }) {
+  const ja = locale === "ja";
+  const items = ja
+    ? [{ title: "交通アクセス", detail: "行き方・乗り継ぎ", kind: "route" }, { title: "客室", detail: "種類・設備", kind: "room" }, { title: "温泉", detail: "利用方法・マナー", kind: "onsen" }]
+    : [{ title: "Transport", detail: "Routes & transfers", kind: "route" }, { title: "Accommodation", detail: "Room types & amenities", kind: "room" }, { title: "Onsen", detail: "Etiquette & access", kind: "onsen" }];
+  return <div className="website-challenge-visual" aria-label={ja ? "団体旅行から海外個人旅行への転換と情報ニーズ" : "From group tours to FIT and practical travel information"}>
+    <div className="challenge-shift"><span>{ja ? "団体・募集型ツアー" : "Group / package tours"}</span><span aria-hidden="true">→</span><strong>{ja ? "海外個人旅行者（FIT）" : "International FIT travelers"}</strong></div>
+    <div className="challenge-details">{items.map(item => <div className="challenge-detail" key={item.kind}>
+      <svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        {item.kind === "route" ? <><rect x="10" y="5" width="20" height="26" rx="5"/><path d="M10 22h20M15 35l3-4m7 4-3-4M14 12h12"/><circle cx="15" cy="26" r="1"/><circle cx="25" cy="26" r="1"/></> :
+        item.kind === "room" ? <><path d="M6 30V10m0 14h28v6M10 21h24v9M12 20v-7h9v7M6 30v4m28-4v4"/></> :
+        <><path d="M8 24c4-4 8 4 12 0s8 4 12 0M8 30c4-4 8 4 12 0s8 4 12 0M15 18c-4-5 4-6 0-11m10 11c-4-5 4-6 0-11"/></>}
+      </svg><strong>{item.title}</strong><span>{item.detail}</span>
+    </div>)}</div>
+  </div>;
+}
+
+function WebsiteStrategyFramework({ lines }: { lines: string[] }) {
+  return <ol className="website-strategy-framework">{lines.map((line, index) => {
+    const raw = line.slice(2);
+    const split = raw.match(/^\*\*(.+?)\*\*\s*(.*)$/);
+    return <li key={index}><span className="strategy-index">{String(index + 1).padStart(2, "0")}</span><div><strong>{split?.[1] ?? raw}</strong><p>{split?.[2] ?? ""}</p></div></li>;
+  })}</ol>;
+}
+
+function WebsiteBeforeAfter({ locale }: { locale: Locale }) {
+  return <div className="website-before-after">
+    {(["before-homepage", "after-homepage"] as const).map((group, index) => <figure key={group}>
+      <div className="section-media"><Gallery items={projectMedia("website", group)} locale={locale} /></div>
+      <figcaption>{index === 0 ? "BEFORE" : "AFTER"}</figcaption>
+    </figure>)}
+  </div>;
+}
+
 function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category; locale: Locale }) {
   const children: ReactNode[] = [];
   const showBenchmark = process.env.PORTFOLIO_BENCHMARK_REVIEW === "1" || process.env.PORTFOLIO_BENCHMARK_APPROVED === "1";
@@ -77,6 +112,16 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       continue;
     } else if (block.startsWith("@benchmark-note ")) {
       if (showBenchmark) children.push(<p className="footnote" key={index}>{inline(block.slice(16))}</p>);
+    } else if (block === "@challenge-illustration" && id === "website") {
+      children.push(<WebsiteChallengeVisual key={index} locale={locale} />);
+    } else if (block === "@strategy-framework" && id === "website") {
+      const lines = blocks.slice(index + 1, index + 6);
+      if (lines.length === 5 && lines.every(line => line.startsWith("- "))) {
+        children.push(<WebsiteStrategyFramework key={index} lines={lines} />);
+        index += 5;
+      }
+    } else if (block === "@before-after" && id === "website") {
+      children.push(<WebsiteBeforeAfter key={index} locale={locale} />);
     } else if (block.startsWith("@") && id) {
       const group = block.slice(1);
       children.push(<div className="section-media" key={index}>

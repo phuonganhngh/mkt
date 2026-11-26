@@ -5,9 +5,6 @@
       {
         "title": "Project Overview",
         "blocks": [
-          "**Company:** Noboribetsu Grand Hotel, Hokkaido, Japan",
-          "**Position:** Overseas Marketing Manager",
-          "**Project:** English Website Redesign",
           "**Expertise:** Website Strategy, Visual Design, Content Strategy, International Marketing, Project Management",
           "The redesigned English website has officially launched, providing information for international travelers and supporting their direct-booking journey and the hotel's international marketing.",
           "**Live Website:** https://www.nobogura.co.jp/en/"
@@ -16,16 +13,17 @@
       {
         "title": "The Challenge",
         "blocks": [
-          "As the hotel shifted its focus from group and package tours toward independent travelers (FIT), reaching international guests and helping them make informed booking decisions became a marketing priority.",
-          "A Japanese-focused website does not necessarily meet international travelers' needs simply by being translated. Visitors may need clearer explanations of transportation, accommodation types, onsen etiquette and hotel services, presented around how independent travelers research and plan.",
-          "Through planning my own trips, I recognized that details taken for granted in Japan can influence an international guest's booking decision. The challenge was to communicate the hotel's traditional onsen identity and distinctive experiences with visual clarity, address diverse information needs and maintain consistency during agency implementation."
+          "As the hotel shifted from group and package tours toward independent travelers (FIT), the English website needed to help international guests research, compare and book with confidence.",
+          "@challenge-illustration",
+          "What feels obvious to Japanese guests may be unfamiliar to international travelers. Translation alone cannot explain practical details such as transport, room types and onsen etiquette in the order they need them.",
+          "Drawing on my experience planning independent trips, I aimed to communicate the hotel's traditional onsen identity and distinctive experiences clearly, while keeping the marketing and design direction consistent through agency implementation."
         ]
       },
       {
         "title": "Strategic Approach",
         "blocks": [
           "Rather than treating the project as a translation exercise or visual refresh, I approached the website as a customer-centric marketing platform.",
-          "The strategy focused on five elements:",
+          "@strategy-framework",
           "- **Customer-Centric Content:** Address international travelers' practical needs.",
           "- **Information Architecture:** Make information easy to locate, understand and compare.",
           "- **Visual Communication:** Use imagery and layout to convey the guest experience.",
@@ -36,12 +34,7 @@
       {
         "title": "Design & Transformation",
         "blocks": [
-          "I personally designed the layouts, typography, font sizes, image selection and information hierarchy, balancing visual consistency with useful information. The goal was a website that answered travelers' questions, not just made a strong visual impression.",
-          "### Before & After",
-          "### BEFORE — Original English Website",
-          "@before-homepage",
-          "### AFTER — Redesigned English Website",
-          "@after-homepage"
+          "@before-after"
         ]
       },
       {
@@ -49,9 +42,9 @@
         "blocks": [
           "### My Role — Overseas Marketing Manager",
           "I led the marketing direction, content strategy, visual design and agency coordination for the project.",
+          "I personally designed the layouts, typography, font sizes, image selection and information hierarchy, balancing visual consistency with useful information. The goal was a website that answered travelers' questions, not just made a strong visual impression.",
           "- Defined marketing objectives and analyzed international traveler needs.",
           "- Developed content strategy and information architecture.",
-          "- Personally designed website layouts and visual presentation.",
           "- Prepared content, images and implementation requirements.",
           "- Coordinated with the external development agency.",
           "- Reviewed content, design consistency and implementation quality.",
