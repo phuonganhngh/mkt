@@ -220,6 +220,7 @@ th { font-weight: 500; }
 .website-strategy-framework { list-style: none !important; padding: 0 !important; margin: 1rem 0 0; border-top: 1px solid var(--line); }
 .website-strategy-framework li { display: grid; grid-template-columns: 2.25rem minmax(0,1fr); gap: .35rem; padding: .9rem 0; margin: 0 !important; border-bottom: 1px solid var(--line); }
 .website-strategy-framework .strategy-index { color: var(--accent); font: 500 .875rem/1.5 var(--ui); }
+.website-strategy-framework li > div { display: grid; grid-template-columns: minmax(10rem, .95fr) minmax(0, 1.25fr); align-items: baseline; gap: 1.15rem; min-width: 0; }
 .website-strategy-framework strong { color: var(--ink); font: 500 .9375rem/1.5 var(--ui); }
 .website-strategy-framework p { font: 400 .875rem/1.65 var(--reading); margin-top: .15rem; }
 .website-before-after { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
@@ -232,5 +233,6 @@ th { font-weight: 500; }
   .challenge-detail { padding-right: .3rem; }
   .challenge-detail + .challenge-detail { padding-left: .5rem; }
   .challenge-detail svg { width: 30px; height: 30px; }
+  .website-strategy-framework li > div { grid-template-columns: 1fr; gap: .2rem; }
   .website-before-after { grid-template-columns: 1fr; gap: 1.4rem; }
 }

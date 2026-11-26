@@ -68,9 +68,9 @@ function WebsiteChallengeVisual({ locale }: { locale: Locale }) {
   const ja = locale === "ja";
   const items = ja
     ? [{ title: "交通アクセス", detail: "行き方・乗り継ぎ", kind: "route" }, { title: "客室", detail: "種類・設備", kind: "room" }, { title: "温泉", detail: "利用方法・マナー", kind: "onsen" }]
-    : [{ title: "Transport", detail: "Routes & transfers", kind: "route" }, { title: "Accommodation", detail: "Room types & amenities", kind: "room" }, { title: "Onsen", detail: "Etiquette & access", kind: "onsen" }];
+    : [{ title: "Transport", detail: "Routes & Transfers", kind: "route" }, { title: "Accommodation", detail: "Room Types & Amenities", kind: "room" }, { title: "Onsen", detail: "Etiquette & Access", kind: "onsen" }];
   return <div className="website-challenge-visual" aria-label={ja ? "団体旅行から海外個人旅行への転換と情報ニーズ" : "From group tours to FIT and practical travel information"}>
-    <div className="challenge-shift"><span>{ja ? "団体・募集型ツアー" : "Group / package tours"}</span><span aria-hidden="true">→</span><strong>{ja ? "海外個人旅行者（FIT）" : "International FIT travelers"}</strong></div>
+    <div className="challenge-shift"><strong>{ja ? "団体・募集型ツアー" : "Group / Package Tours"}</strong><span aria-hidden="true">→</span><strong>{ja ? "海外個人旅行者（FIT）" : "International FIT Travelers"}</strong></div>
     <div className="challenge-details">{items.map(item => <div className="challenge-detail" key={item.kind}>
       <svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         {item.kind === "route" ? <><rect x="10" y="5" width="20" height="26" rx="5"/><path d="M10 22h20M15 35l3-4m7 4-3-4M14 12h12"/><circle cx="15" cy="26" r="1"/><circle cx="25" cy="26" r="1"/></> :
