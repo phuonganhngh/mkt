@@ -99,19 +99,34 @@ function WebsiteBeforeAfter({ locale }: { locale: Locale }) {
 }
 
 const editingTools = [
-  { name: "CapCut", icon: "capcut", color: "000000", initials: "CC" },
-  { name: "Adobe Photoshop", icon: "adobephotoshop", color: "31A8FF", initials: "Ps" },
-  { name: "Adobe Illustrator", icon: "adobeillustrator", color: "FF9A00", initials: "Ai" },
-  { name: "Adobe Lightroom", icon: "adobelightroom", color: "31A8FF", initials: "Lr" },
+  { name: "CapCut", kind: "capcut" },
+  { name: "Adobe Photoshop", kind: "photoshop" },
+  { name: "Adobe Illustrator", kind: "illustrator" },
+  { name: "Adobe Lightroom", kind: "lightroom" },
 ] as const;
+
+function EditingToolLogo({ kind }: { kind: (typeof editingTools)[number]["kind"] }) {
+  if (kind === "capcut") {
+    return <svg viewBox="0 0 40 40" width="34" height="34" role="img" aria-label="CapCut logo" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 8h28v4L12 27h22v5H6v-4L28 13H6z" fill="#111" />
+      <path d="M6 13L34 28" fill="none" stroke="#111" strokeWidth="4.5" strokeLinejoin="round" />
+    </svg>;
+  }
+  const palette = {
+    photoshop: { label: "Ps", bg: "#001E36", text: "#31A8FF" },
+    illustrator: { label: "Ai", bg: "#330000", text: "#FF9A00" },
+    lightroom: { label: "Lr", bg: "#001E36", text: "#31A8FF" },
+  }[kind];
+  return <svg viewBox="0 0 40 40" width="34" height="34" role="img" aria-label={`Adobe ${palette.label} application logo`} xmlns="http://www.w3.org/2000/svg">
+    <rect x="1" y="1" width="38" height="38" rx="4" fill={palette.bg} stroke={palette.text} strokeWidth="1.5" />
+    <text x="20" y="27" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontSize="23" fill={palette.text}>{palette.label}</text>
+  </svg>;
+}
 
 function EditingTools() {
   return <div className="editing-tools" aria-label="Editing and design tools">
     {editingTools.map(tool => <div className="editing-tool" key={tool.name}>
-      <span className="editing-tool-logo">
-        {/* External brand icon. The brand name remains visible if image loading is unavailable. */}
-        <img src={`https://cdn.simpleicons.org/${tool.icon}/${tool.color}`} alt="" width="32" height="32" loading="lazy" />
-      </span>
+      <span className="editing-tool-logo"><EditingToolLogo kind={tool.kind} /></span>
       <span>{tool.name}</span>
     </div>)}
   </div>;

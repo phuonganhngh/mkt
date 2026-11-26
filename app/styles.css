@@ -258,7 +258,7 @@ th { font-weight: 500; }
 .editing-tools { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .9rem 1.25rem; margin-top: 1rem; }
 .editing-tool { display: flex; align-items: center; gap: .7rem; min-width: 0; font: 500 .875rem/1.5 var(--ui); color: var(--ink); }
 .editing-tool-logo { display: grid; place-items: center; flex: 0 0 40px; width: 40px; height: 40px; background: var(--surface); }
-.editing-tool-logo img { display: block; width: 28px; height: 28px; object-fit: contain; }
+.editing-tool-logo svg { display: block; width: 34px; height: 34px; }
 @media (max-width: 520px) {
   .editing-tools { grid-template-columns: 1fr; }
 }
