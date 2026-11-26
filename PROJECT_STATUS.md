@@ -26,3 +26,11 @@ Support Marketing Manager and Digital Marketing Manager applications with projec
 - Production and private review builds completed successfully. Static checks covered the 18 routes, localized links and section order, the review-only benchmark, and the absence of CV links.
 - Temporary media fixtures checked bilingual image and PDF rendering, video references and missing-file handling in the export. The fixtures were removed after testing.
 - The managed preview relay timed out. Desktop and mobile rendering, interactive filtering and media playback remain unverified in a browser.
+
+## Content refinement — November 26, 2026
+
+- Baseline commit for rollback: `7eb8df4b84ef31ccc0fce0b30942e3a1cf918ea2` on `main`.
+- Approved About Me content updated in English and Japanese; Contact section unchanged.
+- English Homepage Transformation consolidated from nine sections to five in both languages: Project Overview, The Challenge, Strategic Approach, Design & Transformation, My Role & Delivery.
+- Before & After uses two separate pending media groups (`before-homepage` and `after-homepage`). Add only actual old/new English homepage screenshots or PDFs to `content/media.ts` and `public/media/` when available; do not fabricate imagery.
+- Existing two-column layout, typography, navigation, footer and other project pages unchanged. Rollback with a new revert commit to the baseline if needed; do not force-push.

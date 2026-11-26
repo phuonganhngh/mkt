@@ -20,7 +20,7 @@ export type Media = {
 type ProjectMedia = { cover?: ImageAsset; groups: Record<string, Media[]> };
 
 const media: Record<Category, ProjectMedia> = {
-  website: { groups: { "design-screens": [], "improvement-screens": [] } },
+  website: { groups: { "design-screens": [], "improvement-screens": [], "before-homepage": [], "after-homepage": [] } },
   social: { groups: { examples: [] } },
   visual: { groups: { examples: [] } },
   partnerships: { groups: { activities: [] } },
