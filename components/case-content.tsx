@@ -156,7 +156,7 @@ function NikkeiThumbnail({ locale }: { locale: Locale }) {
   return <aside className="nikkei-thumbnail-reference" aria-label={ja ? "日本経済新聞の記事" : "Nikkei media reference"}>
     <div className="nikkei-reference-heading">{ja ? "関連記事・資料" : "MEDIA REFERENCE"} <time dateTime="2026-03-02">{ja ? "2026年3月2日" : "March 2, 2026"}</time></div>
     <a href={nikkeiArticleLink} target="_blank" rel="noopener noreferrer" aria-label={ja ? "日本経済新聞の元記事を開く" : "Open the original Nikkei article"}>
-      <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/media/nikkei-article-thumbnail.jpg`} alt={ja ? "日本経済新聞：JALがベトナムのインフルエンサーを帯広・旭川のPRに招いた記事のサムネイル" : "Nikkei news preview about JAL inviting Vietnamese influencers to promote Obihiro and Asahikawa"} width="350" height="110" loading="lazy" />
+      <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/media/nikkei-article-thumbnail.jpg`} alt={ja ? "日本経済新聞：JALがベトナムのインフルエンサーを帯広・旭川のPRに招いた記事のサムネイル" : "Nikkei news preview about JAL inviting Vietnamese influencers to promote Obihiro and Asahikawa"} width="867" height="273" loading="lazy" />
 
     </a>
     <p>{ja ? "記事はJALのプロモーション活動に関する参考資料です。フォロワー数は独自調査であり、日経の記事に記載された数値ではありません。" : "The article documents the JAL initiative. Follower figures are from independent benchmarking, not figures reported by Nikkei."}</p>
