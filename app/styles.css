@@ -433,3 +433,9 @@ th { font-weight: 500; }
   .creator-showcase-yukata { width: 61%; padding: .5rem; border-width: 3px; border-radius: 17px; }
   .creator-showcase-accent { border-radius: 18px; }
 }
+
+/* Work has moved onto Home. Six project cards link to their existing individual cases. */
+.home-work { padding-block: 2.6rem 3.5rem; }
+.home-work-intro { margin-bottom: 1.65rem; }
+.home-work-intro h2 { margin-bottom: .65rem; }
+.home-work-intro p { font: 400 1rem/1.8 var(--reading); }

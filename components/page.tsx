@@ -8,7 +8,7 @@ import { identity, pageUrl, ui, type Locale } from "../content/site";
 import { DocumentSections } from "./case-content";
 import { WorkDirectory, type Covers } from "./projects";
 
-const slugs = ["", "work", "about", ...projects.map(project => project.slug)];
+const slugs = ["", "about", ...projects.map(project => project.slug)];
 export const pageParams = () => slugs.map(slug => ({ slug: slug ? [slug] : [] }));
 
 function projectFor(slug: string) {
@@ -19,8 +19,8 @@ export function portfolioMetadata(locale: Locale, segments: string[] = []): Meta
   const slug = segments.join("/");
   const t = ui[locale];
   const project = projectFor(slug);
-  const title = project?.title[locale] ?? (slug === "work" ? t.work : slug === "about" ? t.about : null);
-  const description = project?.summary[locale] ?? (slug === "work" ? t.workIntro : identity.intro[locale]);
+  const title = project?.title[locale] ?? (slug === "about" ? t.about : null);
+  const description = project?.summary[locale] ?? identity.intro[locale];
   const siteUrl = process.env.PORTFOLIO_SITE_URL;
   const review = process.env.PORTFOLIO_BENCHMARK_REVIEW === "1";
   return {
@@ -40,13 +40,13 @@ export function portfolioMetadata(locale: Locale, segments: string[] = []): Meta
 
 function Header({ locale, slug }: { locale: Locale; slug: string }) {
   const t = ui[locale];
-  const items = [{ label: t.home, slug: "" }, { label: t.work, slug: "work" }, { label: t.about, slug: "about" }];
+  const items = [{ label: t.home, slug: "" }, { label: t.about, slug: "about" }];
   return <header className="site-header">
     <div className="shell header-inner">
       <a className="brand" href={pageUrl(locale)}>{identity.name}</a>
       <div className="header-links">
         <nav aria-label={t.navigation}>{items.map(item => <a key={item.slug}
-          className={item.slug === slug || (item.slug === "work" && projectFor(slug)) ? "current" : undefined}
+          className={item.slug === slug || (item.slug === "" && !!projectFor(slug)) ? "current" : undefined}
           aria-current={item.slug === slug ? "page" : undefined}
           href={pageUrl(locale, item.slug)}>{item.label}</a>)}</nav>
         <nav className="languages" aria-label={t.language}>
@@ -107,17 +107,12 @@ function Home({ locale }: { locale: Locale }) {
         </article>)}
       </div>
     </section>
-    <section className="home-explore" aria-labelledby="home-explore-heading">
-      <div>
-        <h2 id="home-explore-heading">{locale === "en" ? "Explore My Work" : "実績を見る"}</h2>
-        <p>{locale === "en"
-          ? "Explore my portfolio of website strategy, social content, visual communication, international partnerships, destination marketing and digital advertising."
-          : "ウェブサイト戦略、SNSコンテンツ、ビジュアル制作、海外パートナーシップ、デスティネーションマーケティング、デジタル広告の実績をご覧いただけます。"}</p>
+    <section className="home-work" aria-labelledby="home-work-heading">
+      <div className="home-work-intro">
+        <h2 id="home-work-heading">{ui[locale].work}</h2>
+        <p>{ui[locale].workIntro}</p>
       </div>
-      <div className="home-explore-action">
-        <span>{locale === "en" ? "6 Projects" : "6つのプロジェクト"}</span>
-        <a className="text-link" href={pageUrl(locale, "work")}>{locale === "en" ? "View Portfolio" : "ポートフォリオを見る"} <span aria-hidden="true">→</span></a>
-      </div>
+      <WorkDirectory locale={locale} covers={coversFor(projects)} />
     </section>
   </>;
 }
@@ -138,10 +133,6 @@ export function PortfolioPage({ locale, segments = [] }: { locale: Locale; segme
     <Header locale={locale} slug={slug} />
     <main id="main" className="shell main-content">
       {!slug && <Home locale={locale} />}
-      {slug === "work" && <>
-        <div className="page-intro"><h1>{t.work}</h1><p>{t.workIntro}</p></div>
-        <WorkDirectory locale={locale} covers={coversFor(projects)} />
-      </>}
       {document && <article>
         <div className="page-intro case-intro">
           <h1>{document.title}</h1>
@@ -151,7 +142,7 @@ export function PortfolioPage({ locale, segments = [] }: { locale: Locale; segme
         {about && <section className="case-section about-contact">
           <h2>{t.contact}</h2><div className="section-copy"><Contact locale={locale} /></div>
         </section>}
-        {project && <div className="case-return"><a className="text-link" href={pageUrl(locale, "work")}>{t.backToWork}</a></div>}
+        {project && <div className="case-return"><a className="text-link" href={pageUrl(locale)}>{t.backToWork}</a></div>}
       </article>}
     </main>
     <Footer locale={locale} showContact={!about} />
