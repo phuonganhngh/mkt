@@ -3,7 +3,7 @@ import type { Category } from "../content/projects";
 import type { Document } from "../content/documents";
 import { projectMedia } from "../content/media";
 import { ui, type Locale } from "../content/site";
-import { AssetImage, Gallery, MenuBookMockup } from "./media";
+import { AssetImage, Gallery } from "./media";
 
 const benchmark = [
   { platform: "Instagram", selected: 101, reference: 156 },
@@ -306,9 +306,7 @@ function VisualDeliverables({ locale }: { locale: Locale }) {
             <span className="visual-menu-arrow" aria-hidden="true">→</span>
           </div>
           <div className="visual-menu-sheet">
-            {dinner[0]?.kind === "image"
-              ? <MenuBookMockup image={dinner[0]} locale={locale} />
-              : <Gallery items={dinner} locale={locale} />}
+            <Gallery items={dinner} locale={locale} />
           </div>
         </div>
         <div className="visual-shogi-news">
