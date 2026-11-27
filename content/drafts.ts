@@ -70,7 +70,7 @@ export function draftDocument(id: DraftId, locale: Locale, title: string): Docum
     title,
     sections: headings[locale].map((heading, index) => ({
       title: heading,
-      blocks: index === 4 ? ["@examples"] : [copy[id][locale][index]],
+      blocks: index === 4 ? (id === "visual" ? ["@examples"] : [copy[id][locale][index], "@examples"]) : [copy[id][locale][index]],
     })),
   };
 }
