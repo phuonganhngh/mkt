@@ -54,6 +54,14 @@ function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
     setActive(true);
   }
 
+  if (item.kind === "pdf" && !poster) {
+    return <figure className="media-item media-item--document">
+      <a className="media-document-link" href={assetPath(item.src)} target="_blank" rel="noopener noreferrer" aria-label={`${action} — ${caption}`}>
+        <strong>{caption}</strong><span>{action} ↗</span>
+      </a>
+    </figure>;
+  }
+
   return <figure className="media-item">
     {item.kind === "pdf" || external
       ? <a className="media-trigger" href={assetPath(item.src)} aria-label={`${action} — ${caption}`}>
@@ -83,7 +91,7 @@ function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
 
 export function Gallery({ items, locale }: { items: Media[]; locale: Locale }) {
   if (!items.length) return <div className="empty-gallery"><Placeholder locale={locale} /></div>;
-  return <div className="media-gallery">{items.map((item, index) =>
+  return <div className={`media-gallery${items.some(item => item.src.includes("/visual/design-email-banner-")) ? " media-gallery--email" : ""}`}>{items.map((item, index) =>
     <MediaItem key={`${item.src}-${index}`} item={item} locale={locale} />
   )}</div>;
 }

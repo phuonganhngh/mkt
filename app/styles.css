@@ -284,3 +284,13 @@ th { font-weight: 500; }
   .nikkei-reference-image { width: 100%; max-width: 420px; }
 }
 @media (max-width: 520px) { .benchmark-metrics { grid-template-columns: 1fr; gap: .6rem; } }
+
+/* Visual Communication: show email banners at their natural wide aspect ratio. */
+.media-gallery--email { row-gap: 1rem; }
+.media-gallery--email .media-trigger { aspect-ratio: auto; overflow: visible; background: transparent; }
+.media-gallery--email .media-trigger img { display: block; width: 100%; height: auto; object-fit: contain; }
+.media-gallery--email .media-item figcaption { margin-top: .45rem; }
+.media-item--document { align-self: start; }
+.media-document-link { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1rem 0; border-block: 1px solid var(--line); color: var(--ink); text-decoration: none; font: 500 .875rem/1.5 var(--ui); }
+.media-document-link span { color: var(--accent); text-decoration: underline; }
+.media-document-link:hover span { text-decoration-thickness: 2px; }
