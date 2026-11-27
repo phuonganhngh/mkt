@@ -51,17 +51,17 @@ const media: Record<Category, ProjectMedia> = {
         {
           kind: "video",
           src: "/media/social/sns1.mp4",
-          caption: { en: "Social Video 01", ja: "SNS動画 01" },
+          caption: { en: "Onsen & Room", ja: "温泉・客室" },
         },
         {
           kind: "video",
           src: "/media/social/sns2.mp4",
-          caption: { en: "Social Video 02", ja: "SNS動画 02" },
+          caption: { en: "Sightseeing", ja: "観光スポット" },
         },
         {
           kind: "video",
           src: "/media/social/sns3.mp4",
-          caption: { en: "Social Video 03", ja: "SNS動画 03" },
+          caption: { en: "Outlet", ja: "アウトレット" },
         },
       ],
     },
