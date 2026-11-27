@@ -20,7 +20,31 @@ export type Media = {
 type ProjectMedia = { cover?: ImageAsset; groups: Record<string, Media[]> };
 
 const media: Record<Category, ProjectMedia> = {
-  website: { groups: { "design-screens": [], "improvement-screens": [], "before-homepage": [], "after-homepage": [] } },
+  website: {
+    cover: {
+      src: "/media/website/homepage-after.png",
+      alt: {
+        en: "Redesigned English homepage of Noboribetsu Grand Hotel",
+        ja: "登別グランドホテルの英語版公式サイト リニューアル後のホームページ",
+      },
+    },
+    groups: {
+      "design-screens": [],
+      "improvement-screens": [],
+      "before-homepage": [{
+        kind: "image",
+        src: "/media/website/homepage-before.png",
+        alt: { en: "Original English homepage before redesign", ja: "リニューアル前の英語版ホームページ" },
+        caption: { en: "BEFORE", ja: "BEFORE" },
+      }],
+      "after-homepage": [{
+        kind: "image",
+        src: "/media/website/homepage-after.png",
+        alt: { en: "English homepage after redesign", ja: "リニューアル後の英語版ホームページ" },
+        caption: { en: "AFTER", ja: "AFTER" },
+      }],
+    },
+  },
   social: { groups: { examples: [] } },
   visual: {
     groups: {
@@ -48,6 +72,12 @@ const media: Record<Category, ProjectMedia> = {
           src: "/media/visual/design-email-banner-04.png",
           alt: { en: "Email signature banner design 04", ja: "メール署名バナーのデザイン 04" },
           caption: { en: "Email Signature Banner 04", ja: "メール署名バナー 04" },
+        },
+        {
+          kind: "image",
+          src: "/media/visual/social-post-example.png",
+          alt: { en: "Designed social media post", ja: "SNS投稿用に制作したデザイン" },
+          caption: { en: "Social Media Post Design", ja: "SNS投稿デザイン" },
         },
         {
           kind: "image",

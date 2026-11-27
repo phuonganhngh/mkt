@@ -229,6 +229,8 @@ th { font-weight: 500; }
 .website-before-after .section-media { margin: 0; }
 .website-before-after .empty-gallery { max-width: none; aspect-ratio: 1.1; }
 .website-before-after .media-gallery { grid-template-columns: 1fr; }
+.website-before-after .media-trigger { aspect-ratio: 3 / 4; background: transparent; }
+.website-before-after .media-trigger img { object-fit: contain; }
 .website-before-after figcaption { margin-top: .55rem; color: var(--ink); font: 500 .875rem/1.4 var(--ui); letter-spacing: .06em; }
 @media (max-width: 520px) {
   .challenge-detail { padding-right: .3rem; }
