@@ -126,19 +126,3 @@ export function Gallery({ items, locale }: { items: Media[]; locale: Locale }) {
     <MediaItem key={`${item.src}-${index}`} item={item} locale={locale} />
   )}</div>;
 }
-
-
-/** Static transparent-background book mockup with a faithful original-image fallback.
- * The static mockup is a decorative rendering; the original opens on activation. */
-export function MenuBookMockup({ image, locale }: { image: ImageAsset; locale: Locale }) {
-  const [mockupAvailable, setMockupAvailable] = useState(true);
-  const src = assetPath("/media/visual/dinner-menu-book-mockup.png");
-  const original = assetPath(image.src);
-  return <a className="visual-menu-mockup" href={original} target="_blank" rel="noopener noreferrer"
-    aria-label={locale === "ja" ? "元の夕食メニューを開く" : "View original dinner menu"}>
-    {mockupAvailable
-      ? <img src={src} alt={image.alt[locale]} loading="lazy" decoding="async"
-          onError={() => setMockupAvailable(false)} />
-      : <AssetImage image={image} locale={locale} sizes="(max-width: 720px) 70vw, 500px" />}
-  </a>;
-}
