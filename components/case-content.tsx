@@ -228,7 +228,7 @@ function CreatorPartnershipSection({ section, locale }: {
   const collaborations = section.blocks.slice(end + 1);
   return <section className="case-section creator-partnerships-section">
     <h2>{section.title}</h2>
-    <div className="section-copy"><SectionBlocks blocks={intro} id="partnerships" locale={locale} /></div>
+    {intro.length > 0 && <div className="section-copy"><SectionBlocks blocks={intro} id="partnerships" locale={locale} /></div>}
     <CreatorSpotlight locale={locale} blocks={featured} />
     <div className="creator-collaborations"><SectionBlocks blocks={collaborations} id="partnerships" locale={locale} /></div>
   </section>;
