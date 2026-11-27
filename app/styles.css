@@ -372,3 +372,15 @@ th { font-weight: 500; }
   .creator-spotlight .chart-platform { grid-template-columns: 4.5rem minmax(0, 1fr); }
   .creator-spotlight-source .nikkei-reference-body { grid-template-columns: 1fr; }
 }
+
+/* Compact, two-column creator collaboration list: identity and focus on the left, Instagram followers on the right. */
+.creator-collaborations { width: 100%; max-width: 650px; min-width: 0; padding-top: 1rem; }
+.creator-collaborations-heading { display: flex; justify-content: space-between; gap: 1.5rem; align-items: baseline; margin-bottom: 1rem; }
+.creator-collaborations-heading h3 { font: 650 1.2rem/1.4 var(--heading); color: var(--ink); margin: 0; }
+.creator-collaborations-heading > span { font: 400 .75rem/1.5 var(--ui); color: var(--muted); }
+.creator-collaboration-item { border-top: 1px solid var(--line); padding-block: .8rem; }
+.creator-collaboration-primary { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; font: 500 .875rem/1.5 var(--ui); color: var(--ink); }
+.creator-collaboration-primary strong { font-weight: 500; }
+.creator-collaboration-primary span { font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.creator-collaboration-item p { margin-top: .25rem; font: 400 .8125rem/1.55 var(--ui); color: var(--muted); }
+.creator-collaborations-note { font: italic 400 .75rem/1.55 var(--ui); color: var(--muted); margin-top: .55rem; }

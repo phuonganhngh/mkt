@@ -218,6 +218,31 @@ function CreatorSpotlight({ locale, blocks }: { locale: Locale; blocks: string[]
   </div>;
 }
 
+function CreatorCollaborationList({ blocks, locale }: { blocks: string[]; locale: Locale }) {
+  const heading = blocks.find(block => block.startsWith("### "))?.slice(4) ?? (locale === "ja" ? "クリエイターとの連携" : "Creator Collaborations");
+  const tableRows = blocks.filter(block => block.startsWith("|")).map(block =>
+    block.split("|").slice(1, -1).map(value => value.trim())
+  );
+  const rows = tableRows.slice(2);
+  const footnote = blocks.find(block => block.startsWith("*") && !block.startsWith("**"))?.slice(1, -1);
+  return <div className="creator-collaborations">
+    <div className="creator-collaborations-heading">
+      <h3>{heading}</h3>
+      <span>{locale === "ja" ? "Instagram" : "Instagram"}</span>
+    </div>
+    <div className="creator-collaborations-list">
+      {rows.map(([nationality, focus, followers], index) => <div className="creator-collaboration-item" key={index}>
+        <div className="creator-collaboration-primary">
+          <strong>{nationality}</strong>
+          <span>{followers}</span>
+        </div>
+        <p>{focus}</p>
+      </div>)}
+    </div>
+    {footnote && <p className="creator-collaborations-note">{footnote}</p>}
+  </div>;
+}
+
 function CreatorPartnershipSection({ section, locale }: {
   section: { title: string; blocks: string[] }; locale: Locale;
 }) {
@@ -230,7 +255,7 @@ function CreatorPartnershipSection({ section, locale }: {
     <h2>{section.title}</h2>
     {intro.length > 0 && <div className="section-copy"><SectionBlocks blocks={intro} id="partnerships" locale={locale} /></div>}
     <CreatorSpotlight locale={locale} blocks={featured} />
-    <div className="creator-collaborations"><SectionBlocks blocks={collaborations} id="partnerships" locale={locale} /></div>
+    <CreatorCollaborationList blocks={collaborations} locale={locale} />
   </section>;
 }
 
