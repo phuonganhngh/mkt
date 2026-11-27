@@ -316,3 +316,13 @@ th { font-weight: 500; }
 /* Compact skill descriptors replace category eyebrows on project pages. */
 .case-intro .project-skills { margin: 0 0 .8rem; max-width: none; font: 400 .875rem/1.55 var(--ui); color: var(--muted); }
 .case-intro .project-skills span { color: var(--ink); font-weight: 500; }
+
+/* About Me: software logos above names, grouped by personal skill. */
+.tools-platforms { display: grid; gap: 2rem; }
+.tools-group h3 { font: 500 .9375rem/1.5 var(--ui); color: var(--ink); margin: 0 0 1rem; }
+.tools-list { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1.3rem 1rem; }
+.tool-entry { display: flex; flex-direction: column; align-items: center; gap: .6rem; min-width: 0; text-align: center; font: 400 .8125rem/1.4 var(--ui); color: var(--body); }
+.tool-mark { display: grid; place-items: center; width: 48px; height: 48px; }
+.tool-mark svg, .tool-mark img { display: block; width: 44px; height: 44px; object-fit: contain; }
+@media (max-width: 700px) { .tools-list { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 430px) { .tools-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }

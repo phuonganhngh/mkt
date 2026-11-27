@@ -86,12 +86,7 @@
       {
         "title": "Tools & Platforms",
         "blocks": [
-          "### Creative & Design",
-          "CapCut · Adobe Photoshop · Adobe Illustrator · Adobe Lightroom",
-          "### AI & Web Tools",
-          "OpenAI Codex · GitHub · Netlify",
-          "### Analytics & SEO",
-          "Google Analytics 4 (GA4) · Google Search Console (GSC)"
+          "@tools-platforms"
         ]
       }
     ]

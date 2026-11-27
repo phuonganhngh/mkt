@@ -98,6 +98,69 @@ function WebsiteBeforeAfter({ locale }: { locale: Locale }) {
   </div>;
 }
 
+
+const toolGroups = [
+  {
+    title: { en: "Creative & Design", ja: "クリエイティブ・デザイン" },
+    tools: [
+      { name: "CapCut", icon: "capcut" },
+      { name: "Adobe Photoshop", icon: "photoshop" },
+      { name: "Adobe Illustrator", icon: "illustrator" },
+      { name: "Adobe Lightroom", icon: "lightroom" },
+    ],
+  },
+  {
+    title: { en: "AI & Web Tools", ja: "AI・Webツール" },
+    tools: [
+      { name: "OpenAI Codex", icon: "codex" },
+      { name: "GitHub", icon: "github" },
+      { name: "Netlify", icon: "netlify" },
+    ],
+  },
+  {
+    title: { en: "Analytics & SEO", ja: "アナリティクス・SEO" },
+    tools: [
+      { name: "Google Analytics 4 (GA4)", icon: "googleanalytics" },
+      { name: "Google Search Console (GSC)", icon: "googlesearchconsole" },
+    ],
+  },
+] as const;
+
+function ToolLogo({ icon, name }: { icon: string; name: string }) {
+  if (icon === "capcut") return <svg viewBox="0 0 40 40" role="img" aria-label={name}>
+    <path d="M6 9h28v4L12 27h22v5H6v-4L28 13H6z" fill="#161616" />
+    <path d="M6 13L34 28" fill="none" stroke="#161616" strokeWidth="4.5" strokeLinejoin="round" />
+  </svg>;
+  if (icon === "photoshop" || icon === "illustrator" || icon === "lightroom") {
+    const brand = {
+      photoshop: { initials: "Ps", bg: "#001E36", fg: "#31A8FF" },
+      illustrator: { initials: "Ai", bg: "#330000", fg: "#FF9A00" },
+      lightroom: { initials: "Lr", bg: "#001E36", fg: "#31A8FF" },
+    }[icon];
+    return <svg viewBox="0 0 40 40" role="img" aria-label={name}>
+      <rect x="1" y="1" width="38" height="38" rx="4" fill={brand.bg} />
+      <text x="20" y="27" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontSize="23" fill={brand.fg}>{brand.initials}</text>
+    </svg>;
+  }
+  if (icon === "codex") return <svg viewBox="0 0 40 40" role="img" aria-label={name}>
+    <rect x="1" y="1" width="38" height="38" rx="9" fill="#1b2533" />
+    <path d="M14 14l-6 6 6 6M26 14l6 6-6 6M23 10l-6 20" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>;
+  return <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/media/tools/${icon}.svg`} alt={name} width="44" height="44" loading="lazy" />;
+}
+
+function ToolsPlatforms({ locale }: { locale: Locale }) {
+  return <div className="tools-platforms">
+    {toolGroups.map(group => <div className="tools-group" key={group.title.en}>
+      <h3>{group.title[locale]}</h3>
+      <div className="tools-list">{group.tools.map(tool => <div className="tool-entry" key={tool.icon}>
+        <div className="tool-mark"><ToolLogo icon={tool.icon} name={tool.name} /></div>
+        <span>{tool.name}</span>
+      </div>)}</div>
+    </div>)}
+  </div>;
+}
+
 const nikkeiArticleLink = "https://www.nikkei.com/article/DGXZQOFC2594O0V20C26A2000000/";
 
 function BenchmarkMetrics({ locale }: { locale: Locale }) {
@@ -154,6 +217,8 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       children.push(<BenchmarkHighlights key={index} locale={locale} />);
     } else if (block === "@benchmark-metrics" && id === "partnerships") {
       children.push(<BenchmarkMetrics key={index} locale={locale} />);
+    } else if (block === "@tools-platforms") {
+      children.push(<ToolsPlatforms key={index} locale={locale} />);
     } else if (block === "@nikkei-thumbnail" && id === "partnerships") {
       children.push(<NikkeiThumbnail key={index} locale={locale} />);
     } else if (block === "@challenge-illustration" && id === "website") {
