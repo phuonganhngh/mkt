@@ -314,3 +314,8 @@ th { font-weight: 500; }
 @media (max-width: 480px) {
   .section-media--social .media-gallery { grid-template-columns: 1fr; }
 }
+
+/* Home Featured Project only: enlarge the approved artwork without cropping. */
+@media (min-width: 721px) {
+  .featured-image:has(img[src$="/media/website/web-cover.png"]) { aspect-ratio: 1.5; }
+}
