@@ -349,6 +349,7 @@ th { font-weight: 500; }
 .creator-spotlight .benchmark { margin: 0; }
 .creator-spotlight .chart-platform { grid-template-columns: 5.3rem minmax(0, 1fr); }
 .creator-spotlight-bottom { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(1.3rem, 3vw, 2.8rem); margin-top: 1.5rem; padding-top: 1.4rem; border-top: 1px solid #ccd4de; align-items: start; }
+.creator-spotlight-bottom--reference { grid-template-columns: minmax(0, 1fr); }
 .creator-spotlight-insight { min-width: 0; border-left: 3px solid var(--accent); padding-left: 1rem; }
 .creator-spotlight-insight h4 { color: var(--ink); font: 650 1.15rem/1.45 var(--heading); margin-bottom: .65rem; }
 .creator-spotlight-insight p { font: 400 .9375rem/1.65 var(--reading); }
