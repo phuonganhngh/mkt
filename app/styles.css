@@ -58,6 +58,7 @@ html[lang="ja"] {
 .main-content { min-height: 55vh; }
 .home-intro { padding-block: 4.2rem 3.2rem; }
 .home-intro h1 { font-size: 2.75rem; line-height: 1.22; letter-spacing: -.045em; }
+.home-intro-statement { max-width: 62ch; margin-top: 1.3rem; font: 400 1rem/1.8 var(--reading); color: var(--body); }
 html[lang="ja"] h1 { letter-spacing: -.03em; }
 .home-intro:lang(ja) h1 { max-width: 22ch; line-height: 1.35; }
 

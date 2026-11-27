@@ -7,6 +7,10 @@ export const identity = {
     en: "Think Like a Traveler. Act Like a Marketer.",
     ja: "旅人の視点で考え、マーケターとして行動する。",
   },
+  homeStatement: {
+    en: "I enjoy turning ideas into tangible outcomes, actively learning new skills and finding creative solutions with limited resources.",
+    ja: "アイデアを形にすることが好きで、限られたリソースの中でも主体的に新しいスキルを学び、創造的な解決策を見つけることを大切にしています。",
+  },
   intro: {
     en: "Combining an international traveler's perspective with creative execution and management experience, I develop marketing solutions that connect hospitality brands with global audiences.",
     ja: "海外旅行者の視点とクリエイティブな実行力、マネジメント経験を活かし、ホスピタリティブランドと世界の旅行者をつなぐマーケティングに取り組んでいます。",

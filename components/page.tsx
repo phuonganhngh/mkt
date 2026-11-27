@@ -89,6 +89,7 @@ function Home({ locale }: { locale: Locale }) {
   return <>
     <section className="home-intro">
       <h1>{locale === "en" ? <>{firstLine} <br />{secondLine}</> : identity.slogan[locale]}</h1>
+      <p className="home-intro-statement">{identity.homeStatement[locale]}</p>
     </section>
     <section className="featured" aria-labelledby="featured-heading">
       <div className="featured-image" aria-hidden={!cover ? true : undefined}>
