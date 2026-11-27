@@ -82,7 +82,7 @@ function coversFor(entries: typeof projects): Covers {
 function Home({ locale }: { locale: Locale }) {
   const [firstLine, secondLine] = identity.slogan.en.split(/(?<=\\.) /);
   const strengths = locale === "en" ? [
-    { title: "People & Management", description: "HR, L&D, team development and resource planning." },
+    { title: "People & Management", description: "Human Resources Management | Learning & Development." },
     { title: "Traveler's Perspective", description: "Understanding destinations and customer experiences." },
     { title: "Creative Execution", description: "Turning ideas into practical marketing deliverables." },
   ] : [
