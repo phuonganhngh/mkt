@@ -294,8 +294,8 @@ th { font-weight: 500; }
 .project-image:has(img[src$="/media/website/web-cover.png"]) img { object-fit: contain; }
 .media-video-preview { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; pointer-events: none; }
 .media-trigger--video { position: relative; display: block; width: 100%; min-width: 0; max-width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: 0; background: #151515; overflow: hidden; }
-.media-play-indicator { position: absolute; z-index: 1; top: 50%; left: 50%; display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid rgb(0 0 0 / .08); border-radius: 50%; color: rgb(0 0 0 / .78); background: rgb(255 255 255 / .78); box-shadow: 0 4px 16px rgb(0 0 0 / .08); transform: translate(-50%, -50%); pointer-events: none; transition: background .2s, box-shadow .2s, transform .2s; }
-.media-trigger--video:hover .media-play-indicator, .media-trigger--video:focus-visible .media-play-indicator { background: rgb(255 255 255 / .94); box-shadow: 0 5px 18px rgb(0 0 0 / .12); transform: translate(-50%, -50%) scale(1.05); }
+.media-play-indicator { position: absolute; z-index: 1; top: 50%; left: 50%; display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid rgb(0 0 0 / .04); border-radius: 50%; color: rgb(0 0 0 / .72); background: rgb(255 255 255 / .30); box-shadow: 0 2px 9px rgb(0 0 0 / .04); transform: translate(-50%, -50%); pointer-events: none; transition: background .2s, box-shadow .2s, transform .2s; }
+.media-trigger--video:hover .media-play-indicator, .media-trigger--video:focus-visible .media-play-indicator { background: rgb(255 255 255 / .36); box-shadow: 0 3px 10px rgb(0 0 0 / .06); transform: translate(-50%, -50%); }
 @media (max-width: 520px) { .media-play-indicator { width: 46px; height: 46px; } }
 @media (prefers-reduced-motion: reduce) { .media-play-indicator { transition: none; } }
 
