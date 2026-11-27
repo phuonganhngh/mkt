@@ -22,7 +22,7 @@ type ProjectMedia = { cover?: ImageAsset; groups: Record<string, Media[]> };
 const media: Record<Category, ProjectMedia> = {
   website: {
     cover: {
-      src: "/media/website/homepage-after.png",
+      src: "/media/website/web-cover.png",
       alt: {
         en: "Redesigned English homepage of Noboribetsu Grand Hotel",
         ja: "登別グランドホテルの英語版公式サイト リニューアル後のホームページ",
@@ -45,7 +45,27 @@ const media: Record<Category, ProjectMedia> = {
       }],
     },
   },
-  social: { groups: { examples: [] } },
+  social: {
+    groups: {
+      examples: [
+        {
+          kind: "video",
+          src: "/media/social/sns1.mp4",
+          caption: { en: "Social Video 01", ja: "SNS動画 01" },
+        },
+        {
+          kind: "video",
+          src: "/media/social/sns2.mp4",
+          caption: { en: "Social Video 02", ja: "SNS動画 02" },
+        },
+        {
+          kind: "video",
+          src: "/media/social/sns3.mp4",
+          caption: { en: "Social Video 03", ja: "SNS動画 03" },
+        },
+      ],
+    },
+  },
   visual: {
     groups: {
       examples: [
