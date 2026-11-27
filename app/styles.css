@@ -322,3 +322,7 @@ th { font-weight: 500; }
 
 /* Visual Communication deliverables span the two editorial columns; gallery remains two-column. */
 .case-section:has(.section-media--visual) .section-copy { grid-column: 1 / -1; }
+
+/* Compact skill descriptors replace category eyebrows on project pages. */
+.case-intro .project-skills { margin: 0 0 .8rem; max-width: none; font: 400 .875rem/1.55 var(--ui); color: var(--muted); }
+.case-intro .project-skills span { color: var(--ink); font-weight: 500; }

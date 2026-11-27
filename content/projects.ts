@@ -9,6 +9,39 @@ export const categories = {
   advertising: { en: "Digital Advertising", ja: "デジタル広告" },
 };
 
+
+// Project-specific skills are descriptive, not filters.
+export const projectSkills: Record<Category, Translation[]> = {
+  website: [
+    { en: "Website Strategy & Design", ja: "ウェブサイト戦略・デザイン" },
+    { en: "Content Strategy", ja: "コンテンツ戦略" },
+    { en: "Project Coordination", ja: "プロジェクト調整" },
+  ],
+  social: [
+    { en: "Social Media & Video", ja: "SNS・動画" },
+    { en: "Content Planning", ja: "コンテンツ企画" },
+    { en: "Video Production", ja: "動画制作" },
+  ],
+  visual: [
+    { en: "Visual Communication", ja: "ビジュアルコミュニケーション" },
+    { en: "Graphic Design", ja: "グラフィックデザイン" },
+  ],
+  partnerships: [
+    { en: "International Partnerships", ja: "海外パートナーシップ" },
+    { en: "Creator Outreach", ja: "クリエイターへのアプローチ" },
+    { en: "Travel Trade", ja: "旅行業界との連携" },
+  ],
+  destination: [
+    { en: "Destination Marketing", ja: "デスティネーションマーケティング" },
+    { en: "Destination Research", ja: "観光地リサーチ" },
+    { en: "B2B & B2C Content", ja: "B2B・B2Cコンテンツ" },
+  ],
+  advertising: [
+    { en: "Digital Advertising", ja: "デジタル広告" },
+    { en: "Campaign Analysis", ja: "広告効果分析" },
+  ],
+};
+
 export const stages = {
   awareness: { en: "Awareness", ja: "認知" },
   consideration: { en: "Consideration", ja: "検討" },

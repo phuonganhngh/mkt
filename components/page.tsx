@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { documents } from "../content/documents";
 import { draftDocument } from "../content/drafts";
 import { projectCover } from "../content/media";
-import { categories, projects } from "../content/projects";
+import { projectSkills, projects } from "../content/projects";
 import { identity, pageUrl, ui, type Locale } from "../content/site";
 import { DocumentSections } from "./case-content";
 import { AssetImage, Placeholder } from "./media";
@@ -140,7 +140,7 @@ export function PortfolioPage({ locale, segments = [] }: { locale: Locale; segme
       </>}
       {document && <article>
         <div className="page-intro case-intro">
-          {project && <p className="eyebrow">{categories[project.id][locale]}</p>}
+          {project && <p className="project-skills"><span>{locale === "en" ? "Skills:" : "スキル："}</span> {projectSkills[project.id].map(skill => skill[locale]).join(" · ")}</p>}
           <h1>{document.title}</h1>
         </div>
         <DocumentSections document={document} locale={locale} id={project?.id} />
