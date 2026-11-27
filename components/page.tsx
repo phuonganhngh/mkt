@@ -140,8 +140,8 @@ export function PortfolioPage({ locale, segments = [] }: { locale: Locale; segme
       </>}
       {document && <article>
         <div className="page-intro case-intro">
-          {project && <p className="project-skills"><span>{locale === "en" ? "Skills:" : "スキル："}</span> {projectSkills[project.id].map(skill => skill[locale]).join(" · ")}</p>}
           <h1>{document.title}</h1>
+          {project && <p className="project-skills"><span>{locale === "en" ? "Skills:" : "スキル："}</span> {projectSkills[project.id].map(skill => skill[locale]).join(" · ")}</p>}
         </div>
         <DocumentSections document={document} locale={locale} id={project?.id} />
         {about && <section className="case-section about-contact">
