@@ -15,7 +15,7 @@ const benchmark = [
 function BenchmarkChart({ locale }: { locale: Locale }) {
   const ja = locale === "ja";
   const title = ja ? "プラットフォーム別のフォロワー数比較" : "Followers by platform";
-  const labels = ja ? ["選定クリエイター", "JAL招待クリエイター"] : ["Selected creator", "JAL creator benchmark"];
+  const labels = ja ? ["私が招待したKOC", "JALが招待したKOC"] : ["KOC Invited by Me", "KOC Invited by JAL"];
   const format = (value: number) => ja
     ? `${new Intl.NumberFormat("ja", { maximumFractionDigits: 2 }).format(value / 10)}万人`
     : `${value}K`;
@@ -151,8 +151,8 @@ const nikkeiArticleLink = "https://www.nikkei.com/article/DGXZQOFC2594O0V20C26A2
 function BenchmarkMetrics({ locale }: { locale: Locale }) {
   const ja = locale === "ja";
   return <div className="benchmark-metrics" aria-label={ja ? "フォロワー数の比較" : "Combined follower and subscriber comparison"}>
-    <div><span>{ja ? "選定クリエイター" : "Selected Creator"}</span><strong>834.9K</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
-    <div><span>{ja ? "JALクリエイター比較対象" : "JAL Creator Benchmark"}</span><strong>779.1K</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
+    <div><span>{ja ? "私が招待したKOC" : "KOC Invited by Me"}</span><strong>834.9K</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
+    <div><span>{ja ? "JALが招待したKOC" : "KOC Invited by JAL"}</span><strong>779.1K</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
   </div>;
 }
 
