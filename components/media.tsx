@@ -40,6 +40,8 @@ function embedUrl(source: string) {
 function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+  const hoverVideo = useRef<HTMLVideoElement>(null);
+  const previewTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [active, setActive] = useState(false);
   const t = ui[locale];
   const caption = item.caption[locale];
@@ -47,13 +49,34 @@ function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
   const preview = poster
     ? <AssetImage image={poster} locale={locale} sizes="(max-width: 600px) 94vw, 440px" />
     : item.kind === "video" && item.src.startsWith("/media/")
-      ? <video className="media-video-preview" src={assetPath(item.src) + "#t=0.1"} muted playsInline preload="metadata" aria-hidden="true" />
+      ? <video ref={hoverVideo} className="media-video-preview" src={assetPath(item.src) + "#t=0.1"} muted playsInline preload="metadata" aria-hidden="true" />
       : null;
   const embed = item.kind === "video" ? embedUrl(item.src) : undefined;
   const external = item.kind === "video" && item.src.startsWith("https://") && !embed;
   const action = item.kind === "pdf" ? t.openPdf : item.kind === "video" ? t.play : t.expand;
 
+  function stopPreview() {
+    if (previewTimer.current) clearTimeout(previewTimer.current);
+    previewTimer.current = null;
+    const video = hoverVideo.current;
+    if (video) {
+      video.pause();
+      try { video.currentTime = 0.1; } catch { /* metadata may not be loaded yet */ }
+    }
+  }
+
+  function startPreview() {
+    const video = hoverVideo.current;
+    if (!video || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (previewTimer.current) clearTimeout(previewTimer.current);
+    video.muted = true;
+    try { video.currentTime = 0.1; } catch { /* metadata may not be loaded yet */ }
+    void video.play().catch(() => {});
+    previewTimer.current = setTimeout(stopPreview, 2000);
+  }
+
   function open() {
+    stopPreview();
     dialog.current?.showModal();
     setActive(true);
   }
@@ -71,9 +94,13 @@ function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
       ? <a className="media-trigger" href={assetPath(item.src)} aria-label={`${action} — ${caption}`}>
           {preview ?? <Placeholder locale={locale} label={action} />}
         </a>
-      : <button type="button" ref={trigger} className="media-trigger" onClick={open}
+      : <button type="button" ref={trigger} className={`media-trigger${item.kind === "video" ? " media-trigger--video" : ""}`} onClick={open}
+          onMouseEnter={item.kind === "video" ? startPreview : undefined}
+          onMouseLeave={item.kind === "video" ? stopPreview : undefined}
+          onBlur={item.kind === "video" ? stopPreview : undefined}
           aria-label={`${action} — ${caption}`}>
           {preview ?? <Placeholder locale={locale} label={action} />}
+          {item.kind === "video" && <span className="media-play-indicator" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l10-6.5z" /></svg></span>}
         </button>}
     <figcaption>{caption}</figcaption>
     {item.kind !== "pdf" && !external &&
@@ -84,7 +111,7 @@ function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
             ? <AssetImage image={item} locale={locale} sizes="min(90vw, 1000px)" eager />
             : embed
               ? <iframe className="video-frame" src={embed} title={caption} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
-              : <video className="video-frame" src={assetPath(item.src)} controls playsInline preload="metadata" poster={poster?.src ? assetPath(poster.src) : undefined}>
+              : <video className="video-frame" src={assetPath(item.src)} controls muted playsInline preload="metadata" poster={poster?.src ? assetPath(poster.src) : undefined}>
                   {item.subtitles?.map(track => <track key={track.src} src={assetPath(track.src)} kind="captions" srcLang={track.lang} label={track.label} />)}
                 </video>)}
           <p>{caption}</p>

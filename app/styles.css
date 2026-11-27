@@ -292,7 +292,11 @@ th { font-weight: 500; }
 /* Keep the complete approved cover visible; display a still from each uploaded video. */
 .featured-image:has(img[src$="/media/website/web-cover.png"]) img,
 .project-image:has(img[src$="/media/website/web-cover.png"]) img { object-fit: contain; }
-.media-video-preview { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.media-video-preview { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; pointer-events: none; }
+.media-trigger--video { position: relative; display: block; width: 100%; min-width: 0; max-width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: 0; background: #151515; overflow: hidden; }
+.media-play-indicator { position: absolute; z-index: 1; top: 50%; left: 50%; display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; color: #fff; background: rgb(0 0 0 / .62); transform: translate(-50%, -50%); pointer-events: none; transition: background .2s; }
+.media-trigger--video:hover .media-play-indicator, .media-trigger--video:focus-visible .media-play-indicator { background: rgb(0 0 0 / .82); }
+@media (prefers-reduced-motion: reduce) { .media-play-indicator { transition: none; } }
 
 /* Social Media & Video: three uploaded video previews in one full-width row. */
 .case-section:has(.section-media--social) .section-copy { grid-column: 1 / -1; }
