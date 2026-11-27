@@ -257,7 +257,7 @@ function CreatorCollaborationList({ blocks, locale }: { blocks: string[]; locale
             ? <AssetImage image={winter} locale={locale} sizes="(max-width: 720px) 70vw, 390px" />
             : <span>{ja ? "温泉写真を追加予定" : "Winter Onsen photo pending"}</span>}
         </div>
-        <p className="creator-showcase-footer">{ja ? "WINTER ONSEN EXPERIENCE" : "WINTER ONSEN EXPERIENCE"}</p>
+        
       </div>
       <div className="creator-showcase-yukata">
         <p className="creator-showcase-kicker">CREATOR COLLABORATION</p>
