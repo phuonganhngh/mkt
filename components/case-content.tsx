@@ -3,7 +3,7 @@ import type { Category } from "../content/projects";
 import type { Document } from "../content/documents";
 import { projectMedia } from "../content/media";
 import { ui, type Locale } from "../content/site";
-import { AssetImage, Gallery } from "./media";
+import { AssetImage, Gallery, MenuBookMockup } from "./media";
 
 const benchmark = [
   { platform: "Instagram", selected: 101, reference: 156 },
@@ -306,15 +306,9 @@ function VisualDeliverables({ locale }: { locale: Locale }) {
             <span className="visual-menu-arrow" aria-hidden="true">→</span>
           </div>
           <div className="visual-menu-sheet">
-            {dinner[0]?.kind === "image" ? <div className="visual-menu-book" role="img" aria-label={dinner[0].alt[locale]}>
-              <div className="visual-menu-book-page visual-menu-book-page--left">
-                <AssetImage image={dinner[0]} locale={locale} sizes="(max-width: 720px) 65vw, 480px" />
-              </div>
-              <div className="visual-menu-book-page visual-menu-book-page--right">
-                <AssetImage image={dinner[0]} locale={locale} sizes="(max-width: 720px) 65vw, 480px" />
-              </div>
-              <span className="visual-menu-book-spine" aria-hidden="true" />
-            </div> : <Gallery items={dinner} locale={locale} />}
+            {dinner[0]?.kind === "image"
+              ? <MenuBookMockup image={dinner[0]} locale={locale} />
+              : <Gallery items={dinner} locale={locale} />}
           </div>
         </div>
         <div className="visual-shogi-news">
