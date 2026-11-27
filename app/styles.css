@@ -384,3 +384,23 @@ th { font-weight: 500; }
 .creator-collaboration-primary span { font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .creator-collaboration-item p { margin-top: .25rem; font: 400 .8125rem/1.55 var(--ui); color: var(--muted); }
 .creator-collaborations-note { font: italic 400 .75rem/1.55 var(--ui); color: var(--muted); margin-top: .55rem; }
+
+/* Home personal landing page: background strengths and a single Work destination. */
+.home-intro-philosophy { margin-top: .65rem; }
+.home-approach { padding-block: 2.6rem 2.9rem; border-bottom: 1px solid var(--line); }
+.home-approach > h2 { margin-bottom: 1.55rem; }
+.home-strengths { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.6rem; }
+.home-strength { min-width: 0; padding-top: .8rem; border-top: 1px solid var(--line); }
+.home-strength-index { color: var(--accent); font: 500 .75rem/1.5 var(--ui); letter-spacing: .08em; }
+.home-strength h3 { color: var(--ink); font: 600 1rem/1.45 var(--ui); margin-top: .5rem; }
+.home-strength p { color: var(--muted); font: 400 .875rem/1.65 var(--ui); margin-top: .35rem; }
+.home-explore { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(12rem,.5fr); align-items: center; gap: 2rem; padding-block: 2.5rem 3.5rem; }
+.home-explore h2 { margin-bottom: .65rem; }
+.home-explore p { max-width: 68ch; font: 400 .9375rem/1.7 var(--reading); }
+.home-explore-action { display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; }
+.home-explore-action > span { color: var(--muted); font: 500 .8125rem/1.5 var(--ui); }
+.home-explore-action .text-link { font-size: .9375rem; }
+@media (max-width: 720px) {
+  .home-strengths { grid-template-columns: 1fr; gap: 1rem; }
+  .home-explore { grid-template-columns: 1fr; gap: 1rem; padding-block: 2rem 2.6rem; }
+}

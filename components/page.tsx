@@ -6,8 +6,7 @@ import { projectCover } from "../content/media";
 import { projectSkills, projects } from "../content/projects";
 import { identity, pageUrl, ui, type Locale } from "../content/site";
 import { DocumentSections } from "./case-content";
-import { AssetImage, Placeholder } from "./media";
-import { ProjectGrid, WorkDirectory, type Covers } from "./projects";
+import { WorkDirectory, type Covers } from "./projects";
 
 const slugs = ["", "work", "about", ...projects.map(project => project.slug)];
 export const pageParams = () => slugs.map(slug => ({ slug: slug ? [slug] : [] }));
@@ -81,39 +80,44 @@ function coversFor(entries: typeof projects): Covers {
 }
 
 function Home({ locale }: { locale: Locale }) {
-  const t = ui[locale];
-  const [flagship, ...selected] = projects;
-  const cover = projectCover(flagship.id);
-  const [firstLine, secondLine] = identity.slogan.en.split(/(?<=\.) /);
+  const [firstLine, secondLine] = identity.slogan.en.split(/(?<=\\.) /);
+  const strengths = locale === "en" ? [
+    { title: "People & Management", description: "HR, L&D, team development and resource planning." },
+    { title: "Traveler's Perspective", description: "Understanding destinations and customer experiences." },
+    { title: "Creative Execution", description: "Turning ideas into practical marketing deliverables." },
+  ] : [
+    { title: "人材・マネジメント", description: "人事、人材育成、チーム開発、要員計画。" },
+    { title: "旅行者の視点", description: "観光地や顧客体験への理解。" },
+    { title: "企画・実行力", description: "アイデアを具体的なマーケティング施策へ。" },
+  ];
 
   return <>
     <section className="home-intro">
       <h1>{locale === "en" ? <>{firstLine} <br />{secondLine}</> : identity.slogan[locale]}</h1>
-      <p className="home-intro-statement">{identity.homeStatement[locale]}</p>
+      <p className="home-intro-statement">{identity.intro[locale]}</p>
+      <p className="home-intro-statement home-intro-philosophy">{identity.homeStatement[locale]}</p>
     </section>
-    <section className="featured" aria-labelledby="featured-heading">
-      <div className="featured-image" aria-hidden={!cover ? true : undefined}>
-        {cover
-          ? <AssetImage image={cover} locale={locale} sizes="(max-width: 720px) 94vw, 570px" eager />
-          : <Placeholder locale={locale} />}
-      </div>
-      <div className="featured-copy">
-        <p className="eyebrow">{t.featured}</p>
-        <h2 id="featured-heading">{flagship.title[locale]}</h2>
-        <p>{flagship.summary[locale]}</p>
-        <a className="text-link" href={pageUrl(locale, flagship.slug)}>{t.viewCase}</a>
+    <section className="home-approach" aria-labelledby="home-approach-heading">
+      <h2 id="home-approach-heading">{locale === "en" ? "A Background That Shapes My Approach" : "経験が形づくる仕事への姿勢"}</h2>
+      <div className="home-strengths">
+        {strengths.map((item, index) => <article className="home-strength" key={item.title}>
+          <span className="home-strength-index">0{index + 1}</span>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </article>)}
       </div>
     </section>
-    <section className="selected" aria-labelledby="selected-heading">
-      <div className="section-line">
-        <h2 id="selected-heading">{t.selected}</h2>
-        <a className="text-link" href={pageUrl(locale, "work")}>{t.viewWork}</a>
+    <section className="home-explore" aria-labelledby="home-explore-heading">
+      <div>
+        <h2 id="home-explore-heading">{locale === "en" ? "Explore My Work" : "実績を見る"}</h2>
+        <p>{locale === "en"
+          ? "Explore my portfolio of website strategy, social content, visual communication, international partnerships, destination marketing and digital advertising."
+          : "ウェブサイト戦略、SNSコンテンツ、ビジュアル制作、海外パートナーシップ、デスティネーションマーケティング、デジタル広告の実績をご覧いただけます。"}</p>
       </div>
-      <ProjectGrid entries={selected} locale={locale} covers={coversFor(selected)} />
-    </section>
-    <section className="home-about" aria-labelledby="home-about-heading">
-      <h2 id="home-about-heading">{t.about}</h2>
-      <div><p>{identity.intro[locale]}</p><a className="text-link" href={pageUrl(locale, "about")}>{t.aboutLink}</a></div>
+      <div className="home-explore-action">
+        <span>{locale === "en" ? "6 Projects" : "6つのプロジェクト"}</span>
+        <a className="text-link" href={pageUrl(locale, "work")}>{locale === "en" ? "View Portfolio" : "ポートフォリオを見る"} <span aria-hidden="true">→</span></a>
+      </div>
     </section>
   </>;
 }
