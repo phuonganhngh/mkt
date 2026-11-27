@@ -44,7 +44,11 @@ function MediaItem({ item, locale }: { item: Media; locale: Locale }) {
   const t = ui[locale];
   const caption = item.caption[locale];
   const poster = item.kind === "image" ? item : item.poster;
-  const preview = poster ? <AssetImage image={poster} locale={locale} sizes="(max-width: 600px) 94vw, 440px" /> : null;
+  const preview = poster
+    ? <AssetImage image={poster} locale={locale} sizes="(max-width: 600px) 94vw, 440px" />
+    : item.kind === "video" && item.src.startsWith("/media/")
+      ? <video className="media-video-preview" src={assetPath(item.src) + "#t=0.1"} muted playsInline preload="metadata" aria-hidden="true" />
+      : null;
   const embed = item.kind === "video" ? embedUrl(item.src) : undefined;
   const external = item.kind === "video" && item.src.startsWith("https://") && !embed;
   const action = item.kind === "pdf" ? t.openPdf : item.kind === "video" ? t.play : t.expand;
