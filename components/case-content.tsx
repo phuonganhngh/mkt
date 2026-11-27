@@ -127,24 +127,9 @@ const toolGroups = [
 ] as const;
 
 function ToolLogo({ icon, name }: { icon: string; name: string }) {
-  if (icon === "capcut") return <svg viewBox="0 0 40 40" role="img" aria-label={name}>
-    <path d="M6 9h28v4L12 27h22v5H6v-4L28 13H6z" fill="#161616" />
-    <path d="M6 13L34 28" fill="none" stroke="#161616" strokeWidth="4.5" strokeLinejoin="round" />
-  </svg>;
-  if (icon === "photoshop" || icon === "illustrator" || icon === "lightroom") {
-    const brand = {
-      photoshop: { initials: "Ps", bg: "#001E36", fg: "#31A8FF" },
-      illustrator: { initials: "Ai", bg: "#330000", fg: "#FF9A00" },
-      lightroom: { initials: "Lr", bg: "#001E36", fg: "#31A8FF" },
-    }[icon];
-    return <svg viewBox="0 0 40 40" role="img" aria-label={name}>
-      <rect x="1" y="1" width="38" height="38" rx="4" fill={brand.bg} />
-      <text x="20" y="27" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontSize="23" fill={brand.fg}>{brand.initials}</text>
-    </svg>;
-  }
-  if (icon === "codex") return <svg viewBox="0 0 40 40" role="img" aria-label={name}>
-    <rect x="1" y="1" width="38" height="38" rx="9" fill="#1b2533" />
-    <path d="M14 14l-6 6 6 6M26 14l6 6-6 6M23 10l-6 20" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  if (icon === "lightroom") return <svg viewBox="0 0 40 40" role="img" aria-label={name}>
+    <rect x="1" y="1" width="38" height="38" rx="4" fill="#001E36" />
+    <text x="20" y="27" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontSize="23" fill="#31A8FF">Lr</text>
   </svg>;
   return <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/media/tools/${icon}.svg`} alt={name} width="44" height="44" loading="lazy" />;
 }
