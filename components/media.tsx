@@ -126,3 +126,33 @@ export function Gallery({ items, locale }: { items: Media[]; locale: Locale }) {
     <MediaItem key={`${item.src}-${index}`} item={item} locale={locale} />
   )}</div>;
 }
+
+
+/** Interactive editorial newspaper spread. The Shogi page turns from a left-hand
+ * spine to reveal the dinner menu beneath; all existing image lightboxes remain. */
+export function PaperBook({ shogi, dinner, locale }: { shogi: Media[]; dinner: Media[]; locale: Locale }) {
+  const [opened, setOpened] = useState(false);
+  const label = locale === "ja"
+    ? (opened ? "新聞を閉じる" : "新聞をめくる")
+    : (opened ? "Close newspaper" : "Turn newspaper page");
+  return <div className={`paper-book${opened ? " paper-book--open" : ""}`}>
+    <div className="paper-book-stage">
+      <div className="paper-book-spine" aria-hidden="true" />
+      <div className="paper-book-underpage">
+        <Gallery items={dinner} locale={locale} />
+      </div>
+      <div className="paper-book-leaf">
+        <div className="paper-book-leaf-front">
+          <Gallery items={shogi} locale={locale} />
+        </div>
+        <div className="paper-book-leaf-back" aria-hidden="true">
+          <span className="paper-book-backmark" />
+        </div>
+      </div>
+    </div>
+    <button type="button" className="paper-book-control"
+      onClick={() => setOpened(value => !value)} aria-pressed={opened}>
+      {label} <span aria-hidden="true">{opened ? "↶" : "↷"}</span>
+    </button>
+  </div>;
+}
