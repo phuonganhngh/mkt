@@ -12,8 +12,8 @@ export const identity = {
     ja: "アイデアを形にすることが好きで、限られたリソースの中でも主体的に新しいスキルを学び、創造的な解決策を見つけることを大切にしています。",
   },
   intro: {
-    en: "Combining an international traveler's perspective with creative execution and management experience, I develop marketing solutions that connect hospitality brands with global audiences.",
-    ja: "海外旅行者の視点とクリエイティブな実行力、マネジメント経験を活かし、ホスピタリティブランドと世界の旅行者をつなぐマーケティングに取り組んでいます。",
+    en: "My background is in Human Resources and Learning & Development, and I have also gained hands-on experience in international marketing within Japan's hospitality industry.",
+    ja: "人事・人材育成（HR & L&D）をキャリアの基盤とし、日本のホスピタリティ業界で海外マーケティングの実務経験も積んできました。",
   },
   contact: { email: "phuonganhnt209@gmail.com", url: "", label: { en: "Professional profile", ja: "職務プロフィール" } },
 };
