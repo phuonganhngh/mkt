@@ -319,3 +319,6 @@ th { font-weight: 500; }
 @media (min-width: 721px) {
   .featured-image:has(img[src$="/media/website/web-cover.png"]) { aspect-ratio: 1.5; }
 }
+
+/* Visual Communication deliverables span the two editorial columns; gallery remains two-column. */
+.case-section:has(.section-media--visual) .section-copy { grid-column: 1 / -1; }
