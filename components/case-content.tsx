@@ -98,41 +98,6 @@ function WebsiteBeforeAfter({ locale }: { locale: Locale }) {
   </div>;
 }
 
-const editingTools = [
-  { name: "CapCut", kind: "capcut" },
-  { name: "Adobe Photoshop", kind: "photoshop" },
-  { name: "Adobe Illustrator", kind: "illustrator" },
-  { name: "Adobe Lightroom", kind: "lightroom" },
-] as const;
-
-function EditingToolLogo({ kind }: { kind: (typeof editingTools)[number]["kind"] }) {
-  if (kind === "capcut") {
-    return <svg viewBox="0 0 40 40" width="34" height="34" role="img" aria-label="CapCut logo" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 8h28v4L12 27h22v5H6v-4L28 13H6z" fill="#111" />
-      <path d="M6 13L34 28" fill="none" stroke="#111" strokeWidth="4.5" strokeLinejoin="round" />
-    </svg>;
-  }
-  const palette = {
-    photoshop: { label: "Ps", bg: "#001E36", text: "#31A8FF" },
-    illustrator: { label: "Ai", bg: "#330000", text: "#FF9A00" },
-    lightroom: { label: "Lr", bg: "#001E36", text: "#31A8FF" },
-  }[kind];
-  return <svg viewBox="0 0 40 40" width="34" height="34" role="img" aria-label={`Adobe ${palette.label} application logo`} xmlns="http://www.w3.org/2000/svg">
-    <rect x="1" y="1" width="38" height="38" rx="4" fill={palette.bg} stroke={palette.text} strokeWidth="1.5" />
-    <text x="20" y="27" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontSize="23" fill={palette.text}>{palette.label}</text>
-  </svg>;
-}
-
-function EditingTools() {
-  return <div className="editing-tools" aria-label="Editing and design tools">
-    {editingTools.map(tool => <div className="editing-tool" key={tool.name}>
-      <span className="editing-tool-logo"><EditingToolLogo kind={tool.kind} /></span>
-      <span>{tool.name}</span>
-    </div>)}
-  </div>;
-}
-
-
 const nikkeiArticleLink = "https://www.nikkei.com/article/DGXZQOFC2594O0V20C26A2000000/";
 
 function BenchmarkMetrics({ locale }: { locale: Locale }) {
@@ -191,8 +156,6 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       children.push(<BenchmarkMetrics key={index} locale={locale} />);
     } else if (block === "@nikkei-thumbnail" && id === "partnerships") {
       children.push(<NikkeiThumbnail key={index} locale={locale} />);
-    } else if (block === "@editing-tools" && id === "social") {
-      children.push(<EditingTools key={index} />);
     } else if (block === "@challenge-illustration" && id === "website") {
       children.push(<WebsiteChallengeVisual key={index} locale={locale} />);
     } else if (block === "@strategy-framework" && id === "website") {

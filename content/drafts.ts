@@ -13,7 +13,7 @@ const copy = {
       "Content planning, destination exploration, shooting and editing in support of marketing.",
       "Create authentic travel videos by handling the creative process myself, from concept and filming to editing, without a professional production team or expensive equipment.",
       "Use a traveler’s perspective to decide what to explore, capture and explain.",
-      "@editing-tools",
+      "",
       "Confirmed outcomes are pending.",
     ],
     ja: [
@@ -21,7 +21,7 @@ const copy = {
       "マーケティング施策の一環として、コンテンツの企画、観光地の取材、撮影・編集を担当。",
       "プロの制作チームや高価な機材に頼らず、企画から撮影、編集まで自ら担い、リアルな旅の体験を伝える動画を制作すること。",
       "旅行者の視点から、調査・撮影・紹介する内容を選定。",
-      "@editing-tools",
+      "",
       "確認済みの成果は準備中です。",
     ],
   },
@@ -70,7 +70,7 @@ export function draftDocument(id: DraftId, locale: Locale, title: string): Docum
     title,
     sections: headings[locale].map((heading, index) => ({
       title: heading,
-      blocks: index === 4 ? (id === "visual" ? ["@examples"] : [copy[id][locale][index], "@examples"]) : [copy[id][locale][index]],
+      blocks: index === 4 && (id === "visual" || id === "social") ? ["@examples"] : index === 4 ? [copy[id][locale][index], "@examples"] : [copy[id][locale][index]],
     })).filter((_, index) => (id !== "social" && id !== "visual") || index !== 5),
   };
 }

@@ -82,6 +82,17 @@
           "My nine years of experience in Human Resources and Learning & Development within international hotel environments and Japanese companies have helped me develop capabilities in management, team development, resource planning and coordination.",
           "I apply this experience to marketing projects, connecting creative ideas with business objectives through planning, decision-making and execution."
         ]
+      },
+      {
+        "title": "Tools & Platforms",
+        "blocks": [
+          "### Creative & Design",
+          "CapCut · Adobe Photoshop · Adobe Illustrator · Adobe Lightroom",
+          "### AI & Web Tools",
+          "OpenAI Codex · GitHub · Netlify",
+          "### Analytics & SEO",
+          "Google Analytics 4 (GA4) · Google Search Console (GSC)"
+        ]
       }
     ]
   },
