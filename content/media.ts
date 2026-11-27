@@ -108,7 +108,23 @@ const media: Record<Category, ProjectMedia> = {
       ],
     },
   },
-  partnerships: { groups: { activities: [] } },
+  partnerships: { groups: {
+    activities: [],
+    "creator-showcase": [
+      {
+        kind: "image",
+        src: "/media/partnerships/winter-onsen-creator.png",
+        alt: { en: "Creator enjoying a snowy outdoor onsen", ja: "雪景色の露天風呂を楽しむクリエイター" },
+        caption: { en: "Winter Onsen Experience", ja: "冬の温泉体験" },
+      },
+      {
+        kind: "image",
+        src: "/media/partnerships/yukata-creators.png",
+        alt: { en: "Travel creators wearing yukata at the hotel", ja: "ホテルで浴衣を着た旅行クリエイター" },
+        caption: { en: "Yukata Experience", ja: "浴衣体験" },
+      },
+    ],
+  } },
   destination: { groups: { "winter-slides": [], "things-to-do": [] } },
   advertising: { groups: { examples: [] } },
 };

@@ -3,7 +3,7 @@ import type { Category } from "../content/projects";
 import type { Document } from "../content/documents";
 import { projectMedia } from "../content/media";
 import { ui, type Locale } from "../content/site";
-import { Gallery } from "./media";
+import { AssetImage, Gallery } from "./media";
 
 const benchmark = [
   { platform: "Instagram", selected: 101, reference: 156 },
@@ -225,21 +225,50 @@ function CreatorCollaborationList({ blocks, locale }: { blocks: string[]; locale
   );
   const rows = tableRows.slice(2);
   const footnote = blocks.find(block => block.startsWith("*") && !block.startsWith("**"))?.slice(1, -1);
-  return <div className="creator-collaborations">
-    <div className="creator-collaborations-heading">
-      <h3>{heading}</h3>
-      <span>{locale === "ja" ? "Instagram" : "Instagram"}</span>
+  const visuals = projectMedia("partnerships", "creator-showcase");
+  const winter = visuals.find(item => item.kind === "image" && item.src.endsWith("/winter-onsen-creator.png"));
+  const yukata = visuals.find(item => item.kind === "image" && item.src.endsWith("/yukata-creators.png"));
+  const ja = locale === "ja";
+
+  return <div className="creator-collaborations-layout">
+    <div className="creator-collaborations">
+      <div className="creator-collaborations-heading">
+        <h3>{heading}</h3>
+        <span>Instagram</span>
+      </div>
+      <div className="creator-collaborations-list">
+        {rows.map(([nationality, focus, followers], index) => <div className="creator-collaboration-item" key={index}>
+          <div className="creator-collaboration-primary">
+            <strong>{nationality}</strong>
+            <span>{followers}</span>
+          </div>
+          <p>{focus}</p>
+        </div>)}
+      </div>
+      {footnote && <p className="creator-collaborations-note">{footnote}</p>}
     </div>
-    <div className="creator-collaborations-list">
-      {rows.map(([nationality, focus, followers], index) => <div className="creator-collaboration-item" key={index}>
-        <div className="creator-collaboration-primary">
-          <strong>{nationality}</strong>
-          <span>{followers}</span>
+    <div className="creator-showcase" aria-label={ja ? "クリエイターの体験写真" : "Creator experience photos"}>
+      <div className="creator-showcase-accent" aria-hidden="true" />
+      <div className="creator-showcase-winter">
+        <p className="creator-showcase-kicker">{ja ? "CREATOR EXPERIENCE" : "FEATURED CREATOR VISIT"}</p>
+        <h4>{ja ? <>WINTER<br/>ONSEN STORY</> : <>WINTER<br/>ONSEN STORY</>}</h4>
+        <div className="creator-showcase-image creator-showcase-winter-image">
+          {winter?.kind === "image"
+            ? <AssetImage image={winter} locale={locale} sizes="(max-width: 720px) 70vw, 390px" />
+            : <span>{ja ? "温泉写真を追加予定" : "Winter Onsen photo pending"}</span>}
         </div>
-        <p>{focus}</p>
-      </div>)}
+        <p className="creator-showcase-footer">{ja ? "WINTER ONSEN EXPERIENCE" : "WINTER ONSEN EXPERIENCE"}</p>
+      </div>
+      <div className="creator-showcase-yukata">
+        <p className="creator-showcase-kicker">CREATOR COLLABORATION</p>
+        <div className="creator-showcase-image creator-showcase-yukata-image">
+          {yukata?.kind === "image"
+            ? <AssetImage image={yukata} locale={locale} sizes="(max-width: 720px) 50vw, 275px" />
+            : <span>{ja ? "浴衣写真を追加予定" : "Yukata creators photo pending"}</span>}
+        </div>
+        <h4>YUKATA<br/>EXPERIENCE</h4>
+      </div>
     </div>
-    {footnote && <p className="creator-collaborations-note">{footnote}</p>}
   </div>;
 }
 
