@@ -184,6 +184,56 @@ function NikkeiThumbnail({ locale }: { locale: Locale }) {
   </aside>;
 }
 
+
+function CreatorSpotlight({ locale, blocks }: { locale: Locale; blocks: string[] }) {
+  const ja = locale === "ja";
+  const title = blocks.find(block => block.startsWith("### "))?.slice(4).replace(/^Featured Case — |^注目事例 — /, "")
+    ?? (ja ? "ベトナムのクリエイター比較分析" : "Vietnamese Travel & Lifestyle Creator");
+  const narrative = blocks.filter(block => !block.startsWith("@") && !block.startsWith("### ") && !block.startsWith("*"));
+  const note = blocks.find(block => block.startsWith("*") && !block.startsWith("**"))?.slice(1, -1);
+  const insight = ja
+    ? "フォロワー・登録者数の単純合計は、選定クリエイターが83.49万人、比較対象が77.91万人。一方、プラットフォーム構成には違いが見られます。Facebookは24.1万人対4.2万人、TikTokは45.49万人対51.27万人です。協業先を評価する際には、合計規模だけでなく、媒体ごとの強みも考慮する必要があります。"
+    : "The overall audience totals are comparable, but the platform mix differs. The selected creator has 241K Facebook followers versus 42K for the benchmark, while TikTok is 454.9K versus 512.7K. Platform-level strengths matter when assessing partnership potential.";
+
+  return <div className="creator-spotlight">
+    <div className="creator-spotlight-top">
+      <div className="creator-spotlight-intro">
+        <p className="creator-spotlight-label">{ja ? "注目事例" : "FEATURED CASE"}</p>
+        <h3>{title}</h3>
+        {narrative.map((text, index) => <p key={index}>{inline(text)}</p>)}
+      </div>
+      <div className="creator-spotlight-data">
+        <BenchmarkMetrics locale={locale} />
+        <BenchmarkChart locale={locale} />
+      </div>
+    </div>
+    <div className="creator-spotlight-bottom">
+      <div className="creator-spotlight-insight">
+        <h4>{ja ? "分析からの示唆" : "Key Takeaway"}</h4>
+        <p>{insight}</p>
+      </div>
+      <div className="creator-spotlight-source"><NikkeiThumbnail locale={locale} /></div>
+    </div>
+    {note && <p className="creator-spotlight-note">{note}</p>}
+  </div>;
+}
+
+function CreatorPartnershipSection({ section, locale }: {
+  section: { title: string; blocks: string[] }; locale: Locale;
+}) {
+  const start = section.blocks.indexOf("@creator-feature-start");
+  const end = section.blocks.indexOf("@creator-feature-end", start);
+  const intro = section.blocks.slice(0, start);
+  const featured = section.blocks.slice(start + 1, end);
+  const collaborations = section.blocks.slice(end + 1);
+  return <section className="case-section creator-partnerships-section">
+    <h2>{section.title}</h2>
+    <div className="section-copy"><SectionBlocks blocks={intro} id="partnerships" locale={locale} /></div>
+    <CreatorSpotlight locale={locale} blocks={featured} />
+    <div className="creator-collaborations"><SectionBlocks blocks={collaborations} id="partnerships" locale={locale} /></div>
+  </section>;
+}
+
 function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category; locale: Locale }) {
   const children: ReactNode[] = [];
   const showBenchmark = process.env.PORTFOLIO_BENCHMARK_REVIEW === "1" || process.env.PORTFOLIO_BENCHMARK_APPROVED === "1";
@@ -244,9 +294,11 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
 
 export function DocumentSections({ document, locale, id }: { document: Document; locale: Locale; id?: Category }) {
   return <div className="case-sections">
-    {document.sections.map(section => <section key={section.title} className="case-section">
-      <h2>{section.title}</h2>
-      <div className="section-copy"><SectionBlocks blocks={section.blocks} id={id} locale={locale} /></div>
-    </section>)}
+    {document.sections.map(section => id === "partnerships" && section.blocks.includes("@creator-feature-start")
+      ? <CreatorPartnershipSection key={section.title} section={section} locale={locale} />
+      : <section key={section.title} className="case-section">
+        <h2>{section.title}</h2>
+        <div className="section-copy"><SectionBlocks blocks={section.blocks} id={id} locale={locale} /></div>
+      </section>)}
   </div>;
 }
