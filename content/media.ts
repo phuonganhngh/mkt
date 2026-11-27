@@ -105,6 +105,12 @@ const media: Record<Category, ProjectMedia> = {
           alt: { en: "Shogi event design artwork", ja: "将棋イベントのデザイン制作物" },
           caption: { en: "Shogi Event Design", ja: "将棋イベントのデザイン" },
         },
+        {
+          kind: "image",
+          src: "/media/visual/dinner-menu.png",
+          alt: { en: "Printed dinner menu design", ja: "夕食メニューの制作物" },
+          caption: { en: "Dinner Menu Design", ja: "夕食メニューデザイン" },
+        },
       ],
     },
   },

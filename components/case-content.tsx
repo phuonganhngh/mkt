@@ -288,6 +288,25 @@ function CreatorPartnershipSection({ section, locale }: {
   </section>;
 }
 
+function VisualDeliverables({ locale }: { locale: Locale }) {
+  const items = projectMedia("visual", "examples");
+  const banners = items.filter(item => item.src.includes("/visual/design-email-banner-"));
+  const social = items.filter(item => item.src.endsWith("/visual/social-post-example.png"));
+  const shogi = items.filter(item => item.src.endsWith("/visual/shogi-news.png"));
+  const dinner = items.filter(item => item.src.endsWith("/visual/dinner-menu.png"));
+  return <div className="visual-deliverables">
+    <div className="visual-deliverables-banners"><Gallery items={banners} locale={locale} /></div>
+    <div className="visual-deliverables-bottom">
+      <div className="visual-deliverables-social"><Gallery items={social} locale={locale} /></div>
+      <div className="visual-paper-feature">
+        <div className="visual-paper-feature-surface" aria-hidden="true" />
+        <div className="visual-paper visual-paper--shogi"><Gallery items={shogi} locale={locale} /></div>
+        <div className="visual-paper visual-paper--menu"><Gallery items={dinner} locale={locale} /></div>
+      </div>
+    </div>
+  </div>;
+}
+
 function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category; locale: Locale }) {
   const children: ReactNode[] = [];
   const showBenchmark = process.env.PORTFOLIO_BENCHMARK_REVIEW === "1" || process.env.PORTFOLIO_BENCHMARK_APPROVED === "1";
@@ -320,6 +339,8 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       }
     } else if (block === "@before-after" && id === "website") {
       children.push(<WebsiteBeforeAfter key={index} locale={locale} />);
+    } else if (block === "@examples" && id === "visual") {
+      children.push(<div className="section-media section-media--visual" key={index}><VisualDeliverables locale={locale} /></div>);
     } else if (block.startsWith("@") && id) {
       const group = block.slice(1);
       children.push(<div className={id === "social" && group === "examples" ? "section-media section-media--social" : id === "visual" && group === "examples" ? "section-media section-media--visual" : "section-media"} key={index}>
