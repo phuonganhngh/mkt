@@ -8,8 +8,8 @@ export const identity = {
     ja: "旅人の視点で考え、マーケターとして行動する。",
   },
   homeStatement: {
-    en: "My background is in Human Resources and Learning & Development, and I have also gained hands-on experience in international marketing within Japan's hospitality industry. I bring a traveler's perspective, creativity and management skills to my work.",
-    ja: "私のキャリアの基盤は人事・人材育成（HR & L&D）にあります。また、日本のホスピタリティ業界で海外マーケティングの実務にも携わってきました。旅行者の視点、創造力、マネジメント経験を仕事に活かしています。",
+    en: "I enjoy turning ideas into tangible outcomes, actively learning new skills and finding creative solutions with limited resources.",
+    ja: "アイデアを形にすることが好きで、限られたリソースの中でも主体的に新しいスキルを学び、創造的な解決策を見つけることを大切にしています。",
   },
   intro: {
     en: "Combining an international traveler's perspective with creative execution and management experience, I develop marketing solutions that connect hospitality brands with global audiences.",
