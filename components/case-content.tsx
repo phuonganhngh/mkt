@@ -205,7 +205,7 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       children.push(<WebsiteBeforeAfter key={index} locale={locale} />);
     } else if (block.startsWith("@") && id) {
       const group = block.slice(1);
-      children.push(<div className="section-media" key={index}>
+      children.push(<div className={id === "social" && group === "examples" ? "section-media section-media--social" : "section-media"} key={index}>
         <Gallery items={projectMedia(id, group)} locale={locale} />
         {group === "things-to-do" && <p><a href="https://www.nobogura.co.jp/en/#things">{ui[locale].thingsLink}</a></p>}
       </div>);
