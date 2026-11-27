@@ -115,7 +115,14 @@ const media: Record<Category, ProjectMedia> = {
     },
   },
   partnerships: { groups: {
-    activities: [],
+    activities: [
+      {
+        kind: "image",
+        src: "/media/partnerships/jnto-b2b-website.jpg",
+        alt: { en: "JNTO and international travel trade collaboration", ja: "JNTOと海外旅行業界との連携" },
+        caption: { en: "JNTO & International Travel Trade", ja: "JNTO・海外旅行業界との連携" },
+      },
+    ],
     "creator-showcase": [
       {
         kind: "image",
