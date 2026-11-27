@@ -3,7 +3,7 @@ import type { Category } from "../content/projects";
 import type { Document } from "../content/documents";
 import { projectMedia } from "../content/media";
 import { ui, type Locale } from "../content/site";
-import { AssetImage, Gallery } from "./media";
+import { AssetImage, Gallery, PaperBook } from "./media";
 
 const benchmark = [
   { platform: "Instagram", selected: 101, reference: 156 },
@@ -299,9 +299,7 @@ function VisualDeliverables({ locale }: { locale: Locale }) {
     <div className="visual-deliverables-bottom">
       <div className="visual-deliverables-social"><Gallery items={social} locale={locale} /></div>
       <div className="visual-paper-feature">
-        <div className="visual-paper-feature-surface" aria-hidden="true" />
-        <div className="visual-paper visual-paper--shogi"><Gallery items={shogi} locale={locale} /></div>
-        <div className="visual-paper visual-paper--menu"><Gallery items={dinner} locale={locale} /></div>
+        <PaperBook shogi={shogi} dinner={dinner} locale={locale} />
       </div>
     </div>
   </div>;
