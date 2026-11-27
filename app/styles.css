@@ -464,3 +464,18 @@ th { font-weight: 500; }
 /* Remove empty gray letterboxing around the original social post screenshot. */
 .visual-deliverables-social .media-trigger { aspect-ratio: auto; background: transparent; overflow: visible; }
 .visual-deliverables-social .media-trigger img { display: block; width: 100%; height: auto; object-fit: contain; }
+
+/* JNTO website preview: fill only its existing thumbnail rectangle.
+   A tall page screenshot is cropped at the bottom, never stretched or allowed
+   to extend past the original gray thumbnail area. Full image remains in lightbox. */
+.section-media:has(img[src*="jnto-b2b-website.png"]) .media-trigger {
+  aspect-ratio: 1.6;
+  overflow: hidden;
+}
+.section-media img[src*="jnto-b2b-website.png"] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
