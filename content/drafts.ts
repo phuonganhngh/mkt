@@ -31,7 +31,7 @@ const copy = {
       "Project-specific responsibilities are pending.",
       "Help international travelers find and understand practical information.",
       "Organize information by priority and use consistent layouts and typography across related materials.",
-      "Approved examples of brochures, posters, menus and other collateral are pending.",
+      "",
       "Confirmed outcomes are pending.",
     ],
     ja: [
@@ -39,7 +39,7 @@ const copy = {
       "プロジェクトごとの担当範囲は準備中です。",
       "海外旅行者が必要な情報を見つけ、理解しやすくすること。",
       "情報に優先順位を付け、関連資料のレイアウトとタイポグラフィに一貫性を持たせる。",
-      "掲載用のパンフレット、ポスター、メニューなどの制作物は準備中です。",
+      "",
       "確認済みの成果は準備中です。",
     ],
   },
@@ -70,7 +70,7 @@ export function draftDocument(id: DraftId, locale: Locale, title: string): Docum
     title,
     sections: headings[locale].map((heading, index) => ({
       title: heading,
-      blocks: index === 4 ? [copy[id][locale][index], "@examples"] : [copy[id][locale][index]],
+      blocks: index === 4 ? ["@examples"] : [copy[id][locale][index]],
     })),
   };
 }
