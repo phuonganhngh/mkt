@@ -22,7 +22,36 @@ type ProjectMedia = { cover?: ImageAsset; groups: Record<string, Media[]> };
 const media: Record<Category, ProjectMedia> = {
   website: { groups: { "design-screens": [], "improvement-screens": [], "before-homepage": [], "after-homepage": [] } },
   social: { groups: { examples: [] } },
-  visual: { groups: { examples: [] } },
+  visual: {
+    groups: {
+      examples: [
+        {
+          kind: "image",
+          src: "/media/visual/design-email-banner-01.png",
+          alt: { en: "Email signature banner design 01", ja: "メール署名バナーのデザイン 01" },
+          caption: { en: "Email Signature Banner 01", ja: "メール署名バナー 01" },
+        },
+        {
+          kind: "image",
+          src: "/media/visual/design-email-banner-02.png",
+          alt: { en: "Email signature banner design 02", ja: "メール署名バナーのデザイン 02" },
+          caption: { en: "Email Signature Banner 02", ja: "メール署名バナー 02" },
+        },
+        {
+          kind: "image",
+          src: "/media/visual/design-email-banner-03.png",
+          alt: { en: "Email signature banner design 03", ja: "メール署名バナーのデザイン 03" },
+          caption: { en: "Email Signature Banner 03", ja: "メール署名バナー 03" },
+        },
+        {
+          kind: "image",
+          src: "/media/visual/design-email-banner-04.png",
+          alt: { en: "Email signature banner design 04", ja: "メール署名バナーのデザイン 04" },
+          caption: { en: "Email Signature Banner 04", ja: "メール署名バナー 04" },
+        },
+      ],
+    },
+  },
   partnerships: { groups: { activities: [] } },
   destination: { groups: { "winter-slides": [], "things-to-do": [] } },
   advertising: { groups: { examples: [] } },
