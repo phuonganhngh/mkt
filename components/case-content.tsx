@@ -191,9 +191,7 @@ function CreatorSpotlight({ locale, blocks }: { locale: Locale; blocks: string[]
     ?? (ja ? "ベトナムのクリエイター比較分析" : "Vietnamese Travel & Lifestyle Creator");
   const narrative = blocks.filter(block => !block.startsWith("@") && !block.startsWith("### ") && !block.startsWith("*"));
   const note = blocks.find(block => block.startsWith("*") && !block.startsWith("**"))?.slice(1, -1);
-  const insight = ja
-    ? "フォロワー・登録者数の単純合計は、選定クリエイターが83.49万人、比較対象が77.91万人。一方、プラットフォーム構成には違いが見られます。Facebookは24.1万人対4.2万人、TikTokは45.49万人対51.27万人です。協業先を評価する際には、合計規模だけでなく、媒体ごとの強みも考慮する必要があります。"
-    : "The overall audience totals are comparable, but the platform mix differs. The selected creator has 241K Facebook followers versus 42K for the benchmark, while TikTok is 454.9K versus 512.7K. Platform-level strengths matter when assessing partnership potential.";
+
 
   return <div className="creator-spotlight">
     <div className="creator-spotlight-top">
@@ -207,11 +205,7 @@ function CreatorSpotlight({ locale, blocks }: { locale: Locale; blocks: string[]
         <BenchmarkChart locale={locale} />
       </div>
     </div>
-    <div className="creator-spotlight-bottom">
-      <div className="creator-spotlight-insight">
-        <h4>{ja ? "分析からの示唆" : "Key Takeaway"}</h4>
-        <p>{insight}</p>
-      </div>
+    <div className="creator-spotlight-bottom creator-spotlight-bottom--reference">
       <div className="creator-spotlight-source"><NikkeiThumbnail locale={locale} /></div>
     </div>
     {note && <p className="creator-spotlight-note">{note}</p>}
