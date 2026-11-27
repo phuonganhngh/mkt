@@ -50,9 +50,10 @@ const media: Record<Category, ProjectMedia> = {
           caption: { en: "Email Signature Banner 04", ja: "メール署名バナー 04" },
         },
         {
-          kind: "pdf",
-          src: "/media/visual/shogi-menu.pdf.pdf",
-          caption: { en: "Shogi Event Menu (PDF)", ja: "将棋イベントメニュー（PDF）" },
+          kind: "image",
+          src: "/media/visual/shogi-news.png",
+          alt: { en: "Shogi event design artwork", ja: "将棋イベントのデザイン制作物" },
+          caption: { en: "Shogi Event Design", ja: "将棋イベントのデザイン" },
         },
       ],
     },
