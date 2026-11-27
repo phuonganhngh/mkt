@@ -8,8 +8,8 @@ export const identity = {
     ja: "旅人の視点で考え、マーケターとして行動する。",
   },
   homeStatement: {
-    en: "After nine years in Human Resources and Learning & Development, I transitioned into international marketing in Japan's hospitality industry, bringing a traveler's perspective, creativity and management experience to my work.",
-    ja: "9年間の人事・人材育成（HR & L&D）経験を経て、日本のホスピタリティ業界で海外マーケティングに携わるようになりました。旅行者の視点、創造力、マネジメント経験を現在の仕事に活かしています。",
+    en: "My career is rooted in nine years of experience in Human Resources and Learning & Development. I have also worked on international marketing projects in Japan's hospitality industry, bringing a traveler's perspective, creativity and management skills to my work.",
+    ja: "私のキャリアの基盤は、9年間の人事・人材育成（HR & L&D）の経験です。日本のホスピタリティ業界では海外マーケティングのプロジェクトにも携わり、旅行者の視点、創造力、マネジメント経験を仕事に活かしています。",
   },
   intro: {
     en: "Combining an international traveler's perspective with creative execution and management experience, I develop marketing solutions that connect hospitality brands with global audiences.",
