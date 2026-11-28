@@ -568,8 +568,9 @@ th { font-weight: 500; }
   display: grid;
   gap: 1.25rem;
 }
-.home-editorial-focus-item { display: flex; align-items: center; gap: 1.15rem; font: 400 16px/1.4 var(--reading); color: var(--ink); }
-.home-editorial-focus-item svg { width: 30px; height: 30px; flex: 0 0 30px; }
+.home-editorial-focus-item { display: flex; align-items: center; gap: 1.15rem; min-width: 0; font: 400 16px/1.4 var(--reading); color: var(--ink); }
+.home-editorial-focus-item > span { min-width: 0; overflow-wrap: break-word; }
+.home-editorial-focus-item > svg { display: block; width: 30px; height: 30px; min-width: 30px; max-width: 30px; min-height: 30px; max-height: 30px; flex: 0 0 30px; aspect-ratio: 1; }
 .home-intro-editorial .home-editorial-philosophy {
   display: flex;
   align-items: center;
