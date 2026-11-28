@@ -40,15 +40,15 @@ export function portfolioMetadata(locale: Locale, segments: string[] = []): Meta
 
 function Header({ locale, slug }: { locale: Locale; slug: string }) {
   const t = ui[locale];
-  const items = [{ label: t.home, slug: "" }, { label: t.about, slug: "about" }];
+  const items = [{ label: t.work, slug: "work" }, { label: t.about, slug: "about" }];
   return <header className="site-header">
     <div className="shell header-inner">
       <a className="brand" href={pageUrl(locale)}>{identity.name}</a>
       <div className="header-links">
         <nav aria-label={t.navigation}>{items.map(item => <a key={item.slug}
-          className={item.slug === slug || (item.slug === "" && !!projectFor(slug)) ? "current" : undefined}
+          className={item.slug === slug ? "current" : undefined}
           aria-current={item.slug === slug ? "page" : undefined}
-          href={pageUrl(locale, item.slug)}>{item.label}</a>)}</nav>
+          href={item.slug === "work" ? `${pageUrl(locale)}#work` : pageUrl(locale, item.slug)}>{item.label}</a>)}</nav>
         <nav className="languages" aria-label={t.language}>
           <a hrefLang="en" lang="en" aria-label="English" aria-current={locale === "en" ? "page" : undefined} href={pageUrl("en", slug)}>EN</a>
           <span aria-hidden="true">/</span>
@@ -112,7 +112,7 @@ function Home({ locale }: { locale: Locale }) {
           : identity.homeStatement.ja}
       </p>
     </section>
-    <section className="home-work" aria-labelledby="home-work-heading">
+    <section id="work" className="home-work" aria-labelledby="home-work-heading">
       <div className="home-work-intro">
         <h2 id="home-work-heading">{ui[locale].work}</h2>
         <p>{ui[locale].workIntro}</p>
