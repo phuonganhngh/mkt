@@ -613,7 +613,9 @@ html[lang="ja"] .home-intro-editorial h1 { font-family: var(--heading); white-sp
 .website-role-intro p,
 .website-role-design p,
 .website-role-agency p { font: 400 16px/1.7 var(--reading); margin: 0; }
-.website-role-design { display: grid; grid-template-columns: 32px minmax(0,1fr); gap: 1rem; align-items: start; }
+.website-role-design { display: grid; grid-template-columns: 60px minmax(0,1fr); gap: 1rem; align-items: stretch; }
+.website-role-design > svg { align-self: center; justify-self: center; }
+.website-role-design-copy { border-left: 1px solid var(--line); padding-left: 1.25rem; min-width: 0; }
 .website-role-design > svg, .website-role-agency > svg { width: 30px; height: 30px; color: var(--ink); }
 .website-role-design h4, .website-role-agency h4, .website-role-duties > h4 { color: var(--ink); font: 600 16px/1.5 var(--reading); margin: 0 0 .5rem; }
 .website-role-duties > h4 { margin-bottom: .8rem; }
