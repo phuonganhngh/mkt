@@ -367,7 +367,7 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       children.push(<BenchmarkMetrics key={index} locale={locale} />);
      } else if (block === "@learning-timeline") {
       const ja = locale === "ja";
-      children.push(<div key={index} style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:12,marginBottom:16}}>{[["32",ja?"日本語学習開始（歳）":"Started learning Japanese"],["N3",ja?"JLPT合格":"JLPT Passed"],["N2",ja?"現在学習中":"Currently Studying"]].map(([value,label])=><div key={value} style={{borderTop:"1px solid currentColor",paddingTop:12}}><strong style={{display:"block",fontSize:"1.5rem"}}>{value}</strong><small>{label}</small></div>)}</div>);
+      children.push(<div key={index} style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:12,marginBottom:16}}>{[[ja?"32歳":"32 yrs old",ja?"日本語学習開始":"Started learning Japanese"],["N3",ja?"JLPT合格":"JLPT Passed"],["N2",ja?"現在学習中":"Currently Studying"]].map(([value,label])=><div key={value} style={{paddingTop:0}}><strong style={{display:"block",fontSize:"1.5rem"}}>{value}</strong><small>{label}</small></div>)}</div>);
     } else if (block === "@tools-platforms") {
       children.push(<ToolsPlatforms key={index} locale={locale} />);
     } else if (block === "@nikkei-thumbnail" && id === "partnerships") {
