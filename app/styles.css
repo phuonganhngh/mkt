@@ -509,20 +509,20 @@ th { font-weight: 500; }
 .home-editorial-title em { font-style: italic; font-weight: inherit; }
 .home-editorial-body {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, .85fr);
+  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
   align-items: center;
-  gap: clamp(2rem, 5vw, 5rem);
+  gap: 2rem;
   margin-top: clamp(2.5rem, 5vw, 4.2rem);
 }
 .home-editorial-body .home-intro-statement {
   margin: 0;
-  max-width: 39ch;
+  max-width: none;
   font: 400 16px/1.65 var(--reading);
 }
 .home-editorial-body .home-intro-statement strong { font-weight: 700; color: var(--ink); }
 .home-editorial-focus {
   border-left: 1px solid var(--line);
-  padding-left: clamp(1.3rem, 3.5vw, 3rem);
+  padding-left: 1.5rem;
   display: grid;
   gap: 1.25rem;
 }
