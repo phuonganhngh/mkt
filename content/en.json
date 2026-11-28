@@ -28,7 +28,12 @@
           "- **Information Architecture:** Make information easy to locate, understand and compare.",
           "- **Visual Communication:** Use imagery and layout to convey the guest experience.",
           "- **Destination Marketing:** Connect the hotel with Noboribetsu and nearby experiences.",
-          "- **Direct Booking Support:** Guide visitors from research to the hotel's booking system."
+          "- **Direct Booking Support:** Guide visitors from research to the hotel's booking system.",
+          "### Designing Around the Guest Journey",
+          "- **01 — Awareness:** Discover the Destination — Things to Do · Destination Content",
+          "- **02 — Consideration:** Explore the Hotel Experience — Onsen · Accommodation · Dining · Facilities",
+          "- **03 — Decision Support:** Reduce Travel Uncertainty — Access · FAQ · Practical Information",
+          "- **04 — Booking:** Facilitate the Path to Reservation — Booking CTA · Booking Engine"
         ]
       },
       {
@@ -166,6 +171,7 @@
       {
         "title": "Selected Projects",
         "blocks": [
+          "*From Traveler Needs to Destination Content*",
           "### Noboribetsu Winter Experience",
           "**Target Audience: US Tour Operators — B2B**",
           "@winter-slides",
