@@ -869,3 +869,13 @@ html[lang="en"] .website-role-duty-copy {
 @media (min-width: 721px) {
   .insights-steps { width: 85%; margin-inline: auto; }
 }
+
+/* Approved Home editorial spacing, shared across locales. */
+.home-editorial-body { margin-top: var(--space-section); }
+.home-editorial-focus { gap: var(--space-heading); }
+.home-editorial-focus-item { gap: var(--space-heading); }
+.home-intro-editorial .home-editorial-philosophy {
+  margin-top: var(--space-section);
+  padding-top: var(--space-heading);
+  gap: var(--space-heading);
+}
