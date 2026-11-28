@@ -73,13 +73,13 @@ const advertisingCase: Record<Locale, Document> = {
         title: "Project Overview",
         blocks: [
           "The primary objective of the paid social advertising we use is to build brand awareness in selected overseas markets, rather than directly optimize booking conversions.",
-          "I worked mainly with Google Ads, Meta Ads and TikTok Ads."
+          "I work mainly with Google Ads, Meta Ads and TikTok Ads."
         ],
       },
       {
         title: "My Role",
         blocks: [
-          "I gained hands-on experience running campaigns, including:",
+          "I have gained hands-on experience running campaigns, including:",
           "- Selecting overseas markets and setting up audiences within the advertising platforms.",
           "- Preparing and selecting visual content for the ads.",
           "- Configuring campaigns, budgets and delivery settings.",
@@ -89,22 +89,22 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "Challenge",
         blocks: [
-          "The hotel wanted to reach more FIT beyond Japan. At the awareness stage, the challenge was to introduce the hotel and destination to people who might not yet be familiar with Noboribetsu."
+          "The hotel aims to reach more international FIT. At the awareness stage, the challenge is to introduce the hotel and destination to people who might not yet be familiar with Noboribetsu."
         ],
       },
       {
         title: "Approach",
         blocks: [
           "- **Audience Targeting:** Set up ad targeting based on location, demographics, and audience interests.",
-          "- **Experience-Led Creative:** Used content featuring the hotel, onsen and local travel experiences.",
-          "- **Hands-on Execution:** Set up and ran paid social campaigns on Meta and TikTok with limited budgets.",
-          "- **Campaign Review:** Looked at the advertising platforms' delivery and engagement metrics to understand what each campaign reached."
+          "- **Experience-Led Creative:** Use content featuring the hotel, onsen and local travel experiences.",
+          "- **Hands-on Execution:** Set up and run paid social campaigns on Meta and TikTok with limited budgets.",
+          "- **Campaign Review:** Review the advertising platforms' delivery and engagement metrics to understand the reach of each campaign."
         ],
       },
       {
         title: "Key Takeaway",
         blocks: [
-          "Running these campaigns gave me practical experience with digital advertising platforms and a better understanding of how paid media can support brand visibility. It also highlighted the importance of looking beyond campaign metrics and considering how advertising fits into the broader marketing strategy."
+          "Running these campaigns has given me practical experience with digital advertising platforms and a better understanding of how paid media can support brand visibility. It has also highlighted the importance of looking beyond campaign metrics and considering how advertising fits into the broader marketing strategy."
         ],
       },
     ],
@@ -115,14 +115,14 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "プロジェクト概要",
         blocks: [
-          "登別グランドホテルの海外マーケティング施策の一環として、海外市場におけるブランド認知向上を主な目的としたSNS広告を実施しました。宿泊予約のコンバージョン最適化を直接の目標とした施策ではありません。",
-          "主にGoogle広告、Meta広告、TikTok広告を使用しました。"
+          "登別グランドホテルの海外マーケティング施策の一環として、海外市場におけるブランド認知向上を主な目的としたSNS広告を実施しています。宿泊予約のコンバージョン最適化を直接の目標とした施策ではありません。",
+          "主にGoogle広告、Meta広告、TikTok広告を使用しています。"
         ],
       },
       {
         title: "担当業務",
         blocks: [
-          "SNS広告の運用を実践し、以下の業務を担当しました。",
+          "SNS広告の実務経験を積みながら、以下の業務を担当しています。",
           "- 対象とする海外市場の選定と広告配信先の設定。",
           "- 広告に使用する画像・動画コンテンツの準備と選定。",
           "- キャンペーン、予算、配信設定の操作。",
@@ -132,7 +132,7 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "課題",
         blocks: [
-          "日本国外のFITへの認知拡大を目指す中、認知段階では、登別をまだよく知らない旅行者にホテルと観光地の魅力を伝えることが課題でした。"
+          "海外FITへの認知拡大を目指す中、認知段階では、登別をまだよく知らない旅行者にホテルと観光地の魅力を伝えることが課題です。"
         ],
       },
       {
@@ -147,7 +147,7 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "この経験から得たこと",
         blocks: [
-          "これらの広告キャンペーンを通じて、デジタル広告プラットフォームを実際に運用する経験を積み、有料広告がブランドの認知向上にどのように役立つかをより深く理解しました。また、広告の指標だけでなく、広告施策がマーケティング戦略全体の中でどのような役割を果たすかを考えることの重要性も学びました。"
+          "これらの広告キャンペーンを通じて、デジタル広告プラットフォームを実際に運用する経験を積み、有料広告がブランドの認知向上にどのように役立つかをより深く理解できるようになりました。また、広告の指標だけでなく、広告施策がマーケティング戦略全体の中でどのような役割を果たすかを考えることの重要性も学んできました。"
         ],
       },
     ],
