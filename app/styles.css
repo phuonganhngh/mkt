@@ -792,3 +792,8 @@ html[lang="en"] .website-role-duty-copy {
 .insights-steps h3 { margin: 0 0 .5rem; font-size: 1rem; }
 .insights-steps p { margin: 0; overflow-wrap: anywhere; }
 @media (max-width: 720px) { .insights-steps { grid-template-columns: 1fr; } }
+
+/* Shared editorial columns: give long reading text more horizontal room. */
+@media (min-width: 721px) {
+  .case-section { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); column-gap: 1.5rem; }
+}
