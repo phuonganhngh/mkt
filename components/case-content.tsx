@@ -311,6 +311,46 @@ function VisualDeliverables({ locale }: { locale: Locale }) {
   </div>;
 }
 
+/* Website case study: editorial hierarchy with original copy preserved.
+   Mobile uses native details; desktop displays every complete responsibility. */
+function WebsiteRoleBreakdown({ blocks, locale }: { blocks: string[]; locale: Locale }) {
+  const ja = locale === "ja";
+  const bullets = blocks.filter(line => line.startsWith("- ")).map(line => line.slice(2));
+  const labels = ja
+    ? ["マーケティング目標と旅行者分析", "コンテンツ戦略と情報設計", "コンテンツ・画像・制作要件", "制作会社との連携", "品質とデザインの確認"]
+    : ["Defined marketing objectives", "Developed content strategy", "Prepared content, images", "Coordinated with the external development agency", "Reviewed content, design consistency"];
+  return <div className="website-role-breakdown">
+    <div className="website-role-intro">
+      <h3>{blocks[0].slice(4)}</h3>
+      <p>{blocks[1]}</p>
+    </div>
+    <div className="website-role-design">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="5" width="26" height="22" rx="2"/><path d="M3 12h26M12 12v15M18 18h7M18 22h5M7 9h.1"/></svg>
+      <div>
+        <h4>{ja ? "デザインと方針" : "Design & Direction"}</h4>
+        <p>{blocks[2]}</p>
+      </div>
+    </div>
+    <div className="website-role-duties">
+      <h4>{ja ? "主な担当業務" : "Key Responsibilities"}</h4>
+      <ol>{bullets.map((bullet, index) => <li key={index}>
+        <span className="website-role-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+        <div className="website-role-duty-copy">
+          <div className="website-role-desktop-duty">{bullet}</div>
+          <details className="website-role-mobile-duty">
+            <summary>{labels[index] ?? bullet}<span aria-hidden="true" className="website-role-expand-icon"/></summary>
+            <p>{bullet}</p>
+          </details>
+        </div>
+      </li>)}</ol>
+    </div>
+    <div className="website-role-agency">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 8 4 16l8 8M20 8l8 8-8 8M18 5l-4 22"/></svg>
+      <div><h4>{blocks[8].slice(4)}</h4><p>{blocks[9]}</p></div>
+    </div>
+  </div>;
+}
+
 function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category; locale: Locale }) {
   const children: ReactNode[] = [];
   const showBenchmark = process.env.PORTFOLIO_BENCHMARK_REVIEW === "1" || process.env.PORTFOLIO_BENCHMARK_APPROVED === "1";
@@ -375,9 +415,14 @@ export function DocumentSections({ document, locale, id }: { document: Document;
   return <div className="case-sections">
     {document.sections.map(section => id === "partnerships" && section.blocks.includes("@creator-feature-start")
       ? <CreatorPartnershipSection key={section.title} section={section} locale={locale} />
-      : <section key={section.title} className="case-section">
-        <h2>{section.title}</h2>
-        <div className="section-copy"><SectionBlocks blocks={section.blocks} id={id} locale={locale} /></div>
-      </section>)}
+      : id === "website" && section.blocks.length === 10 && section.blocks[0].startsWith("### ") && section.blocks[8].startsWith("### ") && section.blocks.slice(3, 8).every(line => line.startsWith("- "))
+        ? <section key={section.title} className="case-section website-role-section">
+          <h2>{section.title}</h2>
+          <div className="section-copy"><WebsiteRoleBreakdown blocks={section.blocks} locale={locale} /></div>
+        </section>
+        : <section key={section.title} className="case-section">
+          <h2>{section.title}</h2>
+          <div className="section-copy"><SectionBlocks blocks={section.blocks} id={id} locale={locale} /></div>
+        </section>)}
   </div>;
 }
