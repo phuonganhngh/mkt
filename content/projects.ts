@@ -78,7 +78,7 @@ export const projects: Project[] = [
   {
     id: "visual", slug: "visual-communication",
     title: { en: "Visual Communication", ja: "ビジュアルコミュニケーション" },
-    summary: { en: "Brochures, posters, menus and event materials for hospitality audiences.", ja: "ホスピタリティ分野のパンフレット、ポスター、メニュー、イベント資料。" },
+    summary: { en: "Brochures | Posters | Menus | Event Materials", ja: "ホスピタリティ分野のパンフレット、ポスター、メニュー、イベント資料。" },
     stages: ["consideration"],
   },
   {
