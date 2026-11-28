@@ -820,3 +820,47 @@ html[lang="en"] .website-role-duty-copy {
   .journey-number { position: absolute; left: 0; top: 0; }
   .guest-journey li:not(:last-child)::before { top: 32px; left: 15px; right: auto; bottom: -16px; width: 1px; height: auto; }
 }
+
+
+/* Global editorial spacing: shared by EN/JP and all page templates.
+   Split section spacing around divider rules; preserve bespoke media layouts. */
+:root {
+  --space-section: 24px;
+  --space-heading: 16px;
+  --space-paragraph: 14px;
+  --space-content: 12px;
+  --space-caption: 8px;
+  --space-footer: 20px;
+}
+@media (max-width: 720px) {
+  :root { --space-section: 20px; --space-heading: 12px; }
+}
+.home-intro.home-intro-editorial, .page-intro {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+.insights-section { padding-block: 0 var(--space-section); }
+.home-work { padding-top: 0; padding-bottom: var(--space-footer); }
+.insights-section > p, .home-work-intro h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-heading);
+}
+.insights-section > h2 { margin-bottom: var(--space-heading); }
+.home-work-intro { margin-bottom: var(--space-content); }
+.case-intro { padding-bottom: calc(var(--space-section) / 2); }
+.case-intro .project-skills { margin: var(--space-heading) 0 0; }
+.case-section { padding-block: calc(var(--space-section) / 2); }
+.case-sections > .case-section:last-child { padding-bottom: calc(var(--space-section) / 2); }
+.case-return { padding-block: calc(var(--space-section) / 2) var(--space-footer); }
+.about-contact { padding-bottom: var(--space-footer); }
+.section-copy > * + * { margin-top: var(--space-content); }
+.section-copy > p + p { margin-top: var(--space-paragraph); }
+.section-copy > h3:not(:first-child) { margin-top: var(--space-section); }
+.section-copy > h3 + * { margin-top: var(--space-heading); }
+.media-item figcaption, .media-gallery--email .media-item figcaption,
+.visual-shogi-news .media-item figcaption, .website-before-after figcaption {
+  margin-top: var(--space-caption);
+}
+@media (max-width: 720px) {
+  .case-section { row-gap: var(--space-heading); }
+}
