@@ -102,13 +102,6 @@ const advertisingCase: Record<Locale, Document> = {
         ],
       },
       {
-        title: "Execution & Deliverables",
-        blocks: [
-          "My deliverables were the advertising creatives and configured campaigns, supported by the basic reporting available in the advertising platforms.",
-          "This was practical experience in paid social campaign execution, not a full-funnel performance marketing or conversion optimization project."
-        ],
-      },
-      {
         title: "Key Takeaway",
         blocks: [
           "Running these campaigns gave me practical experience with digital advertising platforms and a better understanding of how paid media can support brand visibility. It also highlighted the importance of looking beyond campaign metrics and considering how advertising fits into the broader marketing strategy."
@@ -150,13 +143,6 @@ const advertisingCase: Record<Locale, Document> = {
           "- **体験を伝える素材：** ホテル、温泉、周辺の観光体験を紹介するコンテンツを活用。",
           "- **実務での運用：** 限られた予算でMeta広告とTikTok広告の設定・配信を実施。",
           "- **配信結果の確認：** 広告管理画面で表示回数やエンゲージメントなどの基本指標を確認。"
-        ],
-      },
-      {
-        title: "施策と制作物",
-        blocks: [
-          "広告クリエイティブの準備、キャンペーンの設定と配信、広告プラットフォームでの基本的な配信結果の確認を行いました。",
-          "フルファネルのパフォーマンスマーケティングやコンバージョン最適化ではなく、SNS広告の実務経験を紹介するプロジェクトです。"
         ],
       },
       {
