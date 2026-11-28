@@ -893,3 +893,14 @@ html[lang="en"] .website-role-duty-copy {
     object-position: center;
   }
 }
+
+/* Final approved Home introduction refinements. */
+@media (min-width: 721px) {
+  .home-editorial-body { margin-top: 16px; }
+  .home-editorial-focus { gap: 12px; }
+}
+.home-editorial-philosophy .home-editorial-idea-icon {
+  width: 32.3px;
+  height: 40.8px;
+  flex: 0 0 32.3px;
+}
