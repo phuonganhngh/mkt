@@ -97,11 +97,11 @@ function Home({ locale }: { locale: Locale }) {
             <span>{isEnglish ? "People & Development" : "人事・人材育成"}</span>
           </div>
           <div className="home-editorial-focus-item">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 18h5l15-7v12l-15-7H5zM10 18l2 8h5l-3-9M25 14l3-2M25 20l3 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m3 11 18-5-1 12-17-5z"/><path d="M3 11v2M8.5 14.5l2 6h4l-2.5-7M20.5 10l2-1"/></svg>
             <span>{isEnglish ? "Marketing & Growth" : "マーケティング"}</span>
           </div>
           <div className="home-editorial-focus-item">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="4" y="14" width="24" height="12" rx="2"/><path d="M4 19h24M8 14v-3a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v3M19 14v-3a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v3M7 26v2M25 26v2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 12V8a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v4M12 12V8a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v4"/><rect x="2" y="12" width="20" height="8" rx="1.7"/><path d="M2 16h20M5 20v2M19 20v2"/></svg>
             <span>{isEnglish ? "Hospitality & Travel" : "ホスピタリティ・旅行"}</span>
           </div>
         </div>
