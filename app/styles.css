@@ -802,3 +802,21 @@ html[lang="en"] .website-role-duty-copy {
 @media (min-width: 721px) {
   .project-image > img, .project-image > picture > img { object-fit: contain; }
 }
+
+/* Guest journey: horizontal editorial timeline, vertical on mobile. */
+.guest-journey { margin-top: 24px; }
+.guest-journey h3 { font: 600 18px/1.4 var(--heading); margin-bottom: 20px; }
+.guest-journey ol { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; list-style: none; padding: 0; }
+.guest-journey li { position: relative; min-width: 0; margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.guest-journey li + li { margin-top: 0; }
+.guest-journey li:not(:last-child)::before { content: ""; position: absolute; top: 16px; left: 32px; right: -16px; height: 1px; background: var(--line); }
+.journey-number { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: white; font: 500 12px/1 var(--ui); }
+.guest-journey strong { font: 500 14px/1.4 var(--ui); color: var(--ink); }
+.guest-journey p { font: 400 14px/1.5 var(--reading); }
+.guest-journey small { border-top: 1px solid var(--line); padding-top: 8px; width: 100%; font: 400 12px/1.5 var(--ui); color: var(--muted); }
+@media (max-width: 720px) {
+  .guest-journey ol { grid-template-columns: 1fr; gap: 16px; }
+  .guest-journey li { padding-left: 48px; min-height: 80px; }
+  .journey-number { position: absolute; left: 0; top: 0; }
+  .guest-journey li:not(:last-child)::before { top: 32px; left: 15px; right: auto; bottom: -16px; width: 1px; height: auto; }
+}
