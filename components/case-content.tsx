@@ -39,9 +39,11 @@ function BenchmarkChart({ locale }: { locale: Locale }) {
 }
 
 function inline(text: string): ReactNode {
-  return text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|https:\/\/[^\s]+)/g).map((part, index) => {
+  return text.split(/(\[[^\]]+\]\(https:\/\/[^\s)]+\)|\*\*[^*]+\*\*|\*[^*]+\*|https:\/\/[^\s]+)/g).map((part, index) => {
     if (part.startsWith("**")) return <strong key={index}>{part.slice(2, -2)}</strong>;
     if (part.startsWith("*") && part.endsWith("*")) return <em key={index}>{part.slice(1, -1)}</em>;
+    const link = part.match(/^\[([^\]]+)\]\((https:\/\/[^\s)]+)\)$/);
+    if (link) return <a href={link[2]} key={index}>{link[1]}</a>;
     if (part.startsWith("https://")) return <a href={part} key={index}>{part}</a>;
     return part;
   });
