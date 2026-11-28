@@ -72,7 +72,7 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "Project Overview",
         blocks: [
-          "I implemented paid social advertising as part of Noboribetsu Grand Hotel's international marketing activities. The primary objective was to build brand awareness in selected overseas markets, rather than directly optimize booking conversions.",
+          "The primary objective of the paid social advertising we use is to build brand awareness in selected overseas markets, rather than directly optimize booking conversions.",
           "I worked mainly with Meta Ads and TikTok Ads, using hotel and destination content to introduce Noboribetsu to potential international travelers."
         ],
       },
