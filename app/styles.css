@@ -776,3 +776,10 @@ html[lang="en"] .website-role-duty-copy {
 .home-work, .selected, .page-intro ~ .project-grid, .empty-results, .case-return, .case-sections > .case-section:last-child, .about-contact, .home-about { padding-bottom: 20px; }
 .site-footer { padding-block: 16px 24px; }
 .main-content { min-height: 0; }
+
+/* Compact header-to-content spacing on every page. */
+.home-intro.home-intro-editorial { padding-top: 24px; }
+.page-intro { padding-top: 24px; }
+@media (max-width: 720px) {
+  .home-intro.home-intro-editorial, .page-intro { padding-top: 20px; }
+}
