@@ -365,7 +365,11 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       children.push(<BenchmarkHighlights key={index} locale={locale} />);
     } else if (block === "@benchmark-metrics" && id === "partnerships") {
       children.push(<BenchmarkMetrics key={index} locale={locale} />);
-     } else if (block === "@learning-timeline") {
+      } else if (block === "@advertising-metrics") {
+      const ja = locale === "ja";
+      const metrics = [["101,752",ja?"インプレッション":"Impressions"],["88,601",ja?"リーチ":"Reach"],["1.05%","CTR"],["¥6.43","CPC"],["¥6,876",ja?"広告費":"Ad Spend"],["1,223","ThruPlays"]];
+      children.push(<div key={index} style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:24,marginTop:16}}>{metrics.map(([value,label])=><div key={label}><strong style={{display:"block",fontSize:"1.75rem",fontVariantNumeric:"tabular-nums"}}>{value}</strong><small>{label}</small></div>)}</div>);
+    } else if (block === "@learning-timeline") {
       const ja = locale === "ja";
       children.push(<div key={index} style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:12,marginBottom:16}}>{[[ja?"32歳":"32 yrs old",ja?"日本語学習開始":"Started learning Japanese"],["N3",ja?"JLPT合格":"JLPT Passed"],["N2",ja?"現在学習中":"Currently Studying"]].map(([value,label])=><div key={value} style={{paddingTop:0}}><strong style={{display:"block",fontSize:"1.5rem"}}>{value}</strong><small>{label}</small></div>)}</div>);
     } else if (block === "@tools-platforms") {
