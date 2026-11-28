@@ -109,12 +109,9 @@ const advertisingCase: Record<Locale, Document> = {
         ],
       },
       {
-        title: "Marketing Perspective",
+        title: "Key Takeaway",
         blocks: [
-          "The primary objective of my advertising campaigns was to build brand awareness in international markets rather than directly optimize booking conversions.",
-          "I recognize that hotel booking decisions are influenced by factors beyond advertising, including room rates, availability, product offerings and the booking experience.",
-          "From a Marketing Manager's perspective, I believe marketing responsibilities extend beyond campaign execution to understanding the customer journey, identifying potential conversion barriers and collaborating with relevant departments to improve business outcomes.",
-          "For this awareness-focused work, advertising delivery metrics should not be interpreted as verified bookings or revenue. The experience strengthened my interest in connecting awareness activity with the broader customer journey and business outcomes."
+          "Running these campaigns gave me practical experience with digital advertising platforms and a better understanding of how paid media can support brand visibility. It also highlighted the importance of looking beyond campaign metrics and considering how advertising fits into the broader marketing strategy."
         ],
       },
     ],
@@ -163,12 +160,9 @@ const advertisingCase: Record<Locale, Document> = {
         ],
       },
       {
-        title: "マーケティングに対する考え方",
+        title: "この経験から得たこと",
         blocks: [
-          "担当した広告の主な目的は、宿泊予約のコンバージョンを直接最適化することではなく、海外市場でのブランド認知を高めることでした。",
-          "宿泊予約の判断には、広告以外にも料金、空室状況、宿泊商品、予約体験などが影響すると考えています。",
-          "マーケティングマネージャーの立場では、広告配信だけでなくカスタマージャーニーを理解し、コンバージョンの障壁を見つけ、関連部署と連携して事業成果の改善を目指すことが重要だと考えています。",
-          "認知向上を目的とする広告の配信指標を、予約数や売上の実績として扱うことは適切ではありません。この経験を通じて、認知施策をその後のカスタマージャーニーや事業成果と結び付けて考える重要性を強く意識するようになりました。"
+          "これらの広告キャンペーンを通じて、デジタル広告プラットフォームを実際に運用する経験を積み、有料広告がブランドの認知向上にどのように役立つかをより深く理解しました。また、広告の指標だけでなく、広告施策がマーケティング戦略全体の中でどのような役割を果たすかを考えることの重要性も学びました。"
         ],
       },
     ],
