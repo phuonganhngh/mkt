@@ -661,3 +661,20 @@ html[lang="ja"] .home-intro-editorial h1 { font-family: var(--heading); white-sp
   .website-role-breakdown { gap: 1.3rem; }
   .website-role-duties li { grid-template-columns: 40px minmax(0,1fr); gap: .8rem; }
 }
+
+
+/* Approved EN reading text scale: Roboto Serif Regular 16px -> 14px.
+   Keep UI labels, headings, weights, and Japanese Noto Sans text unchanged. */
+html[lang="en"] body,
+html[lang="en"] .home-intro-statement,
+html[lang="en"] .home-work-intro p,
+html[lang="en"] .home-editorial-body .home-intro-statement,
+html[lang="en"] .home-editorial-focus-item,
+html[lang="en"] .home-intro-editorial .home-editorial-philosophy .home-intro-statement,
+html[lang="en"] .website-strategy-framework .strategy-breakdown-item p,
+html[lang="en"] .website-role-intro p,
+html[lang="en"] .website-role-design p,
+html[lang="en"] .website-role-agency p,
+html[lang="en"] .website-role-duty-copy {
+  font-size: 14px;
+}
