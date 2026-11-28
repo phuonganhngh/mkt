@@ -597,7 +597,7 @@ th { font-weight: 500; }
   .home-editorial-focus { padding-left: 1.5rem; }
 }
 @media (max-width: 720px) {
-  html[lang="en"] .home-intro-editorial .home-editorial-title { font-size: clamp(16px, 5.2vw, 32px); }
+  html[lang="en"] .home-intro-editorial .home-editorial-title { font-size: clamp(20px, 6.8vw, 36px); }
   html[lang="en"] .home-intro-editorial .home-editorial-title > span { white-space: nowrap; }
   .home-editorial-body { grid-template-columns: 1fr; gap: 1.6rem; }
   .home-editorial-focus { border-left: 0; border-top: 1px solid var(--line); padding: 1.3rem 0 0; }
