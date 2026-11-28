@@ -881,3 +881,15 @@ html[lang="en"] .website-role-duty-copy {
 }
 
 .insights-steps li { padding-block: 12px; }
+
+/* Match the website cover to the other 3:2 Home thumbnails without distortion. */
+@media (min-width: 721px) {
+  .project-image img[src$="/media/english-homepage-cover.jpg"] {
+    display: block;
+    width: 78.947368%;
+    height: 100%;
+    margin-inline: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+}
