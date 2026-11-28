@@ -122,7 +122,7 @@ const media: Record<Category, ProjectMedia> = {
       ],
     },
   },
-  partnerships: { groups: {
+  partnerships: { cover: { src: "/media/partnerships/partnerships-cover.png", alt: { en: "International marketing connections from Japan", ja: "日本から世界へ広がる国際マーケティングのつながり" } }, groups: {
     activities: [
       {
         kind: "image",
