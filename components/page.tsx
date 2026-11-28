@@ -93,15 +93,26 @@ function Home({ locale }: { locale: Locale }) {
           : identity.intro.ja}</p>
         <div className="home-editorial-focus" aria-label={isEnglish ? "Core areas of experience" : "主な経験分野"}>
           <div className="home-editorial-focus-item">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="16" cy="9" r="4"/><path d="M7.5 25v-2a8.5 8.5 0 0 1 17 0v2M4 13a3 3 0 1 0 0-6M4 25v-2a8 8 0 0 1 3-6M28 13a3 3 0 1 1 0-6M28 25v-2a8 8 0 0 0-3-6"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="24" cy="10" r="4.5"/><circle cx="9" cy="16" r="3.5"/><circle cx="39" cy="16" r="3.5"/>
+              <path d="M14 27c0-7 4-11 10-11s10 4 10 11M2 29c0-6 3-9 7-9 2 0 3.5.5 4.5 2M46 29c0-6-3-9-7-9-2 0-3.5.5-4.5 2"/>
+              <path d="M4 33c10-3 16-1 20 5 4-6 10-8 20-5v11c-9-3-16-1-20 3-4-4-11-6-20-3zM24 38v9"/>
+            </svg>
             <span>{isEnglish ? "People & Development" : "人事・人材育成"}</span>
           </div>
           <div className="home-editorial-focus-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m3 11 18-5-1 12-17-5z"/><path d="M3 11v2M8.5 14.5l2 6h4l-2.5-7M20.5 10l2-1"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M4 16c-3 0-4 2-4 5s2 5 5 5h7l16 5V9L12 16H4zM12 26l4 12h6l-5-10M29 11V29"/>
+              <path d="M22 39c8-2 14-8 19-18M35 21l6-2 2 6"/>
+              <path d="M27 45v-5h5v5M36 45v-9h5v9M45 45V32"/>
+            </svg>
             <span>{isEnglish ? "Marketing & Growth" : "マーケティング"}</span>
           </div>
           <div className="home-editorial-focus-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 12V8a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v4M12 12V8a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v4"/><rect x="2" y="12" width="20" height="8" rx="1.7"/><path d="M2 16h20M5 20v2M19 20v2"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="10" y="15" width="27" height="29" rx="5"/><path d="M18 15V9a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3v6M18 25v12M24 25v12M30 25v12M16 44v3M31 44v3"/>
+              <path d="M2 33c6-10 16-10 25-13 7-2 13-5 16-11"/><path d="m36 5 9 3-4 4-5 8-3-1 3-9-6-5 2-2 7 3 5-4 2 1-3 5"/>
+            </svg>
             <span>{isEnglish ? "Hospitality & Travel" : "ホスピタリティ・旅行"}</span>
           </div>
         </div>
