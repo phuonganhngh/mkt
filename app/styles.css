@@ -864,3 +864,8 @@ html[lang="en"] .website-role-duty-copy {
 @media (max-width: 720px) {
   .case-section { row-gap: var(--space-heading); }
 }
+
+/* Compact insights cards on desktop; preserve mobile layout. */
+@media (min-width: 721px) {
+  .insights-steps { width: 85%; margin-inline: auto; }
+}
