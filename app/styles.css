@@ -293,8 +293,8 @@ th { font-weight: 500; }
 }
 
 
-/* Keep the breakdown full-width and compact across desktop/mobile. */
-.case-section:has(.website-strategy-framework) .section-copy { grid-column: 1 / -1; }
+/* Strategic Approach follows the shared case-study grid in both locales. */
+.case-section:has(.website-strategy-framework) .section-copy { min-width: 0; }
 @media (max-width: 520px) {
   .website-strategy-framework li { grid-template-columns: 1.7rem minmax(0,1fr); gap: .8rem; }
 }
