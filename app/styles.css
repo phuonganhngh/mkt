@@ -865,9 +865,9 @@ html[lang="en"] .website-role-duty-copy {
   .case-section { row-gap: var(--space-heading); }
 }
 
-/* Compact insights cards on desktop; preserve mobile layout. */
+/* Full-width insights grid with compact vertical card padding. */
 @media (min-width: 721px) {
-  .insights-steps { width: 85%; margin-inline: auto; }
+  .insights-steps { width: 100%; margin-inline: 0; }
 }
 
 /* Approved Home editorial spacing, shared across locales. */
@@ -879,3 +879,5 @@ html[lang="en"] .website-role-duty-copy {
   padding-top: var(--space-heading);
   gap: var(--space-heading);
 }
+
+.insights-steps li { padding-block: 12px; }
