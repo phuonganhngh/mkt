@@ -684,7 +684,7 @@ html[lang="en"] .website-role-duty-copy {
 /* Approved mobile Home spacing: compact intro, focus, philosophy, and Work boundary. */
 @media (max-width: 720px) {
   .home-intro.home-intro-editorial { padding-bottom: 20px; }
-  .home-editorial-body { gap: 20px; }
+  .home-editorial-body { gap: 20px; margin-top: 28px; }
   .home-editorial-focus { padding: 16px 0 0; gap: 12px; }
   .home-intro-editorial .home-editorial-philosophy {
     margin-top: 20px;
