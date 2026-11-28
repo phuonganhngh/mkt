@@ -46,6 +46,7 @@ const media: Record<Category, ProjectMedia> = {
     },
   },
   social: {
+    cover: { src: "/media/social/social-media-cover.png", alt: { en: "Travel content creation and video editing", ja: "旅行コンテンツ制作と動画編集" } },
     groups: {
       examples: [
         {
