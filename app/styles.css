@@ -692,3 +692,13 @@ html[lang="en"] .website-role-duty-copy {
   }
   .home-work { padding-top: 20px; }
 }
+
+
+/* Consistent mobile spacing before footer across Home, case studies and About. */
+@media (max-width: 720px) {
+  .main-content { min-height: 0; }
+  .home-work { padding-bottom: 20px; }
+  .case-return { padding-bottom: 20px; }
+  .case-sections > .case-section:last-child,
+  .about-contact { padding-bottom: 20px; }
+}
