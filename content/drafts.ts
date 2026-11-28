@@ -89,8 +89,7 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "Challenge",
         blocks: [
-          "The hotel wanted to reach more independent travelers beyond Japan. At the awareness stage, the challenge was to introduce the hotel and destination to people who might not yet be familiar with Noboribetsu.",
-          "A booking decision also depends on factors beyond an advertisement, including room rates, availability, the hotel product and the booking experience."
+          "The hotel wanted to reach more independent travelers beyond Japan. At the awareness stage, the challenge was to introduce the hotel and destination to people who might not yet be familiar with Noboribetsu."
         ],
       },
       {
