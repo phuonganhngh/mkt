@@ -9,21 +9,15 @@ type Project = (typeof projects)[number];
 export type Covers = Partial<Record<Category, ImageAsset>>;
 
 function VisualCommunicationCover() {
-  // Optional images: upload these filenames later; until then, each frame stays blank.
-  const slots = [
-    ["left", "/media/visual/cover-left.png"],
-    ["center", "/media/visual/cover-center.png"],
-    ["right", "/media/visual/cover-right.png"],
-  ] as const;
-  return <div className="visual-cover-art" role="img" aria-label="Visual Communication: layered portfolio papers with three empty image frames">
-    <span className="visual-cover-paper visual-cover-paper--red" aria-hidden="true" />
-    <span className="visual-cover-paper visual-cover-paper--yellow" aria-hidden="true" />
-    <span className="visual-cover-paper visual-cover-paper--white" aria-hidden="true" />
-    {slots.map(([name, src]) => <span key={name} className={`visual-cover-photo visual-cover-photo--${name}`} aria-hidden="true">
+  return <div className="visual-cover-static" role="img" aria-label="Visual Communication: Shogi news and dinner menu editorial showcase">
+    <div className="visual-cover-static__news">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt="" loading="lazy" onError={event => { event.currentTarget.style.display = "none"; }} />
-    </span>)}
-    <span className="visual-cover-pocket" aria-hidden="true" />
+      <img src="/media/visual/shogi-news.png" alt="" loading="lazy" />
+    </div>
+    <div className="visual-cover-static__menu">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/media/visual/dinner-menu.png" alt="" loading="lazy" />
+    </div>
   </div>;
 }
 
