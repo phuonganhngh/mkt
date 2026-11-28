@@ -771,3 +771,8 @@ html[lang="en"] .website-role-duty-copy {
   .case-return { padding-bottom: 1.8rem; }
   .main-content { min-height: 0; }
 }
+
+/* Consistent compact footer boundary across locales and viewport sizes. */
+.home-work, .selected, .page-intro ~ .project-grid, .empty-results, .case-return, .case-sections > .case-section:last-child, .about-contact, .home-about { padding-bottom: 20px; }
+.site-footer { padding-block: 16px 24px; }
+.main-content { min-height: 0; }
