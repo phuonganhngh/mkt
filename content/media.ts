@@ -119,8 +119,8 @@ const media: Record<Category, ProjectMedia> = {
       {
         kind: "image",
         src: "/media/partnerships/jnto-b2b-website.png",
-        alt: { en: "JNTO and international travel trade collaboration", ja: "JNTOと海外旅行業界との連携" },
-        caption: { en: "JNTO & International Travel Trade", ja: "JNTO・海外旅行業界との連携" },
+        alt: { en: "Noboribetsu Grand Hotel profile on the JNTO Bangkok B2B Travel Trade Platform", ja: "JNTOバンコクB2B旅行業界向けプラットフォームに掲載された登別グランドホテルの紹介ページ" },
+        caption: { en: "JNTO Bangkok — B2B Travel Trade Platform", ja: "JNTOバンコク — B2B旅行業界向けプラットフォーム" },
       },
     ],
     "creator-showcase": [
