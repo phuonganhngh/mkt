@@ -85,7 +85,15 @@ function WebsiteStrategyFramework({ lines }: { lines: string[] }) {
   return <ol className="website-strategy-framework">{lines.map((line, index) => {
     const raw = line.slice(2);
     const split = raw.match(/^\*\*(.+?)\*\*\s*(.*)$/);
-    return <li key={index}><span className="strategy-index">{String(index + 1).padStart(2, "0")}</span><div><strong>{(split?.[1] ?? raw).replace(/[:：]\s*$/, "")}</strong><p>{split?.[2] ?? ""}</p></div></li>;
+    const heading = (split?.[1] ?? raw).replace(/[:：]\s*$/, "");
+    const description = split?.[2] ?? "";
+    return <li key={index}>
+      <span className="strategy-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+      <details className="strategy-breakdown-item">
+        <summary><span>{heading}</span><span className="strategy-expand-icon" aria-hidden="true" /></summary>
+        {description && <p>{description}</p>}
+      </details>
+    </li>;
   })}</ol>;
 }
 
