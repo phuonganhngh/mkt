@@ -747,3 +747,7 @@ html[lang="en"] .website-role-duty-copy {
   height: 100%;
   object-fit: cover;
 }
+
+/* Full-color analytics brand wordmarks */
+.tool-mark:has(img[src$="googleanalytics.svg"]), .tool-mark:has(img[src$="googlesearchconsole.svg"]) { width: 100%; height: 48px; }
+.tool-mark img[src$="googleanalytics.svg"], .tool-mark img[src$="googlesearchconsole.svg"] { width: 100%; max-width: 150px; height: 48px; }
