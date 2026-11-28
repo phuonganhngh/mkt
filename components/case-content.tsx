@@ -324,9 +324,6 @@ function VisualDeliverables({ locale }: { locale: Locale }) {
 function WebsiteRoleBreakdown({ blocks, locale }: { blocks: string[]; locale: Locale }) {
   const ja = locale === "ja";
   const bullets = blocks.filter(line => line.startsWith("- ")).map(line => line.slice(2));
-  const labels = ja
-    ? ["マーケティング目標と旅行者分析", "コンテンツ戦略と情報設計", "コンテンツ・画像・制作要件", "制作会社との連携", "品質とデザインの確認"]
-    : ["Defined marketing objectives", "Developed content strategy", "Prepared content, images", "Coordinated with the external development agency", "Reviewed content, design consistency"];
   return <div className="website-role-breakdown">
     <div className="website-role-intro">
       <h3>{blocks[0].slice(4)}</h3>
@@ -343,13 +340,7 @@ function WebsiteRoleBreakdown({ blocks, locale }: { blocks: string[]; locale: Lo
       <h4>{ja ? "主な担当業務" : "Key Responsibilities"}</h4>
       <ol>{bullets.map((bullet, index) => <li key={index}>
         <span className="website-role-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-        <div className="website-role-duty-copy">
-          <div className="website-role-desktop-duty">{bullet}</div>
-          <details className="website-role-mobile-duty">
-            <summary>{labels[index] ?? bullet}<span aria-hidden="true" className="website-role-expand-icon"/></summary>
-            <p>{bullet}</p>
-          </details>
-        </div>
+        <p className="website-role-duty-copy">{bullet}</p>
       </li>)}</ol>
     </div>
     <div className="website-role-agency">
