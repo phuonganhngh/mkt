@@ -383,7 +383,7 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
     } else if (block.startsWith("@") && id) {
       const group = block.slice(1);
       children.push(<div className={id === "social" && group === "examples" ? "section-media section-media--social" : id === "visual" && group === "examples" ? "section-media section-media--visual" : "section-media"} key={index}>
-        <Gallery items={projectMedia(id, group)} locale={locale} />
+        {(id !== "destination" || group !== "things-to-do" || projectMedia(id, group).length > 0) && <Gallery items={projectMedia(id, group)} locale={locale} />}
         {group === "things-to-do" && <p><a href="https://www.nobogura.co.jp/en/#things">{ui[locale].thingsLink}</a></p>}
       </div>);
     } else if (block.startsWith("### ")) {
