@@ -67,6 +67,13 @@ const media: Record<Category, ProjectMedia> = {
     },
   },
   visual: {
+    cover: {
+      src: "/media/visual/visual-cover.webp",
+      alt: {
+        en: "Visual communication portfolio cover featuring printed hospitality designs and photographs",
+        ja: "ホテルの印刷物や写真を組み合わせたビジュアルコミュニケーションの作品カバー",
+      },
+    },
     groups: {
       examples: [
         {
