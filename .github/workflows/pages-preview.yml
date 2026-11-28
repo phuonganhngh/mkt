@@ -27,6 +27,9 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Optimize Shogi artwork for browser display
+        run: |
+          node -e "const sharp=require('sharp'); const fs=require('fs'); const p='public/media/visual/shogi-news.png'; sharp(p).resize({width:2400,height:2400,fit:'inside',withoutEnlargement:true}).png().toFile(p+'.tmp').then(()=>fs.renameSync(p+'.tmp',p)).catch(e=>{console.error(e);process.exit(1)})"
       - name: Build static GitHub Pages preview
         env:
           GITHUB_PAGES: 'true'
