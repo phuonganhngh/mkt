@@ -22,7 +22,7 @@ type ProjectMedia = { cover?: ImageAsset; groups: Record<string, Media[]> };
 const media: Record<Category, ProjectMedia> = {
   website: {
     cover: {
-      src: "/media/website/web-cover.png",
+      src: "/media/english-homepage-cover.jpg",
       alt: {
         en: "Redesigned English homepage of Noboribetsu Grand Hotel",
         ja: "登別グランドホテルの英語版公式サイト リニューアル後のホームページ",
