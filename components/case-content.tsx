@@ -418,14 +418,14 @@ export function DocumentSections({ document, locale, id }: { document: Document;
   return <div className="case-sections">
     {document.sections.map(section => id === "partnerships" && section.blocks.includes("@creator-feature-start")
       ? <CreatorPartnershipSection key={section.title} section={section} locale={locale} />
-      : id === "destination" && (section.title === "Selected Projects" || section.title === "主なプロジェクト") && section.blocks.length === 5 && section.blocks[4] === "@things-to-do"
+      : id === "destination" && (section.title === "Selected Projects" || section.title === "主なプロジェクト") && section.blocks.length >= 4
         ? <section key={section.title} className="case-section" style={{ paddingBottom: 24 }}>
           <h2>{section.title}</h2>
           <div className="section-copy">
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               {[0, 2].map((start) => <div key={start} style={{ display: "flex", flexDirection: "column", gap: 0 }}>
                 <p style={{ margin: 0 }}>{inline(section.blocks[start])}</p>
-                <p style={{ margin: "16px 0 0" }}>{inline(section.blocks[start + 1].replace("[first-time onsen visitors](https://www.nobogura.co.jp/en/etiquettes/)", "first-time onsen visitors"))}</p>
+                <p style={{ margin: "16px 0 0" }}>{inline(section.blocks[start + 1].replace(/\[([^\]]+)\]\(https:\/\/www\.nobogura\.co\.jp\/en\/etiquettes\/\)/g, "$1"))}</p>
                 <p style={{ margin: "8px 0 0" }}><a href={start === 0 ? "https://www.nobogura.co.jp/en/etiquettes/" : "https://www.nobogura.co.jp/en/#things"}>{start === 0 ? (locale === "ja" ? "公式サイトの「初めて温泉を利用する方へ」" : "First-time Onsen Visitors on the hotel website") : ui[locale].thingsLink}</a></p>
               </div>)}
             </div>
