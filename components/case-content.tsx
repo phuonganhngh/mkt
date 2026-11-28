@@ -412,6 +412,19 @@ export function DocumentSections({ document, locale, id }: { document: Document;
   return <div className="case-sections">
     {document.sections.map(section => id === "partnerships" && section.blocks.includes("@creator-feature-start")
       ? <CreatorPartnershipSection key={section.title} section={section} locale={locale} />
+      : id === "destination" && section.title === "Selected Projects" && section.blocks.length === 5 && section.blocks[1].includes("[first-time onsen visitors]") && section.blocks[4] === "@things-to-do"
+        ? <section key={section.title} className="case-section" style={{ paddingBottom: 24 }}>
+          <h2>{section.title}</h2>
+          <div className="section-copy">
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              {[0, 2].map((start) => <div key={start} style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+                <p style={{ margin: 0 }}>{inline(section.blocks[start])}</p>
+                <p style={{ margin: "16px 0 0" }}>{inline(section.blocks[start + 1].replace("[first-time onsen visitors](https://www.nobogura.co.jp/en/etiquettes/)", "first-time onsen visitors"))}</p>
+                <p style={{ margin: "8px 0 0" }}><a href={start === 0 ? "https://www.nobogura.co.jp/en/etiquettes/" : "https://www.nobogura.co.jp/en/#things"}>{start === 0 ? "First-time Onsen Visitors on the hotel website" : ui[locale].thingsLink}</a></p>
+              </div>)}
+            </div>
+          </div>
+        </section>
       : id === "website" && section.blocks.length === 10 && section.blocks[0].startsWith("### ") && section.blocks[8].startsWith("### ") && section.blocks.slice(3, 8).every(line => line.startsWith("- "))
         ? <section key={section.title} className="case-section website-role-section">
           <h2>{section.title}</h2>
