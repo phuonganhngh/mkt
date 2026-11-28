@@ -89,7 +89,7 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "Challenge",
         blocks: [
-          "The hotel wanted to reach more independent travelers beyond Japan. At the awareness stage, the challenge was to introduce the hotel and destination to people who might not yet be familiar with Noboribetsu."
+          "The hotel wanted to reach more FIT beyond Japan. At the awareness stage, the challenge was to introduce the hotel and destination to people who might not yet be familiar with Noboribetsu."
         ],
       },
       {
@@ -132,7 +132,7 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "課題",
         blocks: [
-          "限られた広告予算の中で、日本国外の個人旅行者にホテルと登別という目的地を知ってもらうことが課題でした。",
+          "限られた広告予算の中で、日本国外のFITにホテルと登別という目的地を知ってもらうことが課題でした。",
           "一方、実際の宿泊予約は広告だけでなく、宿泊料金、空室状況、商品内容、予約時の使いやすさなど複数の要因に左右されます。"
         ],
       },
