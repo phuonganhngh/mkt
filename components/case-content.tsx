@@ -179,7 +179,6 @@ function NikkeiThumbnail({ locale }: { locale: Locale }) {
   return <aside className="nikkei-thumbnail-reference" aria-label={ja ? "日本経済新聞の関連記事" : "Nikkei media reference"}>
     <div className="nikkei-reference-heading">
       <span>{ja ? "関連記事・資料" : "MEDIA REFERENCE"}</span>
-      <time dateTime="2026-03-02">{ja ? "2026年3月2日" : "March 2, 2026"}</time>
     </div>
     <div className="nikkei-reference-body">
       <a className="nikkei-reference-image" href={nikkeiArticleLink} target="_blank" rel="noopener noreferrer" aria-label={ja ? "日本経済新聞の元記事を開く" : "Open the original Nikkei article"}>
