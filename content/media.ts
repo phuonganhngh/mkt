@@ -146,7 +146,7 @@ const media: Record<Category, ProjectMedia> = {
       },
     ],
   } },
-  destination: { groups: { "winter-slides": [], "things-to-do": [] } },
+  destination: { cover: { src: "/media/destination/destination-cover.png", alt: { en: "Three-dimensional illustration of Jigokudani rising from a travel map", ja: "観光地図から立体的に広がる登別地獄谷のイラスト" } }, groups: { "winter-slides": [], "things-to-do": [] } },
   advertising: { cover: { src: "/media/advertising/digital-advertising-cover.png", alt: { en: "Digital advertising campaign creative and performance metrics", ja: "デジタル広告のクリエイティブと効果指標" } }, groups: { examples: [] } },
 };
 
