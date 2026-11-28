@@ -388,6 +388,13 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
         {(id !== "destination" || group !== "things-to-do" || projectMedia(id, group).length > 0) && <Gallery items={projectMedia(id, group)} locale={locale} />}
         {group === "things-to-do" && <p><a href="https://www.nobogura.co.jp/en/#things">{ui[locale].thingsLink}</a></p>}
       </div>);
+    } else if (id === "website" && (block === "### Designing Around the Guest Journey" || block === "### ゲストジャーニーに沿った設計")) {
+      const stages = blocks.slice(index + 1, index + 5);
+      children.push(<div className="guest-journey" key={index}><h3>{block.slice(4)}</h3><ol>{stages.map((line, i) => {
+        const match = line.match(/^- \*\*\d+ — (.+?)[：:]\*\* (.+?) — (.+)$/);
+        return <li key={i}><span className="journey-number">{String(i + 1).padStart(2, "0")}</span><strong>{match?.[1]}</strong><p>{match?.[2]}</p><small>{match?.[3]}</small></li>;
+      })}</ol></div>);
+      index += 4;
     } else if (block.startsWith("### ")) {
       children.push(<h3 key={index}>{block.slice(4)}</h3>);
     } else if (block.startsWith("|")) {
