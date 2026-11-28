@@ -146,7 +146,7 @@ const media: Record<Category, ProjectMedia> = {
     ],
   } },
   destination: { groups: { "winter-slides": [], "things-to-do": [] } },
-  advertising: { groups: { examples: [] } },
+  advertising: { cover: { src: "/media/advertising/digital-advertising-cover.png", alt: { en: "Digital advertising campaign creative and performance metrics", ja: "デジタル広告のクリエイティブと効果指標" } }, groups: { examples: [] } },
 };
 
 function isAvailable(src: string) {
