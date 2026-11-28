@@ -758,3 +758,16 @@ html[lang="en"] .website-role-duty-copy {
   white-space: nowrap;
   font-size: clamp(9px, 2.5vw, .8125rem);
 }
+
+/* Compact editorial rhythm, preserving approved media layouts and typography. */
+@media (min-width: 721px) {
+  .home-intro.home-intro-editorial { padding-block: 3.2rem 1.5rem; }
+  .home-editorial-body { margin-top: 2rem; }
+  .home-editorial-focus { gap: .85rem; }
+  .home-intro-editorial .home-editorial-philosophy { margin-top: 1.6rem; padding-top: 1.2rem; }
+  .home-work { padding-block: 1.7rem 2.5rem; }
+  .page-intro { padding-block: 2.5rem 1.5rem; }
+  .case-intro { padding-bottom: 1.8rem; }
+  .case-return { padding-bottom: 1.8rem; }
+  .main-content { min-height: 0; }
+}
