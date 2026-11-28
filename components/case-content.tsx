@@ -330,10 +330,7 @@ function WebsiteRoleBreakdown({ blocks, locale }: { blocks: string[]; locale: Lo
       <p>{blocks[1]}</p>
     </div>
     <div className="website-role-design">
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="5" width="26" height="22" rx="2"/><path d="M3 12h26M12 12v15M18 18h7M18 22h5M7 9h.1"/></svg>
-      <div className="website-role-design-copy">
-        <p>{blocks[2]}</p>
-      </div>
+      <p>{blocks[2]}</p>
     </div>
     <div className="website-role-duties">
       <h4>{ja ? "主な担当業務" : "Key Responsibilities"}</h4>
