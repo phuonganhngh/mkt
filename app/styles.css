@@ -475,7 +475,7 @@ th { font-weight: 500; }
   .creator-showcase { min-height: 485px; display: flow-root; }
   .creator-showcase-accent { height: 422px; top: 44px; }
   .creator-showcase-yukata { position: relative; margin-left: auto; margin-top: -199px; top: auto; }
-  .creator-showcase-winter { height: 397px; min-height: 0; width: 74%; }
+  .creator-showcase-winter { height: 497px; min-height: 0; width: 74%; }
   .creator-showcase-winter-image { min-height: 0; }
   .creator-showcase-yukata { width: 61%; padding: 1.2rem .5rem 1rem; border-width: 3px; border-radius: 17px; }
   .creator-showcase-yukata > .creator-showcase-kicker { transform: translateY(-5px); }
