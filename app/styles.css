@@ -288,3 +288,69 @@ th { font-weight: 500; }
 .nikkei-thumbnail-reference img { width: min(100%, 420px); height: auto; border: 0; border-radius: .6rem; }
 .nikkei-thumbnail-reference a > span { display: none; }
 @media (max-width:520px) { .benchmark-highlights { grid-template-columns: 1fr; gap: .6rem; } }
+
+
+/* Approved Home / Work Visual Communication thumbnail: layered blank print pieces.
+   Replace only the three image files when ready; no text or gray placeholders. */
+.project-image:has(.visual-cover-art) { overflow: hidden; }
+.visual-cover-art {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1.9;
+  overflow: hidden;
+  isolation: isolate;
+  background: #f5f0e9;
+}
+.visual-cover-paper {
+  position: absolute;
+  display: block;
+  border-radius: 1px;
+  box-shadow: 0 3px 8px rgb(66 46 31 / .08);
+}
+.visual-cover-paper--red {
+  z-index: 1; top: 5%; left: 11%; width: 66%; height: 73%;
+  background: #ad202a; transform: rotate(-4deg);
+}
+.visual-cover-paper--yellow {
+  z-index: 2; top: 17%; left: 31%; width: 64%; height: 59%;
+  background: #e8b943; transform: rotate(4deg);
+}
+.visual-cover-paper--white {
+  z-index: 3; top: 35%; left: 19%; width: 68%; height: 44%;
+  background: #f8f6f1; transform: rotate(-3deg);
+}
+.visual-cover-photo {
+  position: absolute;
+  display: block;
+  z-index: 4;
+  padding: 2.4%;
+  background: #fffefa;
+  box-shadow: 0 5px 10px rgb(40 30 20 / .13);
+  overflow: hidden;
+}
+.visual-cover-photo img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+}
+.visual-cover-photo--left {
+  top: 42%; left: 13%; width: 30%; height: 43%; transform: rotate(-9deg);
+}
+.visual-cover-photo--center {
+  z-index: 5; top: 29%; left: 37%; width: 34%; height: 55%; transform: rotate(6deg);
+}
+.visual-cover-photo--right {
+  top: 44%; left: 66%; width: 29%; height: 42%; transform: rotate(10deg);
+}
+.visual-cover-pocket {
+  position: absolute;
+  z-index: 6;
+  left: 8%; right: 8%; top: 69%; height: 35%;
+  background: #cba781;
+  clip-path: polygon(0 0, 43% 0, 45% 9%, 47% 15%, 50% 17%, 53% 15%, 55% 9%, 57% 0, 100% 0, 100% 100%, 0 100%);
+  box-shadow: inset 0 4px 5px rgb(85 51 30 / .06);
+}
+.visual-cover-art::after {
+  content: ""; position: absolute; z-index: 7;
+  left: 8%; right: 8%; top: 69%; height: 1px;
+  background: rgb(107 75 51 / .14);
+}
