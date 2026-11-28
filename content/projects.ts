@@ -90,7 +90,7 @@ export const projects: Project[] = [
   {
     id: "destination", slug: "destination-marketing",
     title: { en: "Destination Marketing Beyond the Hotel", ja: "ホテルの枠を超えたデスティネーションマーケティング" },
-    summary: { en: "Positioning Noboribetsu experiences for independent travelers and tour operators.", ja: "登別ならではの体験を海外個人旅行者とツアーオペレーターへ提案。" },
+    summary: { en: "Positioning Noboribetsu experiences for FIT and tour operators.", ja: "登別ならではの体験を海外FITとツアーオペレーターへ提案。" },
     stages: ["awareness", "consideration"],
   },
   {
