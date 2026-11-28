@@ -121,7 +121,7 @@ html[lang="ja"] h1 { letter-spacing: -.03em; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2.25fr);
   gap: 1.55rem 2.4rem;
-  padding-block: 2rem 2.25rem;
+  padding-block: 1.8rem 2.025rem;
   border-top: 1px solid var(--line);
 }
 .case-section h2 { max-width: 20ch; }
@@ -184,7 +184,7 @@ th { font-weight: 500; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .page-intro { padding-block: 2.65rem 1.8rem; }
   h1 { font-size: 2rem; }
-  .case-section { grid-template-columns: 1fr; gap: .85rem; padding-block: 1.5rem 1.7rem; }
+  .case-section { grid-template-columns: 1fr; gap: .85rem; padding-block: 1.35rem 1.53rem; }
   .case-section h2 { max-width: none; }
   .work-filters legend { float: none; width: auto; padding: 0; margin-bottom: .1rem; }
 }
