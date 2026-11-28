@@ -678,3 +678,16 @@ html[lang="en"] .website-role-agency p,
 html[lang="en"] .website-role-duty-copy {
   font-size: 14px;
 }
+
+
+/* Approved mobile Home spacing: compact intro, focus, philosophy, and Work boundary. */
+@media (max-width: 720px) {
+  .home-intro.home-intro-editorial { padding-bottom: 20px; }
+  .home-editorial-body { gap: 20px; }
+  .home-editorial-focus { padding: 16px 0 0; }
+  .home-intro-editorial .home-editorial-philosophy {
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+  .home-work { padding-top: 20px; }
+}
