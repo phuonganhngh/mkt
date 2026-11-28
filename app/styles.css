@@ -494,3 +494,60 @@ th { font-weight: 500; }
   object-fit: cover;
   object-position: center top;
 }
+
+
+/* Editorial hero: equal-size one-line Roman / italic headlines on desktop. */
+.home-intro-editorial { padding-block: clamp(3.2rem, 7vw, 6.4rem) 3.5rem; }
+.home-intro-editorial .home-editorial-title {
+  font-family: "Roboto Serif Variable", Georgia, serif;
+  font-size: clamp(2.15rem, 4.15vw, 3.95rem);
+  font-weight: 750;
+  letter-spacing: -.052em;
+  line-height: 1.16;
+}
+.home-editorial-title > span { display: block; white-space: nowrap; }
+.home-editorial-title em { font-style: italic; font-weight: inherit; }
+.home-editorial-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, .85fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-top: clamp(2.5rem, 5vw, 4.2rem);
+}
+.home-editorial-body .home-intro-statement {
+  margin: 0;
+  max-width: 39ch;
+  font: 400 clamp(1.05rem, 1.55vw, 1.28rem)/1.65 var(--reading);
+}
+.home-editorial-body .home-intro-statement strong { font-weight: 700; color: var(--ink); }
+.home-editorial-focus {
+  border-left: 1px solid var(--line);
+  padding-left: clamp(1.3rem, 3.5vw, 3rem);
+  display: grid;
+  gap: 1.25rem;
+}
+.home-editorial-focus-item { display: flex; align-items: center; gap: 1.15rem; font: 400 clamp(1rem, 1.45vw, 1.23rem)/1.4 var(--reading); color: var(--ink); }
+.home-editorial-focus-item svg { width: 30px; height: 30px; flex: 0 0 30px; }
+.home-intro-editorial .home-editorial-philosophy {
+  max-width: none;
+  margin-top: clamp(2.4rem, 4vw, 3.5rem);
+  padding-top: clamp(1.5rem, 2.5vw, 2.2rem);
+  border-top: 1px solid var(--line);
+  font: 400 clamp(1.05rem, 1.7vw, 1.35rem)/1.7 var(--reading);
+  color: var(--ink);
+}
+.home-editorial-philosophy strong { font-weight: 700; }
+@media (max-width: 900px) {
+  .home-editorial-body { gap: 1.5rem; }
+  .home-editorial-focus { padding-left: 1.5rem; }
+}
+@media (max-width: 720px) {
+  .home-intro-editorial .home-editorial-title { font-size: clamp(1.55rem, 5.4vw, 2.4rem); }
+  .home-editorial-body { grid-template-columns: 1fr; gap: 1.6rem; }
+  .home-editorial-focus { border-left: 0; border-top: 1px solid var(--line); padding: 1.3rem 0 0; }
+}
+@media (max-width: 480px) {
+  .home-intro-editorial .home-editorial-title { font-size: clamp(1.27rem, 5.3vw, 1.7rem); letter-spacing: -.055em; }
+  .home-editorial-focus-item { font-size: 1rem; }
+}
+html[lang="ja"] .home-intro-editorial h1 { font-family: var(--heading); white-space: normal; font-size: clamp(1.6rem, 4vw, 2.8rem); }
