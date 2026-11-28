@@ -5,7 +5,6 @@
       {
         "title": "Project Overview",
         "blocks": [
-          "**Expertise:** Website Strategy, Visual Design, Content Strategy, International Marketing, Project Management",
           "The redesigned English website has officially launched, providing information for international travelers and supporting their direct-booking journey and the hotel's international marketing.",
           "**Live Website:** https://www.nobogura.co.jp/en/"
         ]
@@ -62,12 +61,6 @@
     "title": "About Me",
     "sections": [
       {
-        "title": "Introduction",
-        "blocks": [
-          "With a background in Human Resources and Learning & Development, combined with hands-on experience in international marketing within Japan's hospitality industry, my work brings together a traveler's perspective, creativity and management experience."
-        ]
-      },
-      {
         "title": "Think Like a Traveler",
         "blocks": [
           "Travel has always been a source of inspiration. Planning independent trips across Kanto, Kansai and Hokkaido has offered opportunities to explore nature, onsen, cuisine, art, cultural festivals and entertainment.",
@@ -77,7 +70,8 @@
       {
         "title": "Continuous Learning",
         "blocks": [
-          "I began learning Japanese at 32. Nearly two and a half years later, I have passed JLPT N3 and am now studying toward N2. Learning a new language as an adult has taught me the value of persistence, patience and starting from scratch. I bring that same commitment to learning and improving my skills to my work."
+          "@learning-timeline",
+          "Learning a new language as an adult has taught me persistence, adaptability and the value of continuous improvement."
         ]
       },
       {
@@ -139,7 +133,6 @@
         "title": "JNTO & International Travel Trade",
         "blocks": [
           "I proactively identify tourism promotion opportunities through JNTO, business matching programs and networking activities with international travel trade partners.",
-          "The objective is to expand brand awareness, communicate the value of the hotel's experiences and develop partnership opportunities in target markets.",
           "@activities"
         ]
       }
