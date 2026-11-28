@@ -157,7 +157,15 @@ const advertisingCase: Record<Locale, Document> = {
 type DraftId = keyof typeof copy;
 
 export function draftDocument(id: DraftId, locale: Locale, title: string): Document {
-  if (id === "advertising") { const doc = advertisingCase[locale]; return { ...doc, sections: [...doc.sections.slice(0, 4), { title: locale === "en" ? "Campaign Performance Analysis" : "広告キャンペーンの効果分析", blocks: [locale === "en" ? "Monitor and evaluate advertising performance across international markets using reach, impressions, CTR, CPC, CPM, frequency and video engagement metrics to inform future campaign planning and budget allocation." : "海外市場における広告効果をリーチ、インプレッション、CTR、CPC、CPM、フリークエンシー、動画エンゲージメントなどの指標で分析・評価し、今後のキャンペーン企画や予算配分に活用する。"] }, ...doc.sections.slice(4)] }; }
+  if (id === "advertising") {
+    const ja = locale === "ja";
+    return { title: advertisingCase[locale].title, sections: [
+      { title: ja ? "プロジェクト概要" : "Project Overview", blocks: [ja ? "海外市場・有料広告・キャンペーン分析" : "International Markets · Paid Media · Campaign Analysis", ja ? "ターゲットを絞った広告配信と体験の魅力を伝えるクリエイティブを通じて、海外市場でのブランド認知を高める。" : "Building international brand visibility through targeted advertising and experience-led creative content."] },
+      { title: ja ? "広告プラットフォーム" : "Advertising Platforms", blocks: ["Google Ads · Meta Ads · TikTok Ads"] },
+      { title: ja ? "注目キャンペーン — 台湾市場" : "Featured Campaign — Taiwan Market", blocks: [ja ? "Meta広告・2026年11月" : "Meta Ads · November 2026", "@advertising-metrics"] },
+      { title: ja ? "広告分析からマーケティング施策へ" : "From Campaign Insights to Marketing Decisions", blocks: [ja ? "- ターゲット層・市場の選定" : "- Audience & Market Selection", ja ? "- クリエイティブの効果評価" : "- Creative Performance Evaluation", ja ? "- 予算・キャンペーン計画" : "- Budget & Campaign Planning"] }
+    ] };
+  }
   const sections = headings[locale].map((heading, index) => ({
       title: heading,
       blocks: index === 4 && (id === "visual" || id === "social") ? ["@examples"] : index === 4 ? [copy[id][locale][index], "@examples"] : [copy[id][locale][index]],
