@@ -28,7 +28,7 @@ const copy = {
   visual: {
     en: [
       "Visual communication for brochures, posters, menus and event materials.",
-      "Project-specific responsibilities are pending.",
+      "Bridging marketing strategy and creative execution, transforming communication objectives into visual experiences.",
       "Help international travelers find and understand practical information.",
       "Organize information by priority and use consistent layouts and typography across related materials.",
       "",
@@ -36,7 +36,7 @@ const copy = {
     ],
     ja: [
       "パンフレット、ポスター、メニュー、イベント資料のビジュアルコミュニケーション。",
-      "プロジェクトごとの担当範囲は準備中です。",
+      "マーケティング戦略とクリエイティブの実践をつなぎ、コミュニケーションの目的を視覚的な体験へと形にする。",
       "海外旅行者が必要な情報を見つけ、理解しやすくすること。",
       "情報に優先順位を付け、関連資料のレイアウトとタイポグラフィに一貫性を持たせる。",
       "",
