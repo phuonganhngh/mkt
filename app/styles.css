@@ -606,7 +606,7 @@ th { font-weight: 500; }
 html[lang="ja"] .home-intro-editorial h1 { font-family: var(--heading); white-space: normal; font-size: clamp(1.6rem, 4vw, 2.8rem); }
 
 
-/* Editorial Role Breakdown — specific to the website case study only. */
+/* Approved My Role & Delivery: numbered vertical editorial timeline, no accordion. */
 .website-role-section .section-copy { min-width: 0; }
 .website-role-breakdown { display: grid; gap: 1.5rem; }
 .website-role-intro h3 { color: var(--ink); font: 600 18px/1.45 var(--reading); margin: 0 0 .65rem; }
@@ -616,22 +616,47 @@ html[lang="ja"] .home-intro-editorial h1 { font-family: var(--heading); white-sp
 .website-role-design { display: grid; grid-template-columns: 32px minmax(0,1fr); gap: 1rem; align-items: start; }
 .website-role-design > svg, .website-role-agency > svg { width: 30px; height: 30px; color: var(--ink); }
 .website-role-design h4, .website-role-agency h4, .website-role-duties > h4 { color: var(--ink); font: 600 16px/1.5 var(--reading); margin: 0 0 .5rem; }
-.website-role-duties > h4 { margin-bottom: .65rem; }
-.website-role-duties ol { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line); }
-.website-role-duties li { display: grid; grid-template-columns: 32px minmax(0,1fr); gap: 1rem; align-items: start; padding: .7rem 0; border-top: 1px solid var(--line); }
-.website-role-index { font: 500 12px/1.65 var(--ui); letter-spacing: .06em; color: var(--muted); }
-.website-role-desktop-duty { font: 400 16px/1.65 var(--reading); color: var(--body); }
-.website-role-mobile-duty { display: none; }
-.website-role-agency { display: grid; grid-template-columns: 32px minmax(0,1fr); gap: 1rem; padding: 1.1rem; background: var(--surface); border-radius: 12px; align-items: start; }
+.website-role-duties > h4 { margin-bottom: .8rem; }
+.website-role-duties ol { margin: 0; padding: 0; list-style: none; }
+.website-role-duties li {
+  display: grid;
+  grid-template-columns: 40px minmax(0,1fr);
+  gap: 1rem;
+  position: relative;
+  align-items: center;
+  margin: 0;
+  padding: .4rem 0;
+}
+.website-role-duties li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  bottom: -9px;
+  left: 19px;
+  width: 1px;
+  background: var(--line);
+}
+.website-role-index {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  font: 600 14px/1 var(--ui);
+  font-variant-numeric: tabular-nums;
+}
+.website-role-duty-copy { font: 400 16px/1.65 var(--reading); color: var(--body); margin: 0; }
+.website-role-agency {
+  display: grid;
+  grid-template-columns: 32px minmax(0,1fr);
+  gap: 1rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
 @media (max-width: 720px) {
   .website-role-breakdown { gap: 1.3rem; }
-  .website-role-desktop-duty { display: none; }
-  .website-role-mobile-duty { display: block; }
-  .website-role-mobile-duty summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; list-style: none; font: 500 16px/1.55 var(--reading); color: var(--ink); }
-  .website-role-mobile-duty summary::-webkit-details-marker { display: none; }
-  .website-role-expand-icon { flex: 0 0 16px; width: 16px; height: 16px; position: relative; }
-  .website-role-expand-icon::before, .website-role-expand-icon::after { content: ""; position: absolute; background: currentColor; top: 7px; left: 2px; width: 12px; height: 1px; }
-  .website-role-expand-icon::after { transform: rotate(90deg); }
-  .website-role-mobile-duty[open] .website-role-expand-icon::after { display: none; }
-  .website-role-mobile-duty p { font: 400 16px/1.65 var(--reading); color: var(--body); padding: .65rem 1.5rem .25rem 0; margin: 0; }
+  .website-role-duties li { grid-template-columns: 40px minmax(0,1fr); gap: .8rem; }
 }
