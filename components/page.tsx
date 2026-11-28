@@ -89,7 +89,7 @@ function Home({ locale }: { locale: Locale }) {
       </h1> : <h1>{identity.slogan.ja}</h1>}
       <div className="home-editorial-body">
         <p className="home-intro-statement">{isEnglish
-          ? <>A people-focused professional with a foundation in <strong>Human Resources &amp; L&amp;D</strong>, and hands-on experience in <strong>international marketing</strong> for the hospitality industry in Japan.</>
+          ? <>A people-focused professional with a foundation in Human Resources &amp; L&amp;D, and hands-on experience in international marketing for the hospitality industry in Japan.</>
           : identity.intro.ja}</p>
         <div className="home-editorial-focus" aria-label={isEnglish ? "Core areas of experience" : "主な経験分野"}>
           <div className="home-editorial-focus-item">
