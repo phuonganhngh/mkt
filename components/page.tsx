@@ -79,6 +79,26 @@ function coversFor(entries: typeof projects): Covers {
   return Object.fromEntries(entries.map(project => [project.id, projectCover(project.id)]));
 }
 
+function Insights({ locale }: { locale: Locale }) {
+  const ja = locale === "ja";
+  const steps = ja ? [
+    ["データソース", "OTAレビュー・Googleレビュー・SNSコメント・Google Search Console・Google Analytics 4・旅行コミュニティ・競合施設のレビュー"],
+    ["顧客・市場分析", "旅行者のニーズ・検索行動・情報不足・市場機会"],
+    ["戦略的な施策提案", "優先課題を特定し、具体的なマーケティング施策を企画・提案"],
+    ["マーケティング施策", "ウェブサイト・UX・SNSコンテンツ・観光ガイド・ビジュアルコミュニケーション・デジタル広告"]
+  ] : [
+    ["Data Sources", "OTA Reviews · Google Reviews · SNS Comments · Google Search Console · Google Analytics 4 · Travel Communities · Competitor Reviews"],
+    ["Customer & Market Analysis", "Traveler needs · Search behavior · Information gaps · Market opportunities"],
+    ["Strategic Recommendations", "Identify priorities and develop actionable marketing solutions"],
+    ["Marketing Actions", "Website & UX · Social Content · Destination Guides · Visual Communication · Digital Advertising"]
+  ];
+  return <section className="insights-section" aria-labelledby="insights-heading">
+    <h2 id="insights-heading">{ja ? "顧客インサイトをマーケティング施策へ" : "From Customer Insights to Marketing Actions"}</h2>
+    <p>{ja ? "データに基づく海外旅行者向けマーケティング" : "Data-informed marketing for international travelers."}</p>
+    <ol className="insights-steps">{steps.map(([title, detail], i) => <li key={title}><span className="insights-number">{String(i + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{detail}</p></div></li>)}</ol>
+  </section>;
+}
+
 function Home({ locale }: { locale: Locale }) {
   const isEnglish = locale === "en";
   return <>
@@ -125,6 +145,7 @@ function Home({ locale }: { locale: Locale }) {
         </p>
       </div>
     </section>
+    <Insights locale={locale} />
     <section id="work" className="home-work" aria-labelledby="home-work-heading">
       <div className="home-work-intro">
         <h2 id="home-work-heading">{ui[locale].work}</h2>

@@ -157,12 +157,11 @@ const advertisingCase: Record<Locale, Document> = {
 type DraftId = keyof typeof copy;
 
 export function draftDocument(id: DraftId, locale: Locale, title: string): Document {
-  if (id === "advertising") return advertisingCase[locale];
-  return {
-    title,
-    sections: headings[locale].map((heading, index) => ({
+  if (id === "advertising") { const doc = advertisingCase[locale]; return { ...doc, sections: [...doc.sections.slice(0, 4), { title: locale === "en" ? "Campaign Performance Analysis" : "広告キャンペーンの効果分析", blocks: [locale === "en" ? "Monitor and evaluate advertising performance across international markets using reach, impressions, CTR, CPC, CPM, frequency and video engagement metrics to inform future campaign planning and budget allocation." : "海外市場における広告効果をリーチ、インプレッション、CTR、CPC、CPM、フリークエンシー、動画エンゲージメントなどの指標で分析・評価し、今後のキャンペーン企画や予算配分に活用する。"] }, ...doc.sections.slice(4)] }; }
+  const sections = headings[locale].map((heading, index) => ({
       title: heading,
       blocks: index === 4 && (id === "visual" || id === "social") ? ["@examples"] : index === 4 ? [copy[id][locale][index], "@examples"] : [copy[id][locale][index]],
-    })).filter((_, index) => (id !== "social" && id !== "visual") || index !== 5),
-  };
+    })).filter((_, index) => (id !== "social" && id !== "visual") || index !== 5);
+  if (id === "social") sections.splice(4, 0, { title: locale === "en" ? "Content Strategy & Planning" : "コンテンツ戦略・企画", blocks: locale === "en" ? ["*One Hotel. Multiple Content Objectives.*","| Content Pillar | Content Topic | Communication Objective | Target Audience |","| --- | --- | --- | --- |","| Product & Experience | Onsen, sauna, buffet, guestrooms | Product awareness & consideration | Wellness, leisure and food-oriented travelers |","| Destination Inspiration | Things to Do, local attractions, festivals | Destination awareness | International FIT |","| Travel Education | Onsen etiquette, transportation | Reduce travel uncertainty | First-time visitors |","| Brand Storytelling | Yukata, Japanese hospitality, stay experience | Brand differentiation | Culture-oriented travelers |","| Social Proof | Creator collaborations, guest experiences | Build trust | Potential hotel guests |"] : ["*一つのホテル、多様な情報発信の目的。*","| コンテンツの柱 | テーマ | コミュニケーション目的 | ターゲット |","| --- | --- | --- | --- |","| 商品・体験 | 温泉、サウナ、ビュッフェ、客室 | 認知・利用検討 | ウェルネス、レジャー、食に関心のある旅行者 |","| 旅先の魅力 | Things to Do、観光地、祭り | 観光地の認知向上 | 海外個人旅行者（FIT） |","| 旅行情報 | 温泉マナー、交通アクセス | 旅行前の不安解消 | 初訪問の旅行者 |","| ブランドストーリー | 浴衣、日本のおもてなし、滞在体験 | ブランドの差別化 | 文化に関心のある旅行者 |","| 第三者による信頼形成 | クリエイターとの連携、宿泊客の体験 | 信頼の醸成 | 宿泊を検討する旅行者 |"] });
+  return { title, sections };
 }
