@@ -95,7 +95,7 @@ const advertisingCase: Record<Locale, Document> = {
       {
         title: "Approach",
         blocks: [
-          "- **International Audience:** Used available targeting tools to reach selected overseas markets.",
+          "- **Audience Targeting:** Set up ad targeting based on location, demographics, and audience interests.",
           "- **Experience-Led Creative:** Used content featuring the hotel, onsen and local travel experiences.",
           "- **Hands-on Execution:** Set up and ran paid social campaigns on Meta and TikTok with limited budgets.",
           "- **Campaign Review:** Looked at the advertising platforms' delivery and engagement metrics to understand what each campaign reached."
