@@ -8,6 +8,25 @@ import { AssetImage, Placeholder } from "./media";
 type Project = (typeof projects)[number];
 export type Covers = Partial<Record<Category, ImageAsset>>;
 
+function VisualCommunicationCover() {
+  // Optional images: upload these filenames later; until then, each frame stays blank.
+  const slots = [
+    ["left", "/media/visual/cover-left.png"],
+    ["center", "/media/visual/cover-center.png"],
+    ["right", "/media/visual/cover-right.png"],
+  ] as const;
+  return <div className="visual-cover-art" role="img" aria-label="Visual Communication: layered portfolio papers with three empty image frames">
+    <span className="visual-cover-paper visual-cover-paper--red" aria-hidden="true" />
+    <span className="visual-cover-paper visual-cover-paper--yellow" aria-hidden="true" />
+    <span className="visual-cover-paper visual-cover-paper--white" aria-hidden="true" />
+    {slots.map(([name, src]) => <span key={name} className={`visual-cover-photo visual-cover-photo--${name}`} aria-hidden="true">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt="" loading="lazy" onError={event => { event.currentTarget.style.display = "none"; }} />
+    </span>)}
+    <span className="visual-cover-pocket" aria-hidden="true" />
+  </div>;
+}
+
 export function ProjectGrid({ entries, locale, covers, heading: Heading = "h3" }: {
   entries: Project[]; locale: Locale; covers: Covers; heading?: "h2" | "h3";
 }) {
@@ -16,9 +35,11 @@ export function ProjectGrid({ entries, locale, covers, heading: Heading = "h3" }
       const cover = covers[project.id];
       return <article key={project.id} className="project">
         <a href={pageUrl(locale, project.slug)}>
-          <div className="project-image">{cover
-            ? <AssetImage image={cover} locale={locale} sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, 340px" />
-            : <Placeholder locale={locale} />}</div>
+          <div className="project-image">{project.id === "visual"
+            ? <VisualCommunicationCover />
+            : cover
+              ? <AssetImage image={cover} locale={locale} sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, 340px" />
+              : <Placeholder locale={locale} />}</div>
           <Heading>{project.title[locale]}</Heading>
         </a>
         <p>{project.summary[locale]}</p>
