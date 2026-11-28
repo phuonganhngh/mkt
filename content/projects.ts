@@ -96,7 +96,7 @@ export const projects: Project[] = [
   {
     id: "advertising", slug: "digital-advertising",
     title: { en: "Digital Advertising", ja: "デジタル広告" },
-    summary: { en: "Hands-on Google Ads, Meta Ads and TikTok Ads campaigns focused on international brand awareness.", ja: "海外市場での認知向上を目的としたMeta広告・TikTok広告の実務経験。" },
+    summary: { en: "Hands-on Google Ads, Meta Ads and TikTok Ads campaigns focused on international brand awareness.", ja: "海外市場でのブランド認知向上を目的としたGoogle広告・Meta広告・TikTok広告の実務経験。" },
     stages: ["awareness"],
   },
 ];
