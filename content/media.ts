@@ -3,7 +3,7 @@ import { join } from "node:path";
 import type { Translation } from "./site";
 import type { Category } from "./projects";
 
-export type AssetPath = `/media/${string}`;
+export type AssetPath = `/media/${string}` | "/photo-editing.png";
 export type ImageAsset = {
   src: AssetPath;
   alt: Translation;
@@ -151,7 +151,7 @@ const media: Record<Category, ProjectMedia> = {
 };
 
 function isAvailable(src: string) {
-  return src.startsWith("/media/") &&
+  return (src.startsWith("/media/") || src === "/photo-editing.png") &&
     !src.split("/").some(part => part === ".." || part === ".") &&
     !!statSync(join(process.cwd(), "public", src), { throwIfNoEntry: false })?.isFile();
 }
