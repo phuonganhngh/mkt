@@ -500,7 +500,7 @@ th { font-weight: 500; }
 .home-intro-editorial { padding-block: clamp(3.2rem, 7vw, 6.4rem) 3.5rem; }
 .home-intro-editorial .home-editorial-title {
   font-family: "Roboto Serif Variable", Georgia, serif;
-  font-size: clamp(2rem, 3.55vw, 3.25rem);
+  font-size: 44px;
   font-weight: 750;
   letter-spacing: -.052em;
   line-height: 1.16;
@@ -517,7 +517,7 @@ th { font-weight: 500; }
 .home-editorial-body .home-intro-statement {
   margin: 0;
   max-width: 39ch;
-  font: 400 clamp(.98rem, 1.25vw, 1.1rem)/1.65 var(--reading);
+  font: 400 16px/1.65 var(--reading);
 }
 .home-editorial-body .home-intro-statement strong { font-weight: 700; color: var(--ink); }
 .home-editorial-focus {
@@ -526,14 +526,14 @@ th { font-weight: 500; }
   display: grid;
   gap: 1.25rem;
 }
-.home-editorial-focus-item { display: flex; align-items: center; gap: 1.15rem; font: 400 clamp(.96rem, 1.2vw, 1.08rem)/1.4 var(--reading); color: var(--ink); }
+.home-editorial-focus-item { display: flex; align-items: center; gap: 1.15rem; font: 400 16px/1.4 var(--reading); color: var(--ink); }
 .home-editorial-focus-item svg { width: 30px; height: 30px; flex: 0 0 30px; }
 .home-intro-editorial .home-editorial-philosophy {
   max-width: none;
   margin-top: clamp(2.4rem, 4vw, 3.5rem);
   padding-top: clamp(1.5rem, 2.5vw, 2.2rem);
   border-top: 1px solid var(--line);
-  font: 400 clamp(.98rem, 1.32vw, 1.14rem)/1.7 var(--reading);
+  font: 400 16px/1.7 var(--reading);
   color: var(--ink);
 }
 .home-editorial-philosophy strong { font-weight: 700; }
@@ -542,12 +542,11 @@ th { font-weight: 500; }
   .home-editorial-focus { padding-left: 1.5rem; }
 }
 @media (max-width: 720px) {
-  .home-intro-editorial .home-editorial-title { font-size: clamp(1.55rem, 5.4vw, 2.4rem); }
+  .home-intro-editorial .home-editorial-title > span { white-space: normal; }
   .home-editorial-body { grid-template-columns: 1fr; gap: 1.6rem; }
   .home-editorial-focus { border-left: 0; border-top: 1px solid var(--line); padding: 1.3rem 0 0; }
 }
 @media (max-width: 480px) {
-  .home-intro-editorial .home-editorial-title { font-size: clamp(1.27rem, 5.3vw, 1.7rem); letter-spacing: -.055em; }
-  .home-editorial-focus-item { font-size: 1rem; }
+  .home-intro-editorial .home-editorial-title { letter-spacing: -.055em; }
 }
 html[lang="ja"] .home-intro-editorial h1 { font-family: var(--heading); white-space: normal; font-size: clamp(1.6rem, 4vw, 2.8rem); }
