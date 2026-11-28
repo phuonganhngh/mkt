@@ -797,3 +797,8 @@ html[lang="en"] .website-role-duty-copy {
 @media (min-width: 721px) {
   .case-section { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); column-gap: 1.5rem; }
 }
+
+/* Desktop project thumbnails: preserve the entire approved artwork. */
+@media (min-width: 721px) {
+  .project-image > img, .project-image > picture > img { object-fit: contain; }
+}
