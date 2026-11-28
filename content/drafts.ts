@@ -115,7 +115,7 @@ const advertisingCase: Record<Locale, Document> = {
           "The primary objective of my advertising campaigns was to build brand awareness in international markets rather than directly optimize booking conversions.",
           "I recognize that hotel booking decisions are influenced by factors beyond advertising, including room rates, availability, product offerings and the booking experience.",
           "From a Marketing Manager's perspective, I believe marketing responsibilities extend beyond campaign execution to understanding the customer journey, identifying potential conversion barriers and collaborating with relevant departments to improve business outcomes.",
-          "I did not establish attributable booking or revenue results from these campaigns, and I did not implement a systematic post-campaign optimization process. The experience helped me identify an area for further development: connecting awareness activity with subsequent customer actions and business outcomes."
+          "For this awareness-focused work, advertising delivery metrics should not be interpreted as verified bookings or revenue. The experience strengthened my interest in connecting awareness activity with the broader customer journey and business outcomes."
         ],
       },
     ],
@@ -169,7 +169,7 @@ const advertisingCase: Record<Locale, Document> = {
           "担当した広告の主な目的は、宿泊予約のコンバージョンを直接最適化することではなく、海外市場でのブランド認知を高めることでした。",
           "宿泊予約の判断には、広告以外にも料金、空室状況、宿泊商品、予約体験などが影響すると考えています。",
           "マーケティングマネージャーの立場では、広告配信だけでなくカスタマージャーニーを理解し、コンバージョンの障壁を見つけ、関連部署と連携して事業成果の改善を目指すことが重要だと考えています。",
-          "これらの広告施策で予約数や売上への貢献を測定・実証したわけではなく、配信後の体系的な最適化も実施していません。この経験から、認知施策とその後の顧客行動や事業成果を結び付けて考える必要性を学びました。"
+          "認知向上を目的とする広告の配信指標を、予約数や売上の実績として扱うことは適切ではありません。この経験を通じて、認知施策をその後のカスタマージャーニーや事業成果と結び付けて考える重要性を強く意識するようになりました。"
         ],
       },
     ],
