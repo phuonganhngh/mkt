@@ -161,8 +161,8 @@ const nikkeiArticleLink = "https://www.nikkei.com/article/DGXZQOFC2594O0V20C26A2
 function BenchmarkMetrics({ locale }: { locale: Locale }) {
   const ja = locale === "ja";
   return <div className="benchmark-metrics" aria-label={ja ? "フォロワー数の比較" : "Combined follower and subscriber comparison"}>
-    <div><span>{ja ? "私が招待したトラベルクリエイター" : "Travel Creator Invited by Me"}</span><strong>834.9K</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
-    <div><span>{ja ? "JALが招待したトラベルクリエイター" : "Travel Creator Invited by JAL"}</span><strong>779.1K</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
+    <div><span>{ja ? "私が招待したトラベルクリエイター" : "Travel Creator Invited by Me"}</span><strong>{ja ? "83.49万人" : "834.9K"}</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
+    <div><span>{ja ? "JALが招待したトラベルクリエイター" : "Travel Creator Invited by JAL"}</span><strong>{ja ? "77.91万人" : "779.1K"}</strong><small>{ja ? "SNSフォロワー・登録者数の合計" : "Combined followers & subscribers"}</small></div>
   </div>;
 }
 
@@ -365,6 +365,9 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       children.push(<BenchmarkHighlights key={index} locale={locale} />);
     } else if (block === "@benchmark-metrics" && id === "partnerships") {
       children.push(<BenchmarkMetrics key={index} locale={locale} />);
+     } else if (block === "@learning-timeline") {
+      const ja = locale === "ja";
+      children.push(<div key={index} style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:12,marginBottom:16}}>{[["32",ja?"日本語学習開始（歳）":"Started learning Japanese"],["N3",ja?"JLPT合格":"JLPT Passed"],["N2",ja?"現在学習中":"Currently Studying"]].map(([value,label])=><div key={value} style={{borderTop:"1px solid currentColor",paddingTop:12}}><strong style={{display:"block",fontSize:"1.5rem"}}>{value}</strong><small>{label}</small></div>)}</div>);
     } else if (block === "@tools-platforms") {
       children.push(<ToolsPlatforms key={index} locale={locale} />);
     } else if (block === "@nikkei-thumbnail" && id === "partnerships") {
