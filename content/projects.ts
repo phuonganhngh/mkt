@@ -37,8 +37,8 @@ export const projectSkills: Record<Category, Translation[]> = {
     { en: "B2B & B2C Content", ja: "B2B・B2Cコンテンツ" },
   ],
   advertising: [
-    { en: "Digital Advertising", ja: "デジタル広告" },
-    { en: "Campaign Analysis", ja: "広告効果分析" },
+    { en: "Paid Social Campaign Execution", ja: "SNS広告の設定・配信" },
+    { en: "International Brand Awareness", ja: "海外市場でのブランド認知向上" },
   ],
 };
 
@@ -96,7 +96,7 @@ export const projects: Project[] = [
   {
     id: "advertising", slug: "digital-advertising",
     title: { en: "Digital Advertising", ja: "デジタル広告" },
-    summary: { en: "Campaign objectives, creative and performance analysis.", ja: "広告キャンペーンの目的、クリエイティブ、効果分析。" },
-    stages: ["booking"],
+    summary: { en: "Hands-on Meta and TikTok campaigns focused on international brand awareness.", ja: "海外市場での認知向上を目的としたMeta広告・TikTok広告の実務経験。" },
+    stages: ["awareness"],
   },
 ];
