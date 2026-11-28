@@ -685,7 +685,7 @@ html[lang="en"] .website-role-duty-copy {
 @media (max-width: 720px) {
   .home-intro.home-intro-editorial { padding-bottom: 20px; }
   .home-editorial-body { gap: 20px; }
-  .home-editorial-focus { padding: 16px 0 0; }
+  .home-editorial-focus { padding: 16px 0 0; gap: 12px; }
   .home-intro-editorial .home-editorial-philosophy {
     margin-top: 20px;
     padding-top: 16px;
