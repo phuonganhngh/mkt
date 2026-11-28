@@ -80,32 +80,37 @@ function coversFor(entries: typeof projects): Covers {
 }
 
 function Home({ locale }: { locale: Locale }) {
-  const [firstLine, secondLine] = identity.slogan.en.split(/(?<=\\.) /);
-  const strengths = locale === "en" ? [
-    { title: "People & Management", description: "Human Resources Management | Learning & Development." },
-    { title: "Traveler's Perspective", description: "Understanding destinations and customer experiences." },
-    { title: "Creative Execution", description: "Turning ideas into practical marketing deliverables." },
-  ] : [
-    { title: "人材・マネジメント", description: "人事、人材育成、チーム開発、要員計画。" },
-    { title: "旅行者の視点", description: "観光地や顧客体験への理解。" },
-    { title: "企画・実行力", description: "アイデアを具体的なマーケティング施策へ。" },
-  ];
-
+  const isEnglish = locale === "en";
   return <>
-    <section className="home-intro">
-      <h1>{locale === "en" ? <>{firstLine} <br />{secondLine}</> : identity.slogan[locale]}</h1>
-      <p className="home-intro-statement">{identity.intro[locale]}</p>
-      <p className="home-intro-statement home-intro-philosophy">{identity.homeStatement[locale]}</p>
-    </section>
-    <section className="home-approach" aria-labelledby="home-approach-heading">
-      <h2 id="home-approach-heading">{locale === "en" ? "A Background That Shapes My Approach" : "経験が形づくる仕事への姿勢"}</h2>
-      <div className="home-strengths">
-        {strengths.map((item, index) => <article className="home-strength" key={item.title}>
-          <span className="home-strength-index">0{index + 1}</span>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-        </article>)}
+    <section className="home-intro home-intro-editorial">
+      {isEnglish ? <h1 className="home-editorial-title">
+        <span>Think Like a Traveler.</span>
+        <span><em>Act Like a Marketer.</em></span>
+      </h1> : <h1>{identity.slogan.ja}</h1>}
+      <div className="home-editorial-body">
+        <p className="home-intro-statement">{isEnglish
+          ? <>A people-focused professional with a foundation in <strong>Human Resources &amp; L&amp;D</strong>, and hands-on experience in <strong>international marketing</strong> for the hospitality industry in Japan.</>
+          : identity.intro.ja}</p>
+        <div className="home-editorial-focus" aria-label={isEnglish ? "Core areas of experience" : "主な経験分野"}>
+          <div className="home-editorial-focus-item">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="16" cy="9" r="4"/><path d="M7.5 25v-2a8.5 8.5 0 0 1 17 0v2M4 13a3 3 0 1 0 0-6M4 25v-2a8 8 0 0 1 3-6M28 13a3 3 0 1 1 0-6M28 25v-2a8 8 0 0 0-3-6"/></svg>
+            <span>{isEnglish ? "People & Development" : "人事・人材育成"}</span>
+          </div>
+          <div className="home-editorial-focus-item">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 18h5l15-7v12l-15-7H5zM10 18l2 8h5l-3-9M25 14l3-2M25 20l3 2"/></svg>
+            <span>{isEnglish ? "Marketing & Growth" : "マーケティング"}</span>
+          </div>
+          <div className="home-editorial-focus-item">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="4" y="14" width="24" height="12" rx="2"/><path d="M4 19h24M8 14v-3a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v3M19 14v-3a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v3M7 26v2M25 26v2"/></svg>
+            <span>{isEnglish ? "Hospitality & Travel" : "ホスピタリティ・旅行"}</span>
+          </div>
+        </div>
       </div>
+      <p className="home-intro-statement home-intro-philosophy home-editorial-philosophy">
+        {isEnglish
+          ? <>I enjoy turning ideas into tangible outcomes, actively learning <strong><em>new skills</em></strong> and finding <strong><em>creative solutions</em></strong> with <strong><em>limited resources</em></strong>.</>
+          : identity.homeStatement.ja}
+      </p>
     </section>
     <section className="home-work" aria-labelledby="home-work-heading">
       <div className="home-work-intro">
