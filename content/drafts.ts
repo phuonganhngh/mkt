@@ -73,7 +73,7 @@ const advertisingCase: Record<Locale, Document> = {
         title: "Project Overview",
         blocks: [
           "The primary objective of the paid social advertising we use is to build brand awareness in selected overseas markets, rather than directly optimize booking conversions.",
-          "I worked mainly with Meta Ads and TikTok Ads, using hotel and destination content to introduce Noboribetsu to potential international travelers."
+          "I worked mainly with Google Ads, Meta Ads and TikTok Ads."
         ],
       },
       {
