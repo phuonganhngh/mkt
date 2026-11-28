@@ -418,9 +418,18 @@ export function DocumentSections({ document, locale, id }: { document: Document;
           <h2>{section.title}</h2>
           <div className="section-copy"><WebsiteRoleBreakdown blocks={section.blocks} locale={locale} /></div>
         </section>
-        : <section key={section.title} className="case-section">
-          <h2>{section.title}</h2>
-          <div className="section-copy"><SectionBlocks blocks={section.blocks} id={id} locale={locale} /></div>
-        </section>)}
+        : (section.title === "Strategic Approach" || section.title === "戦略的アプローチ")
+          && section.blocks.length > 0
+          && section.blocks.every(line => /^- \*\*.+?\*\*/.test(line))
+          ? <section key={section.title} className="case-section">
+            <h2>{section.title}</h2>
+            <div className="section-copy">
+              <WebsiteStrategyFramework lines={section.blocks} />
+            </div>
+          </section>
+          : <section key={section.title} className="case-section">
+            <h2>{section.title}</h2>
+            <div className="section-copy"><SectionBlocks blocks={section.blocks} id={id} locale={locale} /></div>
+          </section>)}
   </div>;
 }
