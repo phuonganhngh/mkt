@@ -106,11 +106,17 @@ function Home({ locale }: { locale: Locale }) {
           </div>
         </div>
       </div>
-      <p className="home-intro-statement home-intro-philosophy home-editorial-philosophy">
-        {isEnglish
-          ? <>I enjoy turning ideas into tangible outcomes, actively learning <strong><em>new skills</em></strong> and finding <strong><em>creative solutions</em></strong> with <strong><em>limited resources</em></strong>.</>
-          : identity.homeStatement.ja}
-      </p>
+      <div className="home-editorial-philosophy">
+        <svg className="home-editorial-idea-icon" viewBox="0 0 32 40" fill="none" stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M16 2C8.2 2 3 7.7 3 15c0 5.2 2.6 8.3 5.6 11.2 1.5 1.4 2.4 3.4 2.5 5.5h9.8c.1-2.1 1-4.1 2.5-5.5C26.4 23.3 29 20.2 29 15 29 7.7 23.8 2 16 2Z"/>
+          <path d="M11 32.5h10M11.5 36h9M13 39h6"/>
+        </svg>
+        <p className="home-intro-statement home-intro-philosophy">
+          {isEnglish
+            ? <>I enjoy turning ideas into tangible outcomes, actively learning <strong><em>new skills</em></strong> and finding <strong><em>creative solutions</em></strong> with <strong><em>limited resources</em></strong>.</>
+            : identity.homeStatement.ja}
+        </p>
+      </div>
     </section>
     <section id="work" className="home-work" aria-labelledby="home-work-heading">
       <div className="home-work-intro">
