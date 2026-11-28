@@ -784,8 +784,8 @@ html[lang="en"] .website-role-duty-copy {
   .home-intro.home-intro-editorial, .page-intro { padding-top: 20px; }
 }
 
-.insights-section { margin: 3rem 0; }
-.insights-section > p { margin: .5rem 0 1.5rem; }
+.insights-section { margin: 0; padding-block: 0 20px; }
+.insights-section > p { margin: .5rem 0 1rem; }
 .insights-steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
 .insights-steps li { display: flex; gap: 1rem; border: 1px solid #d8d8d8; padding: 1.25rem; min-width: 0; }
 .insights-number { font-size: .85rem; opacity: .65; }
