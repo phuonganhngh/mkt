@@ -369,6 +369,8 @@ function SectionBlocks({ blocks, id, locale }: { blocks: string[]; id?: Category
       children.push(<ToolsPlatforms key={index} locale={locale} />);
     } else if (block === "@nikkei-thumbnail" && id === "partnerships") {
       children.push(<NikkeiThumbnail key={index} locale={locale} />);
+     } else if (block === "@beyond-translation" && id === "website") {
+      children.push(<img key={index} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/beyond-translation.png`} alt={locale === "ja" ? "翻訳だけでは伝わりにくい交通・客室・温泉の情報をイラストで伝える" : "Illustration of how visual information about transport, rooms and onsen helps international travelers beyond translation"} loading="lazy" style={{ display: "block", width: "100%", height: "auto" }} />);
     } else if (block === "@challenge-illustration" && id === "website") {
       children.push(<WebsiteChallengeVisual key={index} locale={locale} />);
     } else if (block === "@strategy-framework" && id === "website") {
